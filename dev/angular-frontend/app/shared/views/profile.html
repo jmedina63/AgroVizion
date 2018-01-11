@@ -1,0 +1,159 @@
+<div class="modal-body panel-body no-padding" id="modal-body">
+    <div class="yep-profile ">
+        <div class="statistic">
+            <div class="padding-10">
+                <h4>
+                    <strong class="center">{{'app.shared.profile.userProfile' | translate}}</strong>
+                </h4>
+            </div>
+        </div>
+        <img class="yep-image-lg" src="../assets/img/gallery/a9.jpg" height="214" width="500"
+             alt="Profile image example"/>
+
+        <div class="yep-profile-text">
+            <div class="col-sm-12 ">
+
+                <div class="col-sm-3">
+                    <div ng-if="tmpProfile.avatar_url!==undefined"
+                         ng-model="tmpProfile.avatar_url"
+                         dropzone="dropzoneConfig"
+                         mode="single"
+                         class="dropzone dz-clickable dz-single yep-image-profile">
+                    </div>
+                    <div class="profile-info">
+                        <h4>
+                            <small>{{'app.shared.profile.department' | translate}}</small>
+                            <br>{{tmpProfile.department}}
+                        </h4>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 no-padding ">
+                    <h4>
+                        <span class="semi-bold ">
+                            <input type="text" ng-model="tmpProfile.name"
+                                   placeholder="{{'app.shared.profile.name' | translate}}"
+                                   class="without-border">
+                        </span>
+                        <br>
+                        <small>{{tmpProfile.gender === 0 ? 'Male' : 'Female'}}</small>
+                    </h4>
+
+                    <ul class="list-unstyled">
+                        <li>
+                             <span class="input-icon md">
+                                <input type="text" ng-model="tmpProfile.title"
+                                       placeholder="{{'app.shared.profile.jobTitle' | translate}}"
+                                       class="form-control">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="input-icon md">
+                                <input type="text" ng-model="tmpProfile.phone"
+                                       placeholder="{{'app.shared.profile.phone' | translate}}"
+                                       class="form-control">
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="input-icon md">
+                                <input type="text" ng-model="tmpProfile.email"
+                                       placeholder="{{'app.shared.profile.email' | translate}}"
+                                       class="form-control">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="input-icon md">
+                                <input type="text" ng-model="tmpProfile.site"
+                                       placeholder="{{'app.shared.profile.location' | translate}}"
+                                       class="form-control">
+                                <i class="fa fa-map-marker"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="input-icon md">
+                                <select class="form-control" ng-model="tmpProfile.language"
+                                        ng-options="key as 'language.label.'+key | translate for key in languages"></select>
+                                <i class="fa fa-language"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="input-icon md">
+                                <input type="text" ng-model="tmpProfile.timezone"
+                                       placeholder="{{'app.shared.profile.timeZone' | translate}}"
+                                       class="form-control">
+                                <i class="fa fa-history"></i>
+                            </span>
+                        </li>
+                    </ul>
+                    <br>
+
+                </div>
+                <!--<div class="col-sm-3 bg-grey">-->
+                <!--{{tmpProfile | json}}-->
+                <!--</div>-->
+                <!--<div class="col-sm-3 bg-grey">-->
+                     <!--<br>-->
+                     <!--<h6>Calendar Type</h6>-->
+                     <!--<span class="input-icon md">-->
+                         <!--<select class="form-control" ng-model="tmpProfile.language"-->
+                                    <!--ng-options="key as 'language.label.'+key | translate for key in languages">-->
+                         <!--</select>-->
+                         <!--<i class="fa fa-calendar-o"></i>-->
+                     <!--</span>-->
+                    <!--<h6>Date Format</h6>-->
+                     <!--<span class="input-icon md">-->
+                         <!--<input type="text" ng-model="tmpProfile.timezone"-->
+                                <!--placeholder="yyyy/MM/dd"-->
+                                <!--class="form-control">-->
+                                <!--<i class="fa fa-calendar"></i>-->
+                     <!--</span>-->
+                    <!--<br>-->
+                <!--</div>-->
+                <div class="clearfix"></div>
+                <div class="col-sm-3">
+                    <p class="font-md">
+                        {{'app.shared.profile.changePassword' | translate}}
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="m-switch">
+                        <input type="checkbox" id="id-name--1" ng-model="tmpProfile.changePasswordStatus" class="switch-input">
+                        <label for="id-name--1" class="switch-label">
+                            <span class="toggle--on bold">{{'app.shared.profile.enabled' | translate}}</span>
+                            <span class="toggle--off bold">{{'app.shared.profile.disabled' | translate}}</span>
+                        </label>
+                    </div>
+                    <div ng-show="tmpProfile.changePasswordStatus">
+                        <span class="input-icon md">
+                            <input type="password" ng-model="tmpProfile.currentPassword" placeholder="{{'app.shared.profile.currentPassword' | translate}}" class="form-control">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <span class="input-icon md">
+                            <input type="password" ng-model="tmpProfile.newPassword" placeholder="{{'app.shared.profile.newPassword' | translate}}" class="form-control">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <span class="input-icon md">
+                            <input type="password" ng-model="tmpProfile.newPassword_confirmation" placeholder="{{'app.shared.profile.confirmNewPassword' | translate}}" class="form-control">
+                            <i class="fa fa-key"></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success"
+            type="button"
+            ng-class="{'working':isDisabled===true}"
+            ng-click="saveProfile(tmpProfile)"
+            ng-disabled="isDisabled">{{'app.shared.common.save' | translate}}
+    </button>
+    <button class="btn btn-default" type="button" ng-click="cancelModal()">{{'app.shared.common.cancel' | translate}}</button>
+</div>

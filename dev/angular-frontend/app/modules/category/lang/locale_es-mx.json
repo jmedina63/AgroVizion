@@ -1,0 +1,10 @@
+{
+  "category":{
+    "form":{
+      "categoryName":"Nombre de Categoria",
+      "description":"Descripción",
+      "categoryAddSuccess":"Categoria agregada correctamente",
+      "categoryUpdatedSuccess":"Categoria agregada correctamente"
+    }
+  }
+}

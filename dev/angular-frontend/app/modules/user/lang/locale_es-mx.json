@@ -1,0 +1,39 @@
+{
+  "user":{
+    "list":{
+      "name":"Nombre",
+      "email":"Email",
+      "gender":"Genero",
+      "location":"Localización",
+      "status":"Estatus",
+      "createdTime":"Tiempo creado"
+    },
+    "form":{
+      "active":"Activo",
+      "avatar":"Avatar",
+      "male":"Masculino",
+      "female":"Femenino",
+      "title":"Titulo",
+      "password":"Password",
+      "role":"Rol",
+      "userAddSuccess":"Usuario agregado correctamente",
+      "userUpdateSuccess":"Usuario actualizado correctamente"
+    },
+    "importWizard":{
+      "sampleFile":"Archivo ejemplo:",
+      "sampleFileDescription":"Si no tienes un archivo de ejemplo xls o csv para importar, puedes descargar un archivo de ejemplo.",
+      "sampleFileDownloadBtn":"Archivo ejemplo en Excel",
+      "nextMapping":"Siguiente: Mapeo",
+      "mapping":"Mapeo:",
+      "mappingDescription":"Puedes relacionar campos a tus columnas con las caracteristicas mapeadas. Debes mapear las columnas de archivo con los campos del modulo.",
+      "mappingNote":"<b>Nota:</b>debe configurar sus campos en Modelo como <code>$import_fields</code>.",
+      "pleaseWait":"Por favor espere...",
+      "pleaseWaitText":"Puede tomar algunos minutos",
+      "importResult":"Importar Resultados",
+      "totalRecords":"Total de Registros:",
+      "SuccessImport":"Importados correctamete:",
+      "failedImport":"Campos importados:",
+      "errors":"Errores:"
+    }
+  }
+}

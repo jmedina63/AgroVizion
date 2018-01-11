@@ -1,0 +1,242 @@
+<!-- main content -->
+<div id="content">
+    <div class="col-md-12">
+        <div class="panel panel-default yep-card">
+            <div class="panel-heading card-head">
+                <div class="panel-title">
+                    <a ui-sref="admin" class="btn btn-link has-ripple" >
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <span class="bold head-title"> {{$state.current.ncyBreadcrumb.label | translate}}</span>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div xx-angulizer></div>
+
+                <div class="dnd-list">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div ng-repeat="(zone, list) in models.dropzones" >
+                                <div class="dropzone box box-yellow">
+                                    <!-- The dropzone also uses the list template -->
+                                    <div ng-include="'list.html'"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" ng-click="submit()">
+                            <i class="fa fa-save"></i> Save
+                        </button>
+                        <h2>Generated Model</h2>
+                        <pre>{{yobject | json}}</pre>
+                        <pre>{{modelAsJson}}</pre>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-md-2">
+                        <button class="btn btn-success btn-block">Generate Html</button>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               New Elements
+                            </div>
+                            <ul>
+                                <!-- The toolbox only allows to copy objects, not move it. After a new
+                                     element was created, dnd-copied is invoked and we generate the next id -->
+                                <li ng-repeat="item in models.templates"
+                                    dnd-draggable="item"
+                                    dnd-effect-allowed="copy"
+                                    dnd-copied="item.id = item.id + 1">
+                                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.name}}</button>
+                                </li>
+                            </ul>
+                       </div>
+
+                        <!-- Selected property area -->
+                        <div ng-if="models.selected" class="panel panel-default">
+                            <div class="panel-heading">
+                                Selected property
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group" ng-repeat="(key, value) in models.selected">
+                                    <label class="col-sm-2 control-label">
+                                        {{key}}
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" ng-model="models.selected[key]" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main content -->
+
+
+
+<!--
+* Templates for form designer
+-->
+<!-- list -->
+<script type="text/ng-template" id="list.html">
+    <div dnd-list="list">
+        <div ng-repeat="item in list"
+            dnd-draggable="item"
+            dnd-effect-allowed="move"
+            dnd-moved="list.splice($index, 1)"
+            dnd-selected="models.selected = item"
+            ng-class="{selected: models.selected === item}"
+            >
+            <pre>
+                {{getHtml(item.type)}}
+            </pre>
+        </div>
+    </div>
+</script>
+
+<!-- This template is responsible for rendering a container element. It uses
+     the above list template to render each container column -->
+<script type="text/ng-template" id="container1.html">
+    <div class="container-element box box-blue">
+        <h3>Container {{item.id}}</h3>
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <div class="clearfix"></div>
+    </div>
+
+</script>
+
+<!--template for div container -->
+<script type="text/ng-template" id="container.html">
+    <div class="box box-blue {{item.class}}">
+        <h3>{{item.type}} {{item.id}}</h3>
+        <div ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <button type="button" class="btn btn-default" ng-click="list.splice($index,1)"><i class="fa fa-close"></i></button>
+    </div>
+</script>
+
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="item.html">
+    <div class="items">Item {{item.id}}</div>
+</script>
+
+<!-- template for input -->
+<script type="text/ng-template" id="input.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">
+            {{item.fieldName}}
+        </label>
+        <div class="col-sm-10">
+            <input type="text" class="{{item.model}}" placeholder="{{item.placeholder}}" class="form-control">
+        </div>
+    </div>
+</script>
+
+
+<!-- template for checkbox -->
+<script type="text/ng-template" id="checkbox.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">
+            {{item.title}}
+        </label>
+        <div class="col-sm-10">
+            <div class="checkbox checkbox-primary">
+                <input id="{{$index}}"  ng-model="yobject[item.model]" type="checkbox" checked="{{item.checked}}">
+                <label for="{{$index}}">
+                    {{item.title}}
+                </label>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- template for textarea -->
+<script type="text/ng-template" id="textarea.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">
+            {{item.title}}
+        </label>
+        <div class="col-sm-10">
+            <textarea ng-model="yobject[item.model]" placeholder="{{item.placeholder}}" class="form-control"></textarea>
+        </div>
+    </div>
+</script>
+
+<!-- switch -->
+<script type="text/ng-template" id="switch.html">
+    <div class="items form-group switch">
+        <label class="col-sm-2 control-label">{{item.title}}</label>
+        <div class="col-sm-10">
+            <div class="m-switch">
+                <input ng-model="yobject[item.model]" ng-true-value="{{item.trueValue}}" type="checkbox" id="{{$index}}" class="switch-input">
+                <label for="{{$index}}" class="switch-label">
+                </label>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- select -->
+<script type="text/ng-template" id="select.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">{{item.title}}</label>
+        <div class="col-sm-10">
+            <select ng-model="yobject[item.model]" ng-options="{{item.options}}" class="form-control">
+            </select>
+        </div>
+    </div>
+</script>
+
+<!-- Radio -->
+<script type="text/ng-template" id="radio.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">
+            {{item.title}}
+        </label>
+        <div class="col-sm-10">
+            <div class="radio radio-info radio-inline" ng-repeat="opt in getCollection(item.radioOptions)">
+                <input ng-model="yobject[item.model]" type="radio" id="{{item.model + $index}}" ng-value="opt[item.optValue]" name="{{item.model}}">
+                <label for="{{item.model + $index}}">{{opt[item.optLabel] }}</label>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- Rich Editor -->
+<script type="text/ng-template" id="editor.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label" >
+           {{item.title}}
+        </label>
+        <div class="col-sm-10">
+            <div con="example">
+                <summernote  ng-model="yobject[item.model]" height="300"></summernote>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- ui-select -->
+<script type="text/ng-template" id="ui-select.html">
+    <div class="items form-group">
+        <label class="col-sm-2 control-label">
+            {{item.title}}
+        </label>
+        <div class="col-sm-10">
+            <ui-select ng-model="yobject[item.model]" theme="select2" style="min-width: 100%;">
+                <ui-select-match>{{$select.selected.name || $select.selected}}</ui-select-match>
+                <ui-select-choices repeat="{{item.repeat}}">
+                    <div ng-bind-html="category.name | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+</script>

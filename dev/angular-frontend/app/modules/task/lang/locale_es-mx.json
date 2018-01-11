@@ -1,0 +1,22 @@
+{
+  "task":{
+    "form":{
+      "title":"Titulo",
+      "taskTitle":"Titulo de la tarea",
+      "description":"Descripción",
+      "attachment":"Adjuntar",
+      "startAndEndDate":"Inicio & Fecha Final",
+      "status":"Estatus",
+      "category":"Categoria",
+      "user":"Usuario",
+      "userEmail":"email:",
+      "keyword":"Keyword",
+      "comments":"Comentarios",
+      "sendComment":"Enviar",
+      "startDate":"Iniciar",
+      "endDate":"Final",
+      "taskAddSuccess":"Tarea agregadacorrectamente",
+      "taskUpdatedSuccess":"Tarea actualizada correctamente"
+    }
+  }
+}

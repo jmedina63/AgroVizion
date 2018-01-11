@@ -1,0 +1,52 @@
+<div ng-controller="Preloader" class="">
+    <div style="margin: 5% auto; position: relative; width: 400px;">
+
+        <!-- error alert panel -->
+        <div class="alert alert-danger" ng-if="signinError.data.error">
+            <strong>There was an error: </strong> {{signinError.data.error}}
+            <br>Please try again
+        </div>
+
+        <div id="q-sign-in" class="panel panel-default" style="">
+            <div class="panel-body text-center">
+                <a ui-sref="login"> <h4>Login to ngLaravel</h4></a>
+            </div>
+        </div>
+
+        <div id="register-form" class="panel panel-default animated  bounce" >
+
+            <div class="panel-body">
+                <div class="text-center">
+                    <h2>Account Activation</h2>
+                    <h5 class="grey">Please wait to finish account activation progress</h5>
+                </div>
+                <hr>
+                <div class="row">
+
+                    <div class="text-center" ng-show="status === 'loading'">
+                        <img ng-src="../assets/img/preloader/material.gif" alt="waiting">
+                        <br>
+                        <h5>Please Wait...</h5>
+                    </div>
+                    <div class="text-center" ng-show="status === 'success'">
+                        <img ng-src="../assets/img/preloader/success.svg" alt="waiting" width="80">
+                        <br>
+                        <h5>Congratulations!</h5>
+                    </div>
+                    <div class="text-center" ng-show="status === 'error'">
+                        <img ng-src="../assets/img/preloader/error.svg" alt="waiting" width="80">
+                        <br>
+                        <h5>You have an error!</h5>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <p class="text-center">Copyright 2016 YEP Corporation. All right reserved.</p>
+    </div>
+
+</div>
+
+

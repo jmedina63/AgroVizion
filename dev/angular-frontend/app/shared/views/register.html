@@ -1,0 +1,78 @@
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+        async defer
+></script>
+<div style="margin: 5% auto; position: relative; width: 400px;">
+
+    <!-- error alert panel -->
+    <div class="alert alert-danger" ng-if="signinError.data.error">
+        <strong>Este fue un error: </strong> {{signinError.data.error}}
+        <br>Por favor intente de nuevo
+    </div>
+
+    <div id="q-sign-in" class="panel panel-default" style="">
+        <div class="panel-body text-center">
+            Tienen cuenta?
+            <a ui-sref="login"> <b>Click aqui!</b></a>
+        </div>
+    </div>
+
+    <div id="register-form" class="panel panel-default animated  bounce" >
+        <div class="panel-body">
+            <div class="text-center">
+                <h2>Crear nueva cuenta</h2>
+                <h5 class="grey">Registrese </h5>
+            </div>
+            <hr>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="form-horizontal">
+                        <fieldset ng-disabled="isDisabled">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input ng-model="user.name" type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="spacing hidden-md"></div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input ng-model="user.email" type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="spacing hidden-md"></div>
+                            <div class="spacing hidden-md"></div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input ng-model="user.password" type="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="spacing hidden-md"></div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input ng-model="user.password_confirmation" type="password" class="form-control" placeholder="Confirm Password">
+                            </div>
+                            <div class="spacing"></div>
+                            <div vc-recaptcha
+                                    theme="'light'"
+                                    key="key"
+                                    on-create="setWidgetId(widgetId)"
+                                    on-success="setResponse(response)"
+                                    on-expire="cbExpiration()"
+                            ></div>
+                            <div class="spacing"><br></div>
+                            <button class="btn btn-success btn-sm pull-right"
+                                    ng-class="{'working':isDisabled===true}"
+                                    ng-click="register(user)"
+                                    ng-disabled="!response">
+                                        Crear Cuenta
+                            </button>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+        <p>Copyright 2018 AgroMaster Corporation. All right reserved.</p>
+    </div>
+
+</div>

@@ -1,0 +1,2102 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Yep Golabi Admin v1.5 - Responsive Bootstrap Web Application</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="YepTemplate">
+	<meta name="copyright" content="YepTemplate">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-04-05T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_21.png);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-yep-golabi-admin-v15">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#introduction" title="Introduction">Introduction</a></li>
+			<li><a href="#unpacking" title="Unpacking">Unpacking</a></li>
+			<li><a href="#html_version" title="HTML VERSION">HTML VERSION</a></li>
+			<li><a href="#angularjs_version" title="Angularjs Version">Angularjs Version</a></li>
+			<li><a href="#layout_api" title="Layout API">Layout API</a></li>
+			<li><a href="#page_structure" title="Page Structure">Page Structure</a></li>
+			<li><a href="#icons" title="Icons">Icons</a></li>
+			<li><a href="#plugins" title="Plugins">Plugins</a></li>
+			<li><a href="#charts" title="Charts">Charts</a></li>
+			<li><a href="#ui_elements" title="UI Elements">UI Elements</a></li>
+			<li><a href="#tables" title="Tables">Tables</a></li>
+			<li><a href="#datatables_v1_10" title="Datatables v1.10">Datatables v1.10</a></li>
+			<li><a href="#intro_to_yep_script_js" title="Intro to yep-script.js">Intro to yep-script.js</a></li>
+			<li><a href="#sass_files" title="SASS FILES">SASS FILES</a></li>
+			<li><a href="#themes" title="Themes">Themes</a></li>
+			<li><a href="#animation_css" title="Animation.css">Animation.css</a></li>
+			<li><a href="#licenses" title="Licenses">Licenses</a></li>
+			<li><a href="#upgrade" title="Upgrade">Upgrade</a></li>
+			<li><a href="#updates" title="Updates">Updates</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright YepTemplate 2016
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Yep Golabi Admin v1.5</h1>
+	<h2>Responsive Bootstrap Web Application</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 08/23/2015</li>
+	<li>latest update: 04/05/2016</li>
+	<li>by: YepTemplate</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for purchasing Golabi Admin Responsive WebApp. If you have any questions that are beyond the scope of this help file, please feel free to email  me via the email address above.</p>
+	</section>
+	
+	<section id="introduction">
+	<div class="page-header"><h3>Introduction</h3><hr class="notop"></div>
+<p>
+	<span id="docs-internal-guid-5edc7fad-dbc5-6bfe-137b-c8ba186cff74"><strong>Golabi Admin WebApp</strong> - goes beyond the ordinary admin template. Its unique flat design and responsive layout is crafted one of a kind. Golabi Admin comes with 50+ customized jquery plugins. Golabi Admin Layout API lets you customize your project for almost any device - be it Mobile, Web or WebApp.</span></p>
+<p>
+	Golabi Admin is exclusively sold at <a href="https://www.themeforest.net" spfieldtype="null">Themeforest.</a>net;&nbsp;please make sure you save&nbsp;your license ID for support and future upgrades.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-info">
+	<em><strong>Golabi Admin is built with the latest version of Bootstrap Framework (v3 +). You can find more about bootstrap and its documentation in the following languages below:</strong></em><br>
+	<br>
+	<div>
+		<a href="http://getbootstrap.com/getting-started" spfieldtype="null">Bootstrap English (US)</a></div>
+	<div>
+		<a href="http://v3.bootcss.com/" spfieldtype="null">Bootstrap (Chinese)</a></div>
+	<div>
+		<a href="http://www.oneskyapp.com/docs/bootstrap/fr" spfieldtype="null">Bootstrap en Fran&ccedil;ais (French)</a></div>
+	<div>
+		<a href="http://holdirbootstrap.de/" spfieldtype="null">Bootstrap auf Deutsch (German)</a></div>
+	<div>
+		<a href="http://www.oneskyapp.com/docs/bootstrap/ru" spfieldtype="null">Bootstrap (Russian)</a></div>
+	<div>
+		<a href="http://www.oneskyapp.com/docs/bootstrap/es" spfieldtype="null">Bootstrap en Espa&ntilde;ol (Spanish)</a></div>
+	<a href="http://twbs.site-konstruktor.com.ua/" spfieldtype="null">Bootstrap ua (Ukrainian)&nbsp;</a></div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="unpacking">
+	<div class="page-header"><h3>Unpacking</h3><hr class="notop"></div>
+<p>
+	Once you have successfully downloaded Golabi Admin from Themeforest.net, you will notice right away that the zip folder contains the following:</p>
+<p>
+	<span id="docs-internal-guid-6a2251a3-fa29-ca84-1ed7-a488f12d12c7"><img src="assets/images/image_4.jpg" style="border: 0px solid transparent"></span></p>
+<p>
+	Click the <b>html_version&nbsp;</b>directory and you will arrive to the choices below:&nbsp;</p>
+<p>
+	<br>
+	<span id="docs-internal-guid-77cbeb1e-6caf-96a6-aa35-195b3a07f010"><span style="font-size: 15px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><img src="assets/images/image_2.jpg" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></span></span></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<br>
+	&nbsp;</p>
+</section>
+<section id="html_version">
+	<div class="page-header"><h3>HTML VERSION</h3><hr class="notop"></div>
+<p>
+	You will see the following file structure for the&nbsp;<strong>NON</strong>-<strong>AJAX (HTML version)</strong></p>
+<p>
+	<span id="docs-internal-guid-04e2137e-ff44-3384-185c-e1db7eafccd2"><img src="assets/images/image_3.jpg" style="border: 0px solid transparent"></span></p>
+<p>
+	<span>The <strong>non-Ajax version</strong> of Golabi Admin is pretty straight forward. Just treat it like a regular HTML template.</span></p>
+<p>
+	<span style="line-height: 19px; color: rgb(0, 0, 0); white-space: pre-wrap;">Though the <strong>HTML_version </strong>is mostly HTML, the Form Plugins and some messages still uses the AJAX call method. Which means they will need to be running from a server in order to work.</span></p>
+</section>
+<section id="angularjs_version">
+	<div class="page-header"><h3>Angularjs Version</h3><hr class="notop"></div>
+<h4 id="angularjs_version_file_amp_folder_structure">File &amp; Folder Structure:</h4>
+<p>
+	<strong>angularjs_version/app</strong> folder include:</p>
+<ul>
+	<li>
+		&nbsp;controller (include all page controller with &lt;pagename&gt;Ctrl.js)</li>
+	<li>
+		&nbsp;directive (include Golabi Admin custom directive)</li>
+	<li>
+		&nbsp;vendors (include all thrid-party angularjs plugin and directive)</li>
+	<li>
+		&nbsp;view (include all html content page)</li>
+	<li>
+		&nbsp;app.js (include startup configuration of angular app)</li>
+	<li>
+		&nbsp;config.constant.js (inculde all dependency constant)</li>
+	<li>
+		&nbsp;config.router.js (inculde all route in app)</li>
+</ul>
+<h4 id="angularjs_version_configurations">Configurations</h4>
+<p>
+	You need to have a basic knowledge of AngularJS and AngularUI Router to begin your project.</p>
+<div class="alert">
+	Please put the files on a Server or on a Local Development Web Server to preview.<span style="background-color: rgb(255, 255, 255);">&nbsp;</span></div>
+<p>
+	<strong>AngularUI Router</strong> is a routing framework for AngularJS, which allows you to organize the parts of your interface into a state machine. Unlike the&nbsp;<strong><em><code>$route</code></em></strong> service in the Angular ngRoute module, which is organized around URL routes, UI-Router is organized around states, which may optionally have routes, as well as other behavior, attached.&nbsp;</p>
+<p>
+	Check the <a href="http://angular-ui.github.io/ui-router" target="_blank"> official documentation </a> .&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h3>
+	We now begin to customize the main navigation</h3>
+<p>
+	1- First, Open <strong><code> index.html</code></strong> file (angularjs_version/index.html) &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>
+	2- Find &lt;title&gt; tag and change it.</p>
+<p>
+	3- Find<strong>&nbsp; ul </strong>with id<strong>&nbsp;#MainMenu&nbsp;</strong>and change or add a menu item in the list as follows:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;li ui-sref-active=&quot;open active&quot;&gt;
+    &lt;a ui-sref=&quot;dashboard&quot;&gt;
+        &lt;i class=&quot;menu-icon fa fa-tachometer&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;menu-text&quot;&gt; Dashboard &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;
+&lt;/li&gt;</pre>
+<p>
+	or</p>
+<pre class="prettyprint lang-html linenums">
+&lt;li ui-sref-active=&quot;active open&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;
+        &lt;i class=&quot;menu-icon fa fa-desktop&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;menu-text&quot;&gt; UI &amp;amp; Elements &lt;/span&gt;
+        &lt;b class=&quot;arrow fa fa-angle-down&quot;&gt;&lt;/b&gt;
+     &lt;/a&gt;
+     &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;
+     &lt;ul class=&quot;submenu nav-show&quot;  &gt;
+         &lt;li ng-class=&quot;{active:$state.includes(&#39;generalelements&#39;)}&quot;&gt;
+              &lt;a ui-sref=&quot;generalelements&quot; &gt;
+                  &lt;i class=&quot;menu-icon fa fa-caret-right&quot;&gt;&lt;/i&gt;
+                  &lt;span class=&quot;menu-text&quot;&gt;General Elements&lt;/span&gt;
+              &lt;/a&gt;
+              &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;
+          &lt;/li&gt; 
+      &lt;/ul&gt; 
+&lt;/li&gt;</pre>
+<p>
+	4- You&#39;ll notice we also added some links with <strong>ui-sref </strong>directives. this directive auto-generates the <strong>href</strong> attribute of the <strong>&lt;a /&gt;</strong> element it&#39;s attached to, if the corresponding state has a URL.</p>
+<p>
+	5-&nbsp;&nbsp;Now Open <strong>config.router.js</strong> file angularjs_version/app/config.router.js) for set up the states.We&#39;ll wire it all up with <strong>$stateProvider</strong>. Set up your states in the module config, as in the following:</p>
+<pre class="prettyprint lang-js linenums">
+.state(&#39;app&#39;, {
+    template: &#39;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&#39;,
+    ncyBreadcrumb: {
+        label: &#39;App&#39;
+    }
+})
+.state(&#39;dashboard&#39;,{
+    url: &quot;/app/dashboard&quot;,
+    templateUrl: &quot;app/view/dashboard.html&quot;,
+    ncyBreadcrumb: {
+        label: &#39;Dashboard&#39;,
+        parent:&#39;app&#39;
+    },
+    controller:&#39;dashboardCtrl&#39;,
+    resolve: {
+        dep: [&#39;$ocLazyLoad&#39;,
+            function( $ocLazyLoad ){
+                return $ocLazyLoad.load([&#39;morrischart&#39;,&#39;sparkline&#39;,&#39;easypiechart&#39;,&#39;momentjs&#39;,&#39;jquery-ui-custom&#39;]).then(
+                    function(){
+                        return $ocLazyLoad.load([&#39;panel-flat&#39;,&#39;fullcalendar&#39;,&#39;daterangepicker&#39;,&#39;app/controller/dashboardCtrl.js&#39;]);
+                    }
+                );
+            }]
+    }
+})</pre>
+<h4 id="angularjs_version_map_of_dependencies_modules,_css,_jquery_plugins_ecc_">Map of dependencies (Modules, Css, jQuery Plugins ecc.)</h4>
+<p>
+	You can use resolve to provide your controller with content or data that is custom to the state. resolve is an optional map of dependencies which should be injected into the controller.</p>
+<p>
+	If any of these dependencies are promises, they will be resolved and converted to a value before the controller is instantiated and the <strong>$stateChangeSuccess</strong> event is fired.</p>
+<p>
+	Moreover, Golabi Admin uses the module <strong>oc.lazyLoad</strong> for load modules on demand (lazy load) in AngularJS. To configure dependency management you should setup your dependencies:</p>
+<p>
+	1-&nbsp;First of all Open <strong>config.constant.js</strong> file (angularjs_version/app/config.constant.js)</p>
+<p>
+	2-&nbsp;Here we can register a constant service, ie the list of files (css, javascript, etc.) that will serve us as we go forward in the project.</p>
+<p>
+	3-&nbsp;if we want to use an angularJS module, we will indicate in the array modules the name of the module (usually assigned by the author of the library) and its associated files:</p>
+<pre class="prettyprint lang-js linenums">
+modules: [
+    {
+        name:&#39;jstree&#39;,
+        insertBefore: &#39;#yep-style&#39;,
+        files:[
+            &#39;../assets/vendors/jstree/css/proton/style.min.css&#39;,
+            &#39;../assets/vendors/jstree/js/jstree.min.js&#39;,
+            &#39;app/vendors/jstree-directive/jsTree.directive.min.js&#39;
+        ]
+    }
+]</pre>
+<p>
+	Now we want to dynamically load them on-the-fly at runtime when we change states.</p>
+<p>
+	In file <strong>config.router.js</strong> we will match our <strong>resolve:</strong></p>
+<pre class="prettyprint lang-js linenums">
+.state(&#39;jquery-ui&#39;, {
+    url: &quot;/app/jquery-ui&quot;,
+    templateUrl: &quot;app/view/jquery-ui.html&quot;,
+    ncyBreadcrumb: {
+        label: &#39;jQuery UI&#39;,
+        parent:&#39;ui-elements&#39;
+    },
+    controller:&#39;jquery-uiCtrl&#39;,
+    resolve: {
+        dep: [&#39;$ocLazyLoad&#39;,
+            function( $ocLazyLoad ){
+                return $ocLazyLoad.load([&#39;jquery-ui&#39;]).then(
+                    function(){
+                        return $ocLazyLoad.load([&#39;app/controller/jquery-uiCtrl.js&#39;]);
+                    }
+                );
+            }]
+    }
+})</pre>
+<p>
+	&nbsp;</p>
+<h4 id="angularjs_version_breadcrumbs">Breadcrumbs</h4>
+<div>
+	Golabi Admin uses <strong>Angular-breadcrumb </strong>, a module for AngularJS, which generates a breadcrumb for any page of your application. It is strongly based on the <strong>ui-router framework </strong>and its hierarchical tree of states.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Define a ncyBreadcrumb.label property to each states:</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+.state(&#39;charts&#39;, {
+        template: &#39;&lt;div ui-view class=&quot;fade-in-up&quot;&gt;&lt;/div&gt;&#39;,
+        ncyBreadcrumb: {
+            label: &#39;Charts&#39;
+        }
+    })
+    .state(&#39;flotchart&#39;,{
+        url: &quot;/app/flotchart&quot;,
+        templateUrl: &quot;app/view/flotchart.html&quot;,
+        ncyBreadcrumb: {
+            label: &#39;Flot Charts&#39;,
+            parent:&#39;charts&#39;
+        },
+        controller:&#39;flotchartCtrl&#39;,
+    }
+})</pre>
+	<p>
+		&nbsp;</p>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="layout_api">
+	<div class="page-header"><h3>Layout API</h3><hr class="notop"></div>
+<div>
+	Golabi Admin has a number of different layouts. It can be a fixed or fluid width and it can have a sidebar, collapsed bar or be full width. You can also lock in header, ribbon and the sidebar. You can combine these classes to get the desired layout for your app. You do this by adding/toggling styles into the body element of the template<em> (please see examples below)&nbsp;</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h5>
+		<strong>Minified sidebar</strong></h5>
+	<div class="alert alert-info">
+		<em><strong>&lt;div id=&quot;sidebar&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); white-space: pre; background-color: rgb(247, 247, 249); line-height: 19px;"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">sidebar menu-hide</span></span><strong>&rdquo;&gt;</strong><br>
+		<br>
+		Minifies the sidebar so users can have more room for the body while still having access to the menu by hovering over parent node icons. You can also control this by the minify data attribute.&nbsp;</em></div>
+	<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(65, 46, 40);">
+		<img src="assets/images/image_15.jpg" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;"></p>
+	<h5>
+		&nbsp;</h5>
+	<h5>
+		<strong>Fixed Header</strong></h5>
+</div>
+<div>
+	<div class="alert alert-info">
+		<em><strong>&lt;div id=&quot;container&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">fixed-header</span></span><strong>&rdquo;&gt;</strong></em><br>
+		<br>
+		<div>
+			<em>Template header is completely fixed and will stay fixed while being scrolled</em></div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+<div>
+	<div>
+		<h5>
+			&nbsp;</h5>
+		<h5>
+			<strong>Fixed Ribbon</strong></h5>
+		<div class="alert alert-info">
+			<em><strong>&lt;div id=&quot;container&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">fixed-ribbon</span></span><strong>&rdquo;&gt;</strong></em><br>
+			<br>
+			<div>
+				<div>
+					<em>Template ribbon area is completely fixed and will stay fixed while being scrolled *.fixed-header* &nbsp;class needs to be applied</em></div>
+			</div>
+		</div>
+	</div>
+	<p>
+		&nbsp;</p>
+	<p>
+		&nbsp;</p>
+</div>
+<div>
+	<div>
+		<h5>
+			<strong>Fixed Navigation, Header and Ribbon (composite API)</strong></h5>
+		<div class="alert alert-info">
+			<em><strong>&lt;div id=&quot;container&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">fixed-sidebar fixed-header fixed-ribbon</span></span><strong>&rdquo;&gt;</strong></em><br>
+			<br>
+			<div>
+				<div>
+					<em>Template sidebar area is completely fixed and will stay fixed while being scrolled *.fixed-header* and *.fixed-ribbon* class needs to be applied (with a fixed sidebar class as sidebar may not be visible if page content is less than sidebar height</em></div>
+			</div>
+			<div>
+				&nbsp;</div>
+		</div>
+	</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	<img src="assets/images/image_14.jpg" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(65, 46, 40); line-height: 18px;"></div>
+<div>
+	<div>
+		<div>
+			<h5>
+				<strong>Boxed Layout</strong></h5>
+			<div class="alert alert-info">
+				<em><strong>&lt;div id=&quot;container&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">container</span></span><strong>&rdquo;&gt;</strong></em><br>
+				<br>
+				<div>
+					<em>Puts the entire template into a container frame - useful if you want that extra bit of white space for clarity. You can also change the background image to whatever you like through the CSS variable file or refer to the list of background images in the screenshot below:</em></div>
+				<div>
+					&nbsp;</div>
+			</div>
+		</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<span id="docs-internal-guid-04e2137e-0c80-93f3-ef0f-4c0b9fbc22ff"><img src="assets/images/image_13.jpg" style="border: 0px solid transparent;"></span></div>
+	</div>
+</div>
+<div>
+	<h5>
+		<strong>RTL Layout</strong></h5>
+	<h5>
+		&nbsp;</h5>
+	<div>
+		<div>
+			<div class="alert alert-info">
+				<strong><em>&lt;body id=&quot;mainbody&quot; class=&rdquo;<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">rtl</span></span>&rdquo;&gt;</em></strong><br>
+				<br>
+				<div>
+					<em>Also you should add *yep-rtl.min.css* to your page.</em></div>
+				<pre class="prettyprint lang-html linenums">
+<span style="font-size: 12px;">&lt;link rel=&quot;stylesheet&quot; href=&quot;../assets/css/yep-rtl.css&quot;&gt;</span></pre>
+			</div>
+		</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<span id="docs-internal-guid-04e2137e-0c80-93f3-ef0f-4c0b9fbc22ff"><img src="assets/images/image_22.jpg" style="border: 0px solid transparent;"></span></div>
+	</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<h5>
+		<strong>Top Menu</strong></h5>
+	<div class="alert alert-info">
+		<em><strong>&lt;div id=&quot;container&quot; class=&rdquo;</strong><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-family: monospace; vertical-align: baseline; color: rgb(190, 190, 197); line-height: 18px; white-space: pre; background-color: rgb(247, 247, 249);"><span class="atv" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">container top-menu hover-active</span></span><strong>&rdquo;&gt;</strong></em><br>
+		<i>Also you can use .hover-active class or not.</i></div>
+	<h5>
+		<img alt="" src="assets/images/image_20.jpg"  ></h5>
+	<h5>
+		<strong>Remove your demo.js</strong></h5>
+	<p>
+		It is a good idea to remove your <strong>yep-demo.js</strong> file once you have a basic configuration set for your users, unless you want your users to have full control of the layout, it is generally recommended to remove the <strong>yep-demo.js</strong> file</p>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="page_structure">
+	<div class="page-header"><h3>Page Structure</h3><hr class="notop"></div>
+<h4 id="page_structure_full_page_structure_nbsp">Full Page Structure&nbsp;</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+    &lt;head&gt;
+        <strong>[HEAD_INFO]</strong>
+    &lt;/head&gt;
+
+    &lt;body id=&quot;mainbody&quot;&gt;
+        &lt;div id=&quot;container&quot; class=&quot;container-fluid&quot;&gt;            
+            
+            &lt;header id=&quot;header&quot;&gt;
+                <strong>[LOGO]
+                [NAVBAR]
+                [SEARCH]
+                [NOTIFICTION]
+                [USER_OPTION]</strong>
+            &lt;/header&gt;
+
+            &lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot;&gt;
+                &lt;div class=&quot;tabbable-panel&quot;&gt;
+                    &lt;div class=&quot;tabbable-line&quot;&gt;
+                        
+                        &lt;ul class=&quot;nav nav-tabs nav-justified&quot;&gt;
+                            <strong>[SIDEBAR_TAB]</strong>
+                        &lt;/ul&gt;
+
+                        &lt;div class=&quot;tab-content&quot;&gt;
+                            <strong>[MENU_SIDEBAR_TAB_CONTENT]</strong>
+                                &lt;div id=&quot;MainMenu&quot;&gt;
+                                    <strong>[MENU_LIST]</strong>
+                                &lt;/div&gt;                            
+                            <strong>[/MENU_SIDEBAR_TAB_CONTENT]</strong>
+                            
+                            <strong>[OTHER_TAB_MENU_CONTENT]</strong>
+                                ...
+                            <strong>[/OTHER_TAB_MENU_CONTENT]</strong>
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;    
+            &lt;/div&gt;
+            
+            &lt;!-- Main Content --&gt;
+            &lt;div id=&quot;main&quot; class=&quot;main&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                    
+                    &lt;div class=&quot;ribbon&quot;&gt;
+                       <strong> [BREAD_CRUMB]  </strong>  
+                    &lt;/div&gt;
+                    
+                    &lt;div id=&quot;content&quot;&gt;
+                        <strong>[PAGE_CONTENT]</strong>
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;page-footer&quot;&gt;
+                <strong>[COPYRIGHT_INFO]</strong>
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        <strong>[ALL_PAGE_SCRIPTS]
+</strong>
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+<h4 id="page_structure_general_head_info">GENERAL_HEAD_INFO</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;head&gt;
+&lt;title&gt;Golabi Admin - Blank page&lt;/title&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;vendors/bootstrap/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;vendors/font-awesome/css/font-awesome.min.css&quot;&gt;
+
+&lt;!-- Related css to this page --&gt;<span class="Apple-tab-span"> </span>
+
+
+&lt;!-- Yeptemplate css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/yep-style.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/yep-vendors.css&quot;&gt;
+
+
+&lt;!-- favicon --&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;img/favicon/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;img/favicon/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;/head&gt;</pre>
+<h4 id="page_structure_header">HEADER</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- Header --&gt;
+&lt;header id=&quot;header&quot;&gt;
+
+    &lt;nav class=&quot;navbar navbar-default nopadding&quot; role=&quot;navigation&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+            <strong>[TOGGLE_BUTTON_IN_SM_AND_XS_VIEW]</strong>
+            &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot; id=&quot;logo-panel&quot;&gt;
+                <strong>[LOGO_IMG]</strong>
+            &lt;/a&gt;                                                
+        &lt;/div&gt;
+
+        &lt;form action=&quot;#&quot; class=&quot;form-search-mobile pull-right&quot;&gt;
+            <strong>[SEARCH_MOBILE_VIEW]</strong>
+        &lt;/form&gt;
+
+        &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;           
+            &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+                &lt;li id=&quot;search-show-li&quot; class=&quot;dropdown&quot;&gt;
+                   <strong>[SEARCH_LINK_XS_AND_SM_VIEW]</strong>
+                &lt;/li&gt;
+
+                &lt;li class=&quot;dropdown yep-dropdown-notify&quot;&gt;
+                    <strong>[YEP_DROPDOWN_NOTIFY_BUTTON]</strong>
+                    &lt;ul class=&quot;dropdown-menu yep-notify&quot;&gt;
+                       <strong>[YEP_DROPDOWN_NOTIFY_CONTENT]</strong>
+                    &lt;/ul&gt;
+                &lt;/li&gt;              
+
+                &lt;li class=&quot;dropdown&quot;&gt;                    
+                    &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                        <strong>[USER_INFO]</strong>
+                    &lt;/a&gt;
+
+                    &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                        <strong>[USER_OPTION]</strong>
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+
+            &lt;/ul&gt;
+            
+            &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+                &lt;li id=&quot;fullscreen-li&quot;&gt;
+                    <strong>[FULLSCREEN_VIEW_BUTTON]</strong>
+                &lt;/li&gt;                
+
+                &lt;li id=&quot;side-hide-li&quot; class=&quot;dropdown&quot;&gt;
+                    <strong>[SIDEBAR_MINIFY_BUTTON]</strong>
+                &lt;/li&gt;                
+            &lt;/ul&gt;
+
+            &lt;!-- search form in header --&gt;
+            &lt;form class=&quot;navbar-form navbar-right&quot; role=&quot;search&quot;&gt;
+                <strong>[SEARCH_FORM_IN_MD_AND_LG_VIEW]</strong>
+            &lt;/form&gt;                        
+        &lt;/div&gt;   
+
+    &lt;/nav&gt;
+
+&lt;/header&gt;
+&lt;!-- /end Header --&gt;</pre>
+<h4 id="page_structure_sidebar">SIDEBAR</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- sidebar menu --&gt;           
+&lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot; &gt;   
+
+    &lt;div class=&quot;tabbable-panel&quot;&gt;
+        &lt;div class=&quot;tabbable-line&quot;&gt;
+            &lt;ul class=&quot;nav nav-tabs nav-justified&quot;&gt;
+                &lt;li id=&quot;tab_menu_a&quot; class=&quot;active&quot;&gt;
+                    <strong>[MAIN_MENU_TAB_LINK]</strong>
+                &lt;/li&gt;
+
+                &lt;li id=&quot;contact-tab&quot;&gt;
+                    <strong>[CONTACT_TAB_LINK]</strong>
+                &lt;/li&gt;
+
+                &lt;li id=&quot;report-tab&quot;&gt;
+                   <strong>[TASK_WIDGET_TAB_LINK]</strong>
+                &lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;div class=&quot;tab-content&quot;&gt;
+                &lt;div class=&quot;tab-pane active&quot; id=&quot;tab_menu_1&quot;&gt;
+                    &lt;form class=&quot;search-menu-form&quot; role=&quot;search&quot;&gt;
+                        &lt;div class=&quot;&quot;&gt;
+                            &lt;!-- Search menu on-demand --&gt;
+                            &lt;input id=&quot;menu-list-search&quot; type=&quot;text&quot; class=&quot;search-menu&quot;&gt; 
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                    
+                    &lt;!-- sidebar Menu --&gt;
+                    &lt;div id=&quot;MainMenu&quot; &gt;
+                        
+                        &lt;ul id=&quot;menu-list&quot; class=&quot;nav nav-list&quot;&gt;
+                            &lt;li class=&quot;active&quot;&gt;
+                                &lt;a href=&quot;example.html&quot;&gt;
+                                   <strong> &lt;!-- Be Carefull MENU_TITLE must locate in span.menu-text. beacuse of searchable in Search menu --&gt;
+                                    [MENU_ICON]
+                                    [MENU_TITLE]</strong>
+                                &lt;/a&gt;
+                                <strong>[ICON_ARROW]</strong>
+                            &lt;/li&gt;
+
+                            &lt;li class=&quot;&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;
+                                    <strong>[MENU_ICON]
+                                    [MENU_TITLE]
+                                    [ICON_ARROW]</strong>
+                                &lt;/a&gt;
+                                &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;                                         
+
+                                &lt;ul class=&quot;submenu nav-show&quot;  &gt;
+                                    &lt;li class=&quot;&quot;&gt;
+                                        &lt;a href=&quot;exmple2.html&quot; &gt;
+                                            <strong>[MENU_ICON]
+                                            [MENU_TITLE]</strong>
+                                        &lt;/a&gt;
+
+                                        &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;                         
+                                    &lt;/li&gt;
+
+                                    &lt;li &gt;
+                                        ...
+                                    &lt;/li&gt;
+                                    
+                                    &lt;li &gt;
+                                       ...
+                                    &lt;/li&gt;
+                                    
+                                    ...
+
+                                    &lt;li class=&quot;&quot;&gt;
+                                        &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;
+                                           <strong>[THREE_LEVEL_MENU]</strong>
+                                        &lt;/a&gt;
+                                        &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;
+
+                                        &lt;ul class=&quot;submenu&quot;&gt;
+                                            &lt;li class=&quot;&quot;&gt;
+                                                ....
+                                            &lt;/li&gt;
+                                            &lt;li class=&quot;&quot;&gt;
+                                                &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot;&gt;
+                                                    <strong>[4TH_LEVEL]</strong>
+                                                &lt;/a&gt;
+
+                                                &lt;b class=&quot;arrow&quot;&gt;&lt;/b&gt;
+
+                                                &lt;ul class=&quot;submenu&quot;&gt;
+                                                    &lt;li class=&quot;&quot;&gt;
+                                                        ...
+                                                    &lt;/li&gt;                                                                                          ...
+                                                &lt;/ul&gt;
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+
+                            &lt;li class=&quot;&quot;&gt;
+                                ...
+                            &lt;/li&gt;
+
+                            ...                            
+                        &lt;/ul&gt;
+                        &lt;!-- SIDEBAR COLLAPSE --&gt;
+                        &lt;a class=&quot;sidebar-collapse&quot; id=&quot;sidebar-collapse&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#test&quot;&gt;
+                            &lt;i id=&quot;icon-sw-s-b&quot; class=&quot;fa fa-angle-double-left&quot;&gt;&lt;/i&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- CONTACT LIST TAB --&gt;
+                &lt;div class=&quot;tab-pane&quot; id=&quot;tab_contact_2&quot;&gt;
+                    &lt;!-- SEARCH CONTACT LIST --&gt;
+                    &lt;div class=&quot;search-menu-form&quot; role=&quot;search&quot;&gt;
+                        &lt;div class=&quot;&quot;&gt;
+                            &lt;input id=&quot;contact-list-search&quot; placeholder=&quot;Search Contact...&quot; type=&quot;text&quot; class=&quot;form-control search-menu&quot;&gt;
+
+                            &lt;!-- ADD CONTACT FORM IN MODAL --&gt;
+                            &lt;a href=&quot;#modal-add-contact&quot; data-toggle=&quot;modal&quot; class=&quot;btn btn-link&quot; title=&quot;Add Contact&quot;&gt;
+                                &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;                    
+                    
+                    &lt;ul class=&quot;list-group&quot; id=&quot;contact-list&quot;&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-3 avatar-contact&quot;&gt;
+
+                                &lt;!-- AVATAR CONTACT IMAGE --&gt;
+                                &lt;img src=&quot;img/avatars/avatar-6-ct.jpg&quot; alt=&quot;Scott Stevens&quot; class=&quot;img-responsive img-flat&quot; /&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- CONTACT ITEM --&gt;
+                            &lt;div class=&quot;col-xs-12 col-sm-9 &quot;&gt;
+                                &lt;span class=&quot;name&quot;&gt;Scott Stevens&lt;/span&gt;&lt;br/&gt;
+                                &lt;span class=&quot;glyphicon glyphicon-map-marker text-muted c-info&quot; data-toggle=&quot;tooltip&quot; title=&quot;5842 Hillcrest Rd&quot;&gt;&lt;/span&gt;
+                                &lt;span class=&quot;visible-xs&quot;&gt; &lt;span class=&quot;text-muted&quot;&gt;5842 Hillcrest Rd&lt;/span&gt;&lt;br/&gt;&lt;/span&gt;
+                                &lt;span class=&quot;glyphicon glyphicon-earphone text-muted c-info&quot; data-toggle=&quot;tooltip&quot; title=&quot;(870) 288-4149&quot;&gt;&lt;/span&gt;
+                                &lt;span class=&quot;visible-xs&quot;&gt; &lt;span class=&quot;text-muted&quot;&gt;(870) 288-4149&lt;/span&gt;&lt;br/&gt;&lt;/span&gt;
+                                &lt;span class=&quot;fa fa-comments text-muted c-info&quot; data-toggle=&quot;tooltip&quot; title=&quot;&#115;&#99;&#111;&#116;&#116;&#46;&#115;&#116;&#101;&#118;&#101;&#110;&#115;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;&quot;&gt;&lt;/span&gt;
+                                &lt;span class=&quot;visible-xs&quot;&gt; &lt;span class=&quot;text-muted&quot;&gt;&#115;&#99;&#111;&#116;&#116;&#46;&#115;&#116;&#101;&#118;&#101;&#110;&#115;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;&lt;/span&gt;&lt;br/&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+                        &lt;/li&gt;
+
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                            ...
+                        &lt;/li&gt;
+                        
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                            ...
+                        &lt;/li&gt;
+                        ...
+                    &lt;/ul&gt;
+                            
+                &lt;/div&gt;
+
+                &lt;!-- TASK WIDGET TAB --&gt;
+                &lt;div class=&quot;tab-pane &quot; id=&quot;tab_report_3&quot;&gt;
+                    &lt;div class=&quot;search-menu-form&quot; role=&quot;search&quot;&gt;
+                        [SEARCH_FORM_TASK]
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;task-content tasks-widget&quot;&gt;
+                        &lt;ul id=&quot;sortable&quot; class=&quot;task-list ui-sortable&quot;&gt;
+                            &lt;li class=&quot;list-primary&quot;&gt;
+                                &lt;i class=&quot; fa fa-ellipsis-v&quot;&gt;&lt;/i&gt;
+                                &lt;div class=&quot;task-checkbox&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; class=&quot;list-child&quot; value=&quot;&quot;&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class=&quot;task-title&quot;&gt;
+                                   <strong>[TASK_DETAIL] </strong>                               
+                                &lt;/div&gt;
+
+                            &lt;/li&gt;
+
+                            &lt;li class=&quot;list-danger&quot;&gt;
+                                  ...
+                            &lt;/li&gt;
+
+                            &lt;li class=&quot;list-success&quot;&gt;
+                                  ...
+                            &lt;/li&gt;
+
+                            ...
+
+                            &lt;!-- MORE TASK LINK --&gt;
+                            &lt;li class=&quot;&quot;&gt;                                         
+                                &lt;div class=&quot;task-title&quot;&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;center&quot;&gt; See All Tasks ...&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+
+                        &lt;/ul&gt;
+                    &lt;/div&gt;                                                    
+
+                &lt;/div&gt;
+            &lt;/div&gt;&lt;!-- end tab-content--&gt;
+        &lt;/div&gt;&lt;!-- end tabbable-line --&gt;
+    &lt;/div&gt;&lt;!-- end tabbable-panel --&gt;
+&lt;/div&gt;
+&lt;!-- /end #sidebar</pre>
+<h4 id="page_structure_main_panel">MAIN_PANEL</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- main content  --&gt;
+&lt;div id=&quot;main&quot; class=&quot;main&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+
+        &lt;!-- breadcrumb section --&gt;
+        &lt;div class=&quot;ribbon&quot;&gt;
+            &lt;ul class=&quot;breadcrumb&quot;&gt;
+                &lt;li&gt;
+                    <strong>[ICON]
+                    [LINK_1ST]</strong>
+                &lt;/li&gt;
+
+                &lt;li&gt;
+                    <strong>[LINK_2ND]</strong>
+                &lt;/li&gt;
+                ...
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- main content --&gt;
+        &lt;div id=&quot;content&quot;&gt;
+            &lt;div id=&quot;sortable-panel&quot; class=&quot;&quot;&gt;                  
+                        
+                    <strong>[YOUR_CONTENT_HERE]</strong>
+
+            &lt;/div&gt;&lt;!-- end col-md-12 --&gt;
+        &lt;/div&gt;&lt;!-- end #content --&gt;
+    &lt;/div&gt;&lt;!-- end .row --&gt;
+&lt;/div&gt;
+&lt;!-- ./end #main  --&gt;</pre>
+<h4 id="page_structure_default_page_scripts">Default Page Scripts</h4>
+<div class="alert alert-info">
+	<em><strong>These scripts will be sitting right before the body close tag. It is generally a good practice to put all javascripts at the bottom of the page to load the page faster<br>
+	<br>
+	WARNING: If you plan to move any of the javascript files to the page header, Golabi Admin may not function properly</strong></em></div>
+<pre class="prettyprint lang-js linenums">
+&lt;!-- General JS script library--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;vendors/jquery/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;vendors/jquery-ui/js/jquery-ui.min.js&quot;&gt;&lt;/script&gt;<span class="Apple-tab-span" style="white-space:pre"> </span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;vendors/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;<span class="Apple-tab-span" style="white-space:pre"> </span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;vendors/jquery-searchable/js/jquery.searchable-1.1.0.min.js&quot;&gt;&lt;/script&gt;<span class="Apple-tab-span" style="white-space:pre"> </span>
+&lt;script type=&quot;text/javascript&quot; src=&quot;vendors/jquery-fullscreen/jquery.fullscreen-min.js&quot;&gt;&lt;/script&gt;<span class="Apple-tab-span" style="white-space:pre"> </span>
+
+
+&lt;!-- Yeptemplate JS Script --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/yep-script.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/yep-demo.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Related JavaScript Library to This Pagee --&gt;
+<strong>[IMPORT_OTHER_JS_LIBRARY_ON_DEMAND]</strong>
+
+
+&lt;!-- Plugins Script --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    <strong>[WRITE_PAGE_SCRIPT]</strong>
+&lt;/script&gt;</pre>
+</section>
+<section id="icons">
+	<div class="page-header"><h3>Icons</h3><hr class="notop"></div>
+<h4 id="icons_fontawesome_icon_430">FontAwesome Icon 4.3.0</h4>
+<p>
+	Font Awesome gives you scalable vector icons that can instantly be customized &mdash; size, color, drop shadow, and anything that can be done with the power of CSS.</p>
+<p>
+	File dependency:</p>
+<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; white-space: pre-wrap; padding: 8px 15px; margin-top: 0px; margin-bottom: 10px; line-height: 1.428571429; word-break: break-all; word-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(250, 250, 250); border-color: rgb(238, 238, 238); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+<code class="prettyprint lang-html linenums" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border: 0px;"><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;link</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">href=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;vendors/font-awesome/css/font-awesome.min.css&quot;</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">rel=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;stylesheet&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;</span></code></pre>
+<p>
+	Also make sure that the FONTS folder is sitting in your root directory</p>
+<p>
+	<code class="prettyprint lang-html linenums" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border: 0px;"><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">For LESS and SASS versions click here</span></code></p>
+<h5>
+	Inline Icons</h5>
+<p>
+	Place Font Awesome icons just about anywhere with the &lt;i&gt; tag.</p>
+<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; white-space: pre-wrap; padding: 8px 15px; margin-top: 0px; margin-bottom: 10px; line-height: 1.428571429; word-break: break-all; word-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(250, 250, 250); border-color: rgb(238, 238, 238); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+<code class="prettyprint lang-html linenums" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border: 0px;"><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro</code></pre>
+<h5>
+	Larger Icons</h5>
+<p>
+	To increase icon sizes relative to their container, use the fa-lg (33% increase), fa-2x, fa-3x, fa-4x, or fa-5x classes.</p>
+<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; white-space: pre-wrap; padding: 8px 15px; margin-top: 0px; margin-bottom: 10px; line-height: 1.428571429; word-break: break-all; word-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(250, 250, 250); border-color: rgb(238, 238, 238); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+<code class="prettyprint lang-html linenums" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border: 0px;"><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;p&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro fa-lg&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/p&gt;</span>
+<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;p&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro fa-2x&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/p&gt;</span>
+<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;p&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro fa-3x&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/p&gt;</span>
+<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;p&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro fa-4x&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/p&gt;</span>
+<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;p&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-camera-retro fa-5x&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> fa-camera-retro<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/p&gt;</span></code></pre>
+<h5>
+	Fixed Width Icons</h5>
+<p>
+	Use fa-fw to set icons at a fixed width. Great to use when variable icon widths throw off alignment. Especially useful in things like nav lists.</p>
+<pre style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; white-space: pre-wrap; padding: 8px 15px; margin-top: 0px; margin-bottom: 10px; line-height: 1.428571429; word-break: break-all; word-wrap: break-word; color: rgb(51, 51, 51); background-color: rgb(250, 250, 250); border-color: rgb(238, 238, 238); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+<code class="prettyprint lang-html linenums" style="box-sizing: border-box; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: inherit; padding: 0px; color: inherit; background-color: transparent; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border: 0px;"><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;ul</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;nav nav-pills nav-stacked&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;</span>
+  <span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;li</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;active&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;a</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">href=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;#&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-home fa-fw&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> Home<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;li&gt;&lt;a</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">href=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;#&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-book fa-fw&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> Library<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;li&gt;&lt;a</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">href=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;#&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-pencil fa-fw&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> Applications<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;li&gt;&lt;a</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">href=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;#&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;i</span> <span class="na" style="box-sizing: border-box; color: rgb(79, 159, 207);">class=</span><span class="s" style="box-sizing: border-box; color: rgb(212, 73, 80);">&quot;fa fa-cogs fa-fw&quot;</span><span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&gt;&lt;/i&gt;</span> Settings<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt" style="box-sizing: border-box; color: rgb(47, 111, 159);">&lt;/ul&gt;</span></code></pre>
+<p>
+	For a full list of icon use please go to <a href="http://fortawesome.github.io/Font-Awesome/examples/">FontAwesome Library Website</a></p>
+<div class="alert alert-info">
+	Please note that Golabi Admin uses <strong>FontAwesome 4.3 library class</strong>. If you upgrade to the latest, a lot of the references to the icon may not work.</div>
+<h4 id="icons_span_id"docs_internal_guid_04e2137e_3cff_f857_f54f_f12ec6734b2a"img_src"http_yeptemplatecom_doc_img_fontawesomejpg"_style"border_0px_solid_transparent"_span"><span id="docs-internal-guid-04e2137e-3cff-f857-f54f-f12ec6734b2a"><img src="assets/images/image_11.jpg" style="border: 0px solid transparent"></span></h4>
+<h4 id="icons_spanglyphicons_span"><span>Glyphicons</span></h4>
+<p>
+	Includes 200 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you to include a link back to Glyphicons whenever possible</p>
+<p>
+	<a href="http://getbootstrap.com/components/#glyphicons">CLICK HERE</a> for proper usage</p>
+<p>
+	<span id="docs-internal-guid-04e2137e-3d09-d5de-267c-60370c275a08"><img src="assets/images/image_12.jpg" style="border: 0px solid transparent"></span></p>
+</section>
+<section id="plugins">
+	<div class="page-header"><h3>Plugins</h3><hr class="notop"></div>
+<h3>
+	<strong>Golabi Admin &quot;Third Party Plugins&quot;</strong></h3>
+<p>
+	Golabi Admin utilizes many third party plugins in order to synchronize with your need. These following plugins are constantly evolving and changing. It can get quiet difficult to keep up to date with bugs and new plugin releases. For your convenience I have included the plugin list, their home page and their relevant support forum (where applicable). <u><strong>Please note we do not provide support for extended plugins.</strong></u></p>
+<p>
+	<strong>Blueimp jQuery File Upload</strong></p>
+<p>
+	MIT license - <u><a href="https://github.com/blueimp/jQuery-File-Upload">https://github.com/blueimp/jQuery-File-Upload</a></u></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootbox.js</strong></p>
+<p>
+	MIT License - <a href="https://github.com/makeusabrew/bootbox">https://github.com/makeusabrew/bootbox</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Color Picker</strong></p>
+<p>
+	Apache License v2.0- <a href="http://mjolnic.com/bootstrap-colorpicker/">http://mjolnic.com/bootstrap-colorpicker/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Date Picker</strong></p>
+<p>
+	Apache License v2.0- <a href="https://github.com/eternicode/bootstrap-datepicker">https://github.com/eternicode/bootstrap-datepicker</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Date Range Picker</strong></p>
+<p>
+	MIT License - <a href="https://github.com/dangrossman/bootstrap-daterangepicker">https://github.com/dangrossman/bootstrap-daterangepicker</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Dual List</strong></p>
+<p>
+	Apache License v2.0- <a href="https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox">https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Icon Picker</strong></p>
+<p>
+	MIT License - <a href="https://github.com/victor-valencia/bootstrap-iconpicker">https://github.com/victor-valencia/bootstrap-iconpicker</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Image Gallery</strong></p>
+<p>
+	MIT license - <a href="https://github.com/blueimp/Bootstrap-Image-Gallery">https://github.com/blueimp/Bootstrap-Image-Gallery</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap Markdown</strong></p>
+<p>
+	Apache License v2.0 - <a href="https://github.com/toopay/bootstrap-markdown">https://github.com/toopay/bootstrap-markdown</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap tagsinput</strong></p>
+<p>
+	MIT License - <a href="https://github.com/timschlechter/bootstrap-tagsinput/">https://github.com/timschlechter/bootstrap-tagsinput/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Bootstrap &nbsp;wysihtml5</strong></p>
+<p>
+	MIT License - <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>CK Editor</strong></p>
+<p>
+	GPL, LGPL and MPL Open Source licenses - <a href="https://github.com/ckeditor/ckeditor-dev">https://github.com/ckeditor/ckeditor-dev</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>DataTables</strong></p>
+<p>
+	MIT license - <a href="https://datatables.net/download/index">https://datatables.net/download/index</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Dropzone</strong></p>
+<p>
+	MIT license - <a href="https://github.com/enyo/dropzone">https://github.com/enyo/dropzone</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Easy pie chart</strong></p>
+<p>
+	MIT License - <a href="https://github.com/rendro/easy-pie-chart">https://github.com/rendro/easy-pie-chart</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Flot Chart</strong></p>
+<p>
+	MIT license - <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Fuelux Wizard</strong></p>
+<p>
+	BSD-3 license - <a href="https://github.com/ExactTarget/fuelux">https://github.com/ExactTarget/fuelux</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Full Calendar</strong></p>
+<p>
+	License: http://fullcalendar.io/ - <a href="https://github.com/arshaw/fullcalendar">https://github.com/arshaw/fullcalendar</a></p>
+<p>
+	<strong>Google Map API</strong></p>
+<p>
+	<a href="http://maps.googleapis.com/maps/api/js">http://maps.googleapis.com/maps/api/js</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Jasny Bootstrap</strong></p>
+<p>
+	Apache License v2.0 - <a href="https://github.com/jasny/bootstrap/">https://github.com/jasny/bootstrap/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Jcrop</strong></p>
+<p>
+	MIT License - <a href="https://github.com/tapmodo/Jcrop/">https://github.com/tapmodo/Jcrop/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery Fullscreen</strong></p>
+<p>
+	<a href="https://github.com/kayahr/jquery-fullscreen-plugin">https://github.com/kayahr/jquery-fullscreen-plugin</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery Knob</strong></p>
+<p>
+	MIT License - <a href="https://github.com/aterrien/jQuery-Knob">https://github.com/aterrien/jQuery-Knob</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery Mockjax</strong></p>
+<p>
+	Dual licensed under the MIT or GPL licenses - <a href="https://github.com/jakerella/jquery-mockjax">https://github.com/jakerella/jquery-mockjax</a></p>
+<p>
+	<strong>jquery.require v1.0.1</strong></p>
+<div>
+	MIT License - <a href="http://jquery.require v1.0.1   MIT License - https://github.com/masalygin/jquery.require">https://github.com/masalygin/jquery.require</a></div>
+<div>
+	&nbsp;</div>
+<p>
+	<strong>jQuery Searchable</strong></p>
+<p>
+	MIT license - <a href="https://github.com/stidges/jquery-searchable">https://github.com/stidges/jquery-searchable</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery Sparklines</strong></p>
+<p>
+	New BSD License - <a href="https://github.com/gwatts/jquery.sparkline">https://github.com/gwatts/jquery.sparkline</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery Steps</strong></p>
+<p>
+	MIT License - <a href="https://github.com/rstaib/jquery-steps">https://github.com/rstaib/jquery-steps</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jQuery UI Bootstrap</strong></p>
+<p>
+	MIT License - <a href="https://github.com/jquery-ui-bootstrap/jquery-ui-bootstrap">https://github.com/jquery-ui-bootstrap/jquery-ui-bootstrap</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jsTree Bootstrap</strong></p>
+<p>
+	MIT license - <a href="https://github.com/orangehill/jstree-bootstrap-theme">https://github.com/orangehill/jstree-bootstrap-theme</a></p>
+<p>
+	<strong>jsTree</strong></p>
+<p>
+	MIT license - <a href="https://github.com/vakata/jstree">https://github.com/vakata/jstree</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>jVector Map</strong></p>
+<p>
+	GNU License - <a href="https://github.com/bjornd/jvectormap/">https://github.com/bjornd/jvectormap/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Ladda Button</strong></p>
+<p>
+	MIT License - <a href="https://github.com/hakimel/Ladda">https://github.com/hakimel/Ladda</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Moment js</strong></p>
+<p>
+	MIT license - <a href="http://momentjs.com">http://momentjs.com</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Morris Chart</strong></p>
+<p>
+	BSD-2-Clause License - <a href="https://github.com/morrisjs/morris.js">https://github.com/morrisjs/morris.js</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>nprogress v0.2.0&nbsp;</strong></p>
+<p>
+	MIT License - <a href="https://github.com/rstacruz/nprogress/">https://github.com/rstacruz/nprogress/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Nestable jQuery</strong></p>
+<p>
+	BSD &amp; MIT license - <a href="https://github.com/dbushell/Nestable">https://github.com/dbushell/Nestable</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Raphael js</strong></p>
+<p>
+	MIT license - <a href="http://raphaeljs.com/">http://raphaeljs.com/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Ripple.js&nbsp;</strong></p>
+<p>
+	MIT License -<a href="https://github.com/jakiestfu/Ripple.js">&nbsp;</a><a href="https://github.com/select2/select2">https://github.com/jakiestfu/Ripple.js</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Select2</strong></p>
+<p>
+	MIT License - <a href="https://github.com/select2/select2">https://github.com/select2/select2</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Summernote</strong></p>
+<p>
+	MIT license - <a href="https://github.com/summernote/summernote">https://github.com/summernote/summernote</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>TinyMCE</strong></p>
+<p>
+	GNU license - <a href="http://www.tinymce.com/">http://www.tinymce.com/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Typeahead.js</strong></p>
+<p>
+	MIT License - <a href="https://github.com/twitter/typeahead.js">https://github.com/twitter/typeahead.js</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Vitalets x-editable</strong></p>
+<p>
+	MIT license - <a href="http://vitalets.github.io/x-editable/">http://vitalets.github.io/x-editable/</a></p>
+<p>
+	&nbsp;</p>
+<h3>
+	<strong>Angularjs Plugin:</strong></h3>
+<p>
+	<strong>Angularjs v1.4.8</strong></p>
+<div>
+	MIT License - <a href="https://github.com/angular/angular.js">https://github.com/angular/angular.js</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ocLazyLoad v1.0.9 </strong></div>
+<div>
+	MIT License - <a href="https://github.com/ocombe/ocLazyLoad">https://github.com/ocombe/ocLazyLoad</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-breadcrumb v0.4.1</strong></div>
+<div>
+	MIT license - <a href="https://github.com/ncuillery/angular-breadcrumb">https://github.com/ncuillery/angular-breadcrumb</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ngBootbox v0.1.3 </strong></div>
+<div>
+	MIT License - <a href="https://github.com/eriktufvesson/ngBootbox">https://github.com/eriktufvesson/ngBootbox</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>jsTree-directive v0.1.5 </strong></div>
+<div>
+	MIT license - <a href="https://github.com/arvindr21/jsTree-directive">https://github.com/arvindr21/jsTree-directive</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-datatables v0.5.2</strong></div>
+<div>
+	MIT license - <a href="https://github.com/l-lin/angular-datatables">https://github.com/l-lin/angular-datatables</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-ui-jq v0.1.1</strong></div>
+<div>
+	MIT License - <a href="https://github.com/puxos/angular-ui-jq">https://github.com/puxos/angular-ui-jq</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-morris-chart v1.1.0</strong></div>
+<div>
+	MIT License - <a href="https://github.com/stewones/angular-morris-chart">https://github.com/stewones/angular-morris-chart</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ng-ckeditor v0.2.1</strong></div>
+<div>
+	New BSD License - <a href="https://github.com/esvit/ng-ckeditor">https://github.com/esvit/ng-ckeditor</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ui-tinymce v0.0.12</strong></div>
+<div>
+	MIT License - <a href="https://github.com/angular-ui/ui-tinymce">https://github.com/angular-ui/ui-tinymce</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-xeditable v0.1.9</strong></div>
+<div>
+	MIT License - <a href="https://github.com/vitalets/angular-xeditable">https://github.com/vitalets/angular-xeditable</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angularjs-google-maps v1.16.6</strong></div>
+<div>
+	MIT License - <a href="https://github.com/allenhwkim/angularjs-google-maps">https://github.com/allenhwkim/angularjs-google-maps</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-ui-router-anim-in-out v1.0.2</strong></div>
+<div>
+	MIT License - <a href="https://github.com/homerjam/angular-ui-router-anim-in-out">https://github.com/homerjam/angular-ui-router-anim-in-out</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ng-daterange v1.0.1</strong></div>
+<div>
+	GNU General Public License - <a href="https://github.com/miamarti/ng.daterangepicker">https://github.com/miamarti/ng.daterangepicker</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-ladda v0.3.1</strong></div>
+<div>
+	MIT License - <a href="https://github.com/remotty/angular-ladda">https://github.com/remotty/angular-ladda</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>ngSweetAlert v1.1.0</strong></div>
+<div>
+	MIT License - <a href="https://github.com/oitozero/ngSweetAlert/">https://github.com/oitozero/ngSweetAlert/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-flot v0.0.16</strong></div>
+<div>
+	MIT License - <a href="https://github.com/develersrl/angular-flot">https://github.com/develersrl/angular-flot</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-ui-tree v2.15.0</strong></div>
+<div>
+	MIT License - <a href="https://github.com/angular-ui-tree/angular-ui-tree">https://github.com/angular-ui-tree/angular-ui-tree</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>angular-bootstrap-duallistbox v0.1.0</strong></div>
+<div>
+	Apache License v2.0 - <a href="https://github.com/frapontillo/angular-bootstrap-duallistbox">https://github.com/frapontillo/angular-bootstrap-duallistbox</a></div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="charts">
+	<div class="page-header"><h3>Charts</h3><hr class="notop"></div>
+<div class="alert alert-info">
+	<em><strong>PLEASE NOTE: All charts displayed in the demo, its javascripts and algorithms can be found in the bottom of the relative pages</strong></em></div>
+<h4 id="charts_flot_charts">Flot Charts</h4>
+<p>	Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. FlotChart&nbsp;works with Internet Explorer 6+, Chrome, Firefox 2+, Safari 3+ and Opera 9.5+</p>
+<h5>
+	Basic Usage</h5>
+<p>	Create a placeholder div to put the graph in:</p>
+<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; margin-top: 15px; margin-bottom: 15px; background-color: rgb(248, 248, 248); border-color: rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal; color: rgb(51, 51, 51);">
+<span class="nt" style="box-sizing: border-box; color: navy;">&lt;div</span> <span class="na" style="box-sizing: border-box; color: teal;">id=</span><span class="s" style="box-sizing: border-box; color: rgb(221, 17, 68);">&quot;placeholder&quot;</span><span class="nt" style="box-sizing: border-box; color: navy;">&gt;&lt;/div&gt;</span></pre>
+<p>	You need to set the width and height of this div, otherwise the plot library doesn&#39;t know how to scale the graph. You can do it inline like this:</p>
+<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; margin-top: 15px; margin-bottom: 15px; background-color: rgb(248, 248, 248); border-color: rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal; color: rgb(51, 51, 51);">
+<span class="nt" style="box-sizing: border-box; color: navy;">&lt;div</span> <span class="na" style="box-sizing: border-box; color: teal;">id=</span><span class="s" style="box-sizing: border-box; color: rgb(221, 17, 68);">&quot;placeholder&quot;</span> <span class="na" style="box-sizing: border-box; color: teal;">style=</span><span class="s" style="box-sizing: border-box; color: rgb(221, 17, 68);">&quot;width:600px;height:300px&quot;</span><span class="nt" style="box-sizing: border-box; color: navy;">&gt;&lt;/div&gt;</span></pre>
+<p>	You can also do it with an external stylesheet. Make sure that the placeholder isn&#39;t within something with a display:none CSS property - in that case, Flot has trouble measuring label dimensions which results in garbled looks and might have trouble measuring the placeholder dimensions which is fatal (it&#39;ll throw an exception).</p>
+<div>
+	&nbsp;</div>
+<div>
+	Then when the div is ready in the DOM, which is usually on document ready, run the plot function:</div>
+<div>
+	<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; margin-top: 15px; margin-bottom: 15px; background-color: rgb(248, 248, 248); border-color: rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal; color: rgb(51, 51, 51);">
+<span class="nx" style="box-sizing: border-box;">$</span><span class="p" style="box-sizing: border-box;">.</span><span class="nx" style="box-sizing: border-box;">plot</span><span class="p" style="box-sizing: border-box;">(</span><span class="nx" style="box-sizing: border-box;">$</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(221, 17, 68);">&quot;#placeholder&quot;</span><span class="p" style="box-sizing: border-box;">),</span> <span class="nx" style="box-sizing: border-box;">data</span><span class="p" style="box-sizing: border-box;">,</span> <span class="nx" style="box-sizing: border-box;">options</span><span class="p" style="box-sizing: border-box;">);</span></pre>
+	<p>		<span class="p" style="box-sizing: border-box;">Here, data is an array of data series and options is an object with settings if you want to customize the plot. Take a look at the examples for some ideas of what to put in or look at the&nbsp;</span><a href="https://github.com/flot/flot/blob/master/API.md">API reference</a>. Here&#39;s a quick example that&#39;ll draw a line from (0, 0) to (1, 1):</p>
+	<pre style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 13px; margin-top: 15px; margin-bottom: 15px; background-color: rgb(248, 248, 248); border-color: rgb(221, 221, 221); overflow: auto; padding: 6px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-wrap: normal; color: rgb(51, 51, 51);">
+<span class="nx" style="box-sizing: border-box;">$</span><span class="p" style="box-sizing: border-box;">.</span><span class="nx" style="box-sizing: border-box;">plot</span><span class="p" style="box-sizing: border-box;">(</span><span class="nx" style="box-sizing: border-box;">$</span><span class="p" style="box-sizing: border-box;">(</span><span class="s2" style="box-sizing: border-box; color: rgb(221, 17, 68);">&quot;#placeholder&quot;</span><span class="p" style="box-sizing: border-box;">),</span> <span class="p" style="box-sizing: border-box;">[</span> <span class="p" style="box-sizing: border-box;">[[</span><span class="mi" style="box-sizing: border-box; color: rgb(0, 153, 153);">0</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(0, 153, 153);">0</span><span class="p" style="box-sizing: border-box;">],</span> <span class="p" style="box-sizing: border-box;">[</span><span class="mi" style="box-sizing: border-box; color: rgb(0, 153, 153);">1</span><span class="p" style="box-sizing: border-box;">,</span> <span class="mi" style="box-sizing: border-box; color: rgb(0, 153, 153);">1</span><span class="p" style="box-sizing: border-box;">]]</span> <span class="p" style="box-sizing: border-box;">],</span> <span class="p" style="box-sizing: border-box;">{</span> <span class="nx" style="box-sizing: border-box;">yaxis</span><span class="o" style="box-sizing: border-box; font-weight: bold;">:</span> <span class="p" style="box-sizing: border-box;">{</span> <span class="nx" style="box-sizing: border-box;">max</span><span class="o" style="box-sizing: border-box; font-weight: bold;">:</span> <span class="mi" style="box-sizing: border-box; color: rgb(0, 153, 153);">1</span> <span class="p" style="box-sizing: border-box;">}</span> <span class="p" style="box-sizing: border-box;">});</span></pre>
+	<p>		For more info on FLOTCHART:</p>
+	<p>		<a href="https://github.com/flot/flot/blob/master/API.md">GitHUB Directory for FLOT</a></p>
+	<p>		<a href="https://groups.google.com/forum/#!forum/flot-graphs">FlotChart Forum</a></p>
+	<p>		<a href="http://www.flotcharts.org/">FlotChart Website</a></p>
+</div>
+<h4 id="charts_morris_charts">Morris Charts</h4>
+<div class="alert alert-success">
+	Add morris.js and its dependencies (<a href="http://jquery.com/">jQuery </a>&amp; <a href="http://raphaeljs.com/">Rapha&euml;l</a>) to your page.</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;!-- Related css to this page --&gt; 
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../assets/vendors/morrisjs/css/morris.min.css&quot;&gt;
+
+&lt;!-- General JS script library--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../assets/vendors/jquery/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Related JavaScript Library to This Pagee --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../assets/vendors/morrisjs/js/raphael-min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../assets/vendors/morrisjs/js/morris.min.js&quot;&gt;&lt;/script&gt;</pre>
+</div>
+<p>	<strong>Example Chart</strong></p>
+<p>	Start by adding a <strong>&lt;div&gt; </strong>to your page that will contain your chart. Make sure it has an ID so you can refer to it in your Javascript later.</p>
+<pre style="padding: 9.5px; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; margin-top: 0px; margin-bottom: 10px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre-wrap; background-color: rgb(245, 245, 245); border-color: rgba(0, 0, 0, 0.14902);">
+<code class="prettyprint lang-html linenums" style="padding: 0px; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 12px; color: inherit; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: transparent; border: 0px;"><span class="nt" style="color: rgb(0, 0, 128);">&lt;div</span> <span class="na" style="color: rgb(0, 128, 128);">id=</span><span class="s" style="color: rgb(221, 17, 68);">&quot;myfirstchart&quot;</span> <span class="na" style="color: rgb(0, 128, 128);">style=</span><span class="s" style="color: rgb(221, 17, 68);">&quot;height: 250px;&quot;</span><span class="nt" style="color: rgb(0, 0, 128);">&gt;&lt;/div&gt;</span></code></pre>
+<p>	<em>Note: in order to display something, you&rsquo;ll need to have given the div some dimensions. Here I&rsquo;ve used inline CSS just for illustration.</em></p>
+<p>	Next add a <strong>&lt;script&gt;</strong> block to the end of your page, containing the following javascript code:</p>
+<pre style="padding: 9.5px; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; color: rgb(51, 51, 51); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; margin-top: 0px; margin-bottom: 10px; line-height: 20px; word-break: break-all; word-wrap: break-word; white-space: pre-wrap; background-color: rgb(245, 245, 245); border-color: rgba(0, 0, 0, 0.14902);">
+<code class="javascript" style="padding: 0px; font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 12px; color: inherit; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; background-color: transparent; border: 0px;"><span class="k" style="font-weight: bold;">new</span> <span class="nx">Morris</span><span class="p">.</span><span class="nx">Line</span><span class="p">({</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// ID of the element in which to draw the chart.</span>
+  <span class="nx">element</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;myfirstchart&#39;</span><span class="p">,</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// Chart data records -- each entry in this array corresponds to a point on</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// the chart.</span>
+  <span class="nx">data</span><span class="o" style="font-weight: bold;">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">year</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;2008&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o" style="font-weight: bold;">:</span> <span class="mi" style="color: rgb(0, 153, 153);">20</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">year</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;2009&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o" style="font-weight: bold;">:</span> <span class="mi" style="color: rgb(0, 153, 153);">10</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">year</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;2010&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o" style="font-weight: bold;">:</span> <span class="mi" style="color: rgb(0, 153, 153);">5</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">year</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;2011&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o" style="font-weight: bold;">:</span> <span class="mi" style="color: rgb(0, 153, 153);">5</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">year</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;2012&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o" style="font-weight: bold;">:</span> <span class="mi" style="color: rgb(0, 153, 153);">20</span> <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// The name of the data record attribute that contains x-values.</span>
+  <span class="nx">xkey</span><span class="o" style="font-weight: bold;">:</span> <span class="s1" style="color: rgb(221, 17, 68);">&#39;year&#39;</span><span class="p">,</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// A list of names of data record attributes that contain y-values.</span>
+  <span class="nx">ykeys</span><span class="o" style="font-weight: bold;">:</span> <span class="p">[</span><span class="s1" style="color: rgb(221, 17, 68);">&#39;value&#39;</span><span class="p">],</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// Labels for the ykeys -- will be displayed when you hover over the</span>
+  <span class="c1" style="color: rgb(153, 153, 136); font-style: italic;">// chart.</span>
+  <span class="nx">labels</span><span class="o" style="font-weight: bold;">:</span> <span class="p">[</span><span class="s1" style="color: rgb(221, 17, 68);">&#39;Value&#39;</span><span class="p">]</span>
+<span class="p">});</span></code></pre>
+<div class="alert">
+	LEARN MORE FROM <a href="http://www.oesmith.co.uk/morris.js/index.html">MORRIS WEBSITE</a></div>
+</section>
+<section id="ui_elements">
+	<div class="page-header"><h3>UI Elements</h3><hr class="notop"></div>
+<h4 id="ui_elements_general_elements">General Elements</h4>
+<div class="alert alert-info">
+	<em><strong>Below are a few basic examples of the general elements in Golabi Admin. For a full list you will need to go to the &quot;General Elements&quot; page in Golabi Admin and use the &quot;inspect element&quot; option to view the HTML</strong></em></div>
+<h5>
+	Alerts&nbsp;</h5>
+<h5>
+	<img src="assets/images/image_8.jpg" style="line-height: 19px; font-size: 12px; border: 0px solid transparent;"></h5>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;alert alert-warning fade in&quot;&gt;
+   &lt;button class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&times;&lt;/button&gt;
+   &lt;strong&gt;Warning&lt;/strong&gt; <span style="font-family: Consolas, 'Lucida Console', monospace; white-space: pre-wrap;">Better check yourself, you&#39;re not looking too good.</span>
+&lt;/div&gt;</pre>
+<h5>
+	Progressbars (please see the General Elements page for more examples)</h5>
+<h5>
+	<img src="assets/images/image_16.jpg" style="font-size: 12px; border: 0px solid transparent;"></h5>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;progress progress-sm&quot;&gt;
+   &lt;div class=&quot;<span style="font-family: Consolas, 'Lucida Console', monospace; white-space: pre-wrap;">progress-bar progress-bar-warning</span>&quot; style=&quot;width: 60%&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>	The following classes can be used &quot;.<strong>progress-micro&quot;, &quot;.progress-xs&quot;, &quot;.progress-sm&quot;, &quot;.progress-lg&quot;</strong></p>
+<h5>
+	Tabs (please view the tabs section in General Elements page for more examples)</h5>
+<p>	<span id="docs-internal-guid-25f26d6d-dc44-01b2-a3c0-41154d9379fb"><img src="assets/images/image_18.jpg" style="border: 0px solid transparent"></span></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div id=&quot;panel1&quot; class=&quot;panel panel-default &quot;&gt;
+   &lt;div class=&quot;panel-body no-padding&quot;&gt;                                  
+      &lt;div class=&quot;tabbable tabs-above &quot;&gt;
+         &lt;ul class=&quot;nav nav-tabs&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;
+               &lt;a href=&quot;#one&quot; data-toggle=&quot;tab&quot;&gt;
+                  &lt;i class=&quot;fa fa-home success&quot;&gt;&lt;/i&gt; 
+                  <strong>[TITLE_TAB_1]</strong>
+               &lt;/a&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+               <strong>[LINK_TAB_2]</strong>
+            &lt;/li&gt;
+
+            &lt;li&gt;
+               <strong>[LINK_TAB_3]</strong>
+            &lt;/li&gt;
+
+            &lt;li class=&quot;dropdown pull-right&quot;&gt;
+               &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot;&gt; &lt;i class=&quot;fa fa-lg fa-cog&quot;&gt;&lt;/i&gt; &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+               &lt;ul class=&quot;dropdown-menu multi-level&quot; role=&quot;menu&quot;&gt;
+                  &lt;li&gt;&lt;a href=&quot;#four&quot; data-toggle=&quot;tab&quot;&gt;<strong>[TITLE_SETTING_TAB_ONE]</strong>&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#five&quot; data-toggle=&quot;tab&quot;&gt;<strong>[TITLE_SETTING_TAB_TWO]</strong>&lt;/a&gt;&lt;/li&gt;
+               &lt;/ul&gt;
+            &lt;/li&gt;
+
+         &lt;/ul&gt;
+
+         &lt;div class=&quot;tab-content padding-10 &quot;&gt;
+            &lt;div class=&quot;tab-pane active&quot; id=&quot;one&quot;&gt;
+               <strong>[CONTENT_TAB_1]</strong>
+            &lt;/div&gt;
+
+            &lt;div class=&quot;tab-pane&quot; id=&quot;two&quot;&gt;
+              <strong> [CONTENT_TAB_2]</strong>
+            &lt;/div&gt;
+
+            &lt;div class=&quot;tab-pane&quot; id=&quot;twee&quot;&gt;
+               <strong>[CONTENT_TAB_3]</strong>
+            &lt;/div&gt;
+
+            &lt;div class=&quot;tab-pane&quot; id=&quot;four&quot;&gt;
+               <strong>[CONTENT_SETTING_TAB_ONE]</strong>
+            &lt;/div&gt;
+
+            &lt;div class=&quot;tab-pane&quot; id=&quot;five&quot;&gt;
+               <strong>[CONTENT_SETTING_TAB_TWO]</strong>
+            &lt;/div&gt;
+
+         &lt;/div&gt;
+      &lt;/div&gt;                                    
+   &lt;/div&gt;                              
+&lt;/div&gt;&lt;!-- end panel tab--&gt;</pre>
+<div class="alert alert-info">
+	<em><strong>For various styles and direction for tabs, please refer to the general-elements.html page</strong></em></div>
+<h5>
+	Accordions</h5>
+<div class="alert">
+	<em><strong>Please view the accordion section in General Elements page for the complete mockup (there are various examples available)</strong></em></div>
+<p>	<img src="assets/images/image_7.jpg" style="border: 0px solid transparent;"></p>
+<h5>
+	Buttons</h5>
+<div class="alert">
+	<em><strong>Uses default bootstrap button format, please see the buttons section for more variation</strong></em></div>
+<p>	<span id="docs-internal-guid-25f26d6d-dc4c-2ff7-530e-0b301a4b2196"><img src="assets/images/image_9.jpg" style="border: 0px solid transparent"></span></p>
+</section>
+<section id="tables">
+	<div class="page-header"><h3>Tables</h3><hr class="notop"></div>
+<p>
+	Golabi Admin uses the default table CSS from the core bootstrap CSS file. For more information please visit:&nbsp;<a href="http://getbootstrap.com/css/#tables">http://getbootstrap.com/css/#tables</a></p>
+<p>
+	<span id="docs-internal-guid-04e2137e-3cfd-820e-b3d0-17b665d1f695"><img src="assets/images/image_19.jpg" style="border: 0px solid transparent"></span></p>
+</section>
+<section id="datatables_v1_10">
+	<div class="page-header"><h3>Datatables v1.10</h3><hr class="notop"></div>
+<p>
+	<strong>Golabi Admin have datatable to version 1.10.7</strong></p>
+<p>
+	Golabi Admin uses the plugin &quot;datatables&quot; for dynamic table content and table data alterations. More about this plugin can be found on <a href="http://datatables.net/">datatables.net</a>.&nbsp;</p>
+<p>
+	<span id="docs-internal-guid-77cbeb1e-5d39-2991-2a5c-ca1e33f32df2"><span style="font-size: 15px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><img src="assets/images/image_10.jpg" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></span></span></p>
+<div class="alert alert-info">
+	<em><span>Find more useful examples of datatables here&nbsp;</span><a href="https://datatables.net/examples/"><strong><span style="background-color: rgb(255, 255, 255); color: rgb(34, 34, 34);">https://datatables.net/examples/</span></strong></a></em></div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="intro_to_yep_script_js">
+	<div class="page-header"><h3>Intro to yep-script.js</h3><hr class="notop"></div>
+<h3>
+	Introduction yep-script.js</h3>
+<div>
+	Please find the following index in reference to yep-script.js file:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<ol>
+		<li>
+			Yep-notify btn-group script&nbsp;</li>
+		<li>
+			Prevent close dropdown menu&nbsp;</li>
+		<li>
+			Search in sidebar menu&nbsp;</li>
+		<li>
+			Sidebar menu switch small &amp; big</li>
+		<li>
+			Sidebar menu accordian - open/close submenu script&nbsp;</li>
+		<li>
+			Search contact in sidebar tab</li>
+		<li>
+			Search task in sidebar</li>
+		<li>
+			Sortable task in sidebar&nbsp;</li>
+		<li>
+			Task input checked action</li>
+		<li>
+			Full screen document switch&nbsp;</li>
+		<li>
+			Panel actions&nbsp;</li>
+		<li>
+			Show &amp; hide sidebar menu (min-width:979px)</li>
+		<li>
+			Show &amp; hide form search mobile screen</li>
+		<li>
+			Popover and tooltip activation&nbsp;</li>
+		<li>
+			Accoridan icon toggle</li>
+		<li>
+			Activity profile panel flat</li>
+	</ol>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="sass_files">
+	<div class="page-header"><h3>SASS FILES</h3><hr class="notop"></div>
+<p>
+	Golabi Admin introduced SASS files with version 1.0. You will find the SASS files inside the <strong>Developer/assets/css</strong> folder:</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<span id="docs-internal-guid-66181997-d97e-057f-db00-33a7bb2057ea"><span style="font-size: 15px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;"><img src="assets/images/image_17.jpg" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></span></span></p>
+</section>
+<section id="themes">
+	<div class="page-header"><h3>Themes</h3><hr class="notop"></div>
+<div class="alert alert-info">
+	<em><strong>Golabi Admin comes with 3 built in unique themes! You can easily change the theme by selecting the Layout options or by hardcoding the theme name to the &lt;div id=&quot;container&quot;&gt; tag</strong></em></div>
+<p>
+	<strong>Golabi Default</strong></p>
+<pre>
+<span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; color: rgb(0, 0, 0); font-size: medium;">div id=&quot;container&quot; class</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">=</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium;"><font color="#0000e6">skin-3</font></span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">/</span><span style="line-height: 19px; font-size: medium;"><font color="#000000">div</font></span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span> </pre>
+<p>
+	<img src="assets/images/image_1.jpg" style="border: 0px solid transparent;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	<b>Blue Skin</b></p>
+<pre>
+<span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; color: rgb(0, 0, 0); font-size: medium;">div id=&quot;container&quot; class</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">=</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium;"><font color="#0000e6">skin-1</font></span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">/</span><span style="line-height: 19px; font-size: medium;"><font color="#000000">div</font></span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span><span style="line-height: 19px;"> </span></pre>
+<p>
+	<span id="docs-internal-guid-25f26d6d-dc3c-e4aa-ce8a-fc331fecb5c6"><img src="assets/images/image_5.jpg" style="border: 0px solid transparent"></span></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Black Skin</strong></p>
+<pre>
+<span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; color: rgb(0, 0, 0); font-size: medium;">div id=&quot;container&quot; class</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">=</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium; color: rgb(0, 0, 230);">skin-2</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 0, 0);">&quot;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">.</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&lt;</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">/</span><span style="line-height: 19px; color: rgb(0, 0, 0); font-size: medium;">div</span><span style="line-height: 19px; font-size: medium; color: rgb(128, 128, 48);">&gt;</span><span style="line-height: 19px;"> </span></pre>
+<p>
+	<span id="docs-internal-guid-25f26d6d-dc3c-a82b-5fe2-88ac88d087e5"><img src="assets/images/image_6.jpg" style="border: 0px solid transparent"></span></p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-info">
+	<em><strong>You can create your own skins by changing the LESS variables. See the LESS Settings section of this documentation for more details</strong></em></div>
+</section>
+<section id="animation_css">
+	<div class="page-header"><h3>Animation.css</h3><hr class="notop"></div>
+<p>
+	Golabi Admin use animate.css for CSS animation, it uses the &quot;<span style="color: rgb(24, 54, 145); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; line-height: 1.45; background-color: rgb(247, 247, 247);">animate.min.css</span>&quot; file to generate almost all kinds of animation which can be applied to various HTML objects within your project by adding simple classes.</p>
+<p>
+	<strong>Proper Usage:</strong></p>
+<div class="alert alert-info">
+	<em>&lt;div class=&quot;<strong>animated bounceIn</strong>&gt;...&lt;/div&gt;</em></div>
+<p>
+	You can change the duration of your animations, add a delay or change the number of times that it plays:</p>
+<pre style="box-sizing: border-box; overflow: auto; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6000003814697px; margin-top: 0px; margin-bottom: 0px; font-stretch: normal; line-height: 1.45; padding: 16px; border-radius: 3px; word-wrap: normal; word-break: normal; color: rgb(51, 51, 51); background-color: rgb(247, 247, 247);">
+<span class="pl-e" style="box-sizing: border-box; color: rgb(121, 93, 163);">#yourElement</span> {
+  <span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">-vendor-<span class="pl-c1" style="box-sizing: border-box;">animation-duration</span></span>: <span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">3<span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">s</span></span>;
+  <span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">-vendor-<span class="pl-c1" style="box-sizing: border-box;">animation-delay</span></span>: <span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">2<span class="pl-k" style="box-sizing: border-box; color: rgb(167, 29, 93);">s</span></span>;
+  <span class="pl-c1" style="box-sizing: border-box; color: rgb(0, 134, 179);">-vendor-<span class="pl-c1" style="box-sizing: border-box;">animation-iteration-count</span></span>: infinite;
+}</pre>
+<p>
+	<strong>List of possible animation types:</strong></p>
+<p>
+	Attention Seekers</p>
+<ul>
+	<li>
+		bounce</li>
+	<li>
+		flash</li>
+	<li>
+		pulse</li>
+	<li>
+		shake</li>
+	<li>
+		swing</li>
+	<li>
+		tada</li>
+	<li>
+		wobble</li>
+	<li>
+		jello</li>
+</ul>
+<p>
+	Bouncing Entrances</p>
+<ul>
+	<li>
+		bounceIn</li>
+	<li>
+		bounceInDown</li>
+	<li>
+		bounceInLeft</li>
+	<li>
+		bounceInRight</li>
+	<li>
+		bounceInUp</li>
+</ul>
+<p>
+	Bouncing Exists</p>
+<ul>
+	<li>
+		bounceOut</li>
+	<li>
+		bounceOutDown</li>
+	<li>
+		bounceOutRight</li>
+	<li>
+		bounceOutUp</li>
+</ul>
+<div>
+	Fading Entrances</div>
+<ul>
+	<li>
+		fadeIn</li>
+	<li>
+		fadeInDown</li>
+	<li>
+		fadeInDownBig</li>
+	<li>
+		fadeInLeft</li>
+	<li>
+		fadeInRight</li>
+	<li>
+		fadeInRightBig</li>
+	<li>
+		fadeInUp</li>
+	<li>
+		fadeInUpBig</li>
+</ul>
+<div>
+	Fading Exits</div>
+<ul>
+	<li>
+		fadeOut</li>
+	<li>
+		fadeOutDown</li>
+	<li>
+		fadeOutDownBig</li>
+	<li>
+		fadeOutLeft</li>
+	<li>
+		fadeOutLeftBig</li>
+	<li>
+		fadeOutRight</li>
+	<li>
+		fadeOutRightBig</li>
+	<li>
+		fadeOutUp</li>
+	<li>
+		fadeOutUpBig</li>
+</ul>
+<div>
+	Flippers</div>
+<ul>
+	<li>
+		flip</li>
+	<li>
+		flipInX</li>
+	<li>
+		flipInY</li>
+	<li>
+		flipOutX</li>
+	<li>
+		flipOutY</li>
+</ul>
+<div>
+	Lightspeed</div>
+<ul>
+	<li>
+		lightSpeedIn</li>
+	<li>
+		lightSpeedOut</li>
+</ul>
+<div>
+	Rotating Entrances</div>
+<ul>
+	<li>
+		rotateIn</li>
+	<li>
+		rotateInDownLeft</li>
+	<li>
+		rotateInDownRight</li>
+	<li>
+		rotateUpLeft</li>
+	<li>
+		rotateInUpRight</li>
+</ul>
+<div>
+	Rotating Exits</div>
+<ul>
+	<li>
+		rotateOut</li>
+	<li>
+		rotateOutDownLeft</li>
+	<li>
+		rotateOutDownRight</li>
+	<li>
+		rotateOutUpLeft</li>
+	<li>
+		rotateOutUpRight</li>
+</ul>
+<div>
+	Sliders</div>
+<ul>
+	<li>
+		slideInDown</li>
+	<li>
+		slideInLeft</li>
+	<li>
+		slideInRight</li>
+	<li>
+		slideOutLeft</li>
+	<li>
+		slideOutRight</li>
+	<li>
+		slideOutUp</li>
+</ul>
+<div>
+	Specials</div>
+<ul>
+	<li>
+		hinge</li>
+	<li>
+		rollIn</li>
+	<li>
+		rollOut</li>
+</ul>
+<div>
+	&nbsp;</div>
+</section>
+<section id="licenses">
+	<div class="page-header"><h3>Licenses</h3><hr class="notop"></div>
+<div class="alert alert-success">
+	<em>Below is the list of <u>ALL</u> plugins (with the exception of <strong>bootstrap.js</strong>, <strong>jQuery.js</strong> and <strong>jQueryUI</strong>) used by Golabi Admin Template.</em></div>
+<pre>
+</pre>
+<ul>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Angularjs v1.4.8 - MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		AnimateCSS v3.3 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Awesome bootstrap checkbox v0.3.4&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Blueimp jQuery-File-Upload 9.10.1 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootbox.js v4.4.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Colorpicker 2.2 - Apache License v2.0&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Datepicker v1.4.0 - Apache License v2.0</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap daterangepicker v2.0.8 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Dual List 3.0.2 - Apache License &nbsp;v2.0</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Iconpicker v1.7.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Image Gallery 3.1.1 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap Markdown v2.9.0 - Apache License v2.0&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap tagsinput v0.5.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Bootstrap3 wysihtml5 v0.3.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		CKEditor v4.4.7 - GPL, LGPL and MPL Open Source licenses&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		DataTables 1.10.7 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Dropzone v3.12.0- MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Easy pie chart v2.1.6 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Flot Chart v0.8.3 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Font awesome 4.3.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Fuelux wizard v3.9.0 - BSD-3 license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Fullcalendar 2.3.1 - License: http://fullcalendar.io/&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Google Map API &nbsp;- http://maps.googleapis.com/maps/api/js</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Jasny Bootstrap v3.1.3 - Apache License v2.0&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Jcrop v2.0 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery fullscreen 1.1.5 - https://github.com/kayahr/jquery-fullscreen-plugin</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery Knob v1.2.11 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery Mockjax v2.0.1 - Dual licensed under the MIT or GPL licenses&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery require v1.0.1 - MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		JQuery Sparklines v2.1.2 - New BSD License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery steps v1.1 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jQuery ui bootstrap v1.0.0 alpha - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jsTree Bootstrap Theme v1.0 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jsTree v3.0.4 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		jVectorMap 2.0.2 - GNU License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Ladda button v0.9.8 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Momentjs 2.9.0 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Morrisjs v0.5.1 - BSD-2-Clause License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Nestable jQuery Plugin v1.0 - BSD &amp; MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		nprogress v0.2.0 - MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		ocLazyLoad v1.0.9 - MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Raphaeljs v2.1.0 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Ripple.js v1.2.1 -&nbsp;MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Select2 v3.5.2 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Sweetalert v1.1.3 - MIT License</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Stidges jQuery Searchable v1.1.0 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Summernote v0.6.7 - MIT license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		TinyMCE v4.1.10 - GNU license&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Typeahead.js 0.9.3 - MIT License&nbsp;</li>
+	<li style="box-sizing: border-box; margin-bottom: 10px;">
+		Vitalets x-editable 1.5.1 - MIT license&nbsp;</li>
+</ul>
+<p style="box-sizing: border-box; margin-bottom: 10px;">
+	&nbsp;</p>
+<p style="box-sizing: border-box; margin-bottom: 10px;">
+	Angularjs Plugin Credit:</p>
+<ul>
+	<li>
+		angular-breadcrumb v0.4.1 - MIT license&nbsp;</li>
+	<li>
+		ngBootbox v0.1.3 - MIT License&nbsp;</li>
+	<li>
+		jsTree-directive v0.1.5 - MIT license&nbsp;</li>
+	<li>
+		angular-datatables v0.5.2 - MIT license&nbsp;</li>
+	<li>
+		angular-ui-jq v0.1.1 - MIT License&nbsp;</li>
+	<li>
+		angular-morris-chart v1.1.0 - MIT License&nbsp;</li>
+	<li>
+		ng-ckeditor v0.2.1 - New BSD License&nbsp;</li>
+	<li>
+		ui-tinymce v0.0.12 - MIT License&nbsp;</li>
+	<li>
+		angular-xeditable v0.1.9 - MIT License&nbsp;</li>
+	<li>
+		angularjs-google-maps v1.16.6 - MIT License&nbsp;</li>
+	<li>
+		angular-ui-router-anim-in-out v1.0.2 - MIT License&nbsp;</li>
+	<li>
+		ng-daterange v1.0.1 - GNU General Public License&nbsp;</li>
+	<li>
+		angular-ladda v0.3.1 - MIT License&nbsp;</li>
+	<li>
+		ngSweetAlert v1.1.0 - MIT License&nbsp;</li>
+	<li>
+		angular-flot v0.0.16 - MIT License&nbsp;</li>
+	<li>
+		angular-ui-tree v2.15.0 - MIT License&nbsp;</li>
+	<li>
+		angular-bootstrap-duallistbox v0.1.0&nbsp;</li>
+</ul>
+<h5>
+	Product Licenses</h5>
+<p>
+	Golabi Admin comes with various product licenses for you to choose from. It offers <strong>Single License</strong>&nbsp;and <strong>Extended Licenses</strong>.&nbsp;</p>
+</section>
+<section id="upgrade">
+	<div class="page-header"><h3>Upgrade</h3><hr class="notop"></div>
+<h5>
+	&nbsp;</h5>
+<h5>
+	Upgrading from version 1.1 to version 1.2</h5>
+<p>
+	Please copy and paste assets folder version 1.2 and then rename these string in your files:</p>
+<ol>
+	<li>
+		Rename path&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">jquery.searchable-1.1.0.min.js</span>&nbsp;to&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">jquery.searchable.min.js</span></li>
+	<li>
+		Rename path&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">assets/vendors/jqueryu-mockjax</span>&nbsp;to <span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">assets/vendors/jquery-mockjax</span></li>
+	<li>
+		Rename path&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">vendors/jquery-fullscreen/jquery.fullscreen-min.js</span>&nbsp; to&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">vendors/jquery-fullscreen/js/jquery.fullscreen.min.js</span></li>
+	<li>
+		Rename path&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">vendors/fuelux-wizard/...</span>&nbsp;to&nbsp;<span style="color: rgb(199, 37, 78); font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: nowrap; background-color: rgb(249, 242, 244);">vendors/fuelux/...</span></li>
+</ol>
+<h5>
+	Upgrading from version 1.0 to version 1.1:</h5>
+<p>
+	There are no particular DOM changes to look for, you will simply copy and paste all files and folders relating to plugins and CSS files over to your project and it should adap to the new changes wihtout any further effort.</p>
+</section>
+<section id="updates">
+	<div class="page-header"><h3>Updates</h3><hr class="notop"></div>
+<div class="alert alert-success">
+	<strong>For the full list please visit:&nbsp;http://www.yeptemplate.com/</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Update 1.0</div>
+<ul>
+	<li>
+		Initial release</li>
+</ul>
+<div>
+	Version 1.1</div>
+<ul>
+	<li>
+		Add RTL version</li>
+	<li>
+		Add sidebar accordian action</li>
+	<li>
+		Fix issue .skin-2 color submenu&nbsp;</li>
+	<li>
+		Fix issue .active menu in .skin-1&nbsp;</li>
+	<li>
+		Fix w3c warning &amp; error</li>
+	<li>
+		Fix issue 4th level accordian menu</li>
+</ul>
+<div>
+	Version 1.2</div>
+<ul>
+	<li>
+		Add PHP non-ajax version</li>
+	<li>
+		Add Invoice page</li>
+	<li>
+		Add lock-screen page<span class="Apple-tab-span" style="white-space:pre"> </span></li>
+	<li>
+		Add badge to sidebar menu</li>
+	<li>
+		Add Grunt Task Runner</li>
+	<li>
+		Fix issue contact &amp; task add button</li>
+	<li>
+		Fix issue footer-section in timeline page</li>
+	<li>
+		Rename jquery.searchable-1.1.0.min.js to jquery.searchable.min.js</li>
+	<li>
+		Rename &#39;assets/vendors/jqueryu-mockjax&#39; to &#39;assets/vendors/jquery-mockjax&#39;</li>
+	<li>
+		Change path &#39;vendors/jquery-fullscreen/jquery.fullscreen-min.js&#39; to &#39;vendors/jquery-fullscreen/js/jquery.fullscreen.min.js&#39;</li>
+	<li>
+		Change path &#39;vendors/fuelux-wizard/...&#39; to &#39;vendors/fuelux/...&#39;</li>
+</ul>
+<div>
+	Version 1.3</div>
+<ul>
+	<li>
+		Add top menu layout</li>
+	<li>
+		Add hover open submenu in top-menu layout</li>
+	<li>
+		Add Special Font for RTL Langauage (ex: Arabic)</li>
+	<li>
+		Upgrade Select2 v3.5.2 to v3.5.4</li>
+	<li>
+		Remove Selec2 initial script from yep-vendors.js</li>
+	<li>
+		Fix issue top menu hover-active and clickable</li>
+	<li>
+		Fix issue top-menu search on-demand</li>
+</ul>
+<div>
+	Version 1.4</div>
+<ul>
+	<li>
+		Add .skin-3</li>
+	<li>
+		Add vertical accordian menu</li>
+	<li>
+		Add category to sidebar menu</li>
+	<li>
+		Add category to sidebar contact list</li>
+	<li>
+		Add ripple.js action for .btn</li>
+	<li>
+		Add .left-icon to alert in generalelements.html</li>
+	<li>
+		Add transaction to dropdown css</li>
+	<li>
+		Change button label in button.html</li>
+	<li>
+		Change 404 &amp; 500 error page style</li>
+	<li>
+		Dual List page change html</li>
+	<li>
+		Nestable page change style</li>
+</ul>
+<p>
+	Version 1.5</p>
+<ul>
+	<li>
+		Add AngularJs version</li>
+	<li>
+		Add sweetalert</li>
+	<li>
+		Change login style</li>
+	<li>
+		Add vendors LESS files</li>
+	<li>
+		Add vendors SASS files</li>
+</ul>
+</section>
+
+	</div>
+</body>
+</html>

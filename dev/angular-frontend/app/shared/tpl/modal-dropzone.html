@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title">Select Files </h3>
+</div>
+<div class="modal-body">
+    <div ng-if="galleryFiles!==undefined"
+         ng-model="galleryFiles"
+         dropzone="dropzoneConfig"
+         mode="multi"
+         class="dropzone dz-clickable">
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="okModal()">OK</button>
+    <button class="btn btn-default" type="button" ng-click="cancelModal()">Cancel</button>
+</div>

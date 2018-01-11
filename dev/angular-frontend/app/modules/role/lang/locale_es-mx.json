@@ -1,0 +1,15 @@
+{
+  "role":{
+    "form":{
+      "roleName":"Nombre",
+      "displayName":"nombre_a_mostrar",
+      "description":"Descripción",
+      "permissions":"Permisos",
+      "roleAddSuccess":"Rol Agregado correctamente",
+      "roleUpdateSuccess":"Rol actualizado correctamente"
+    },
+    "list":{
+      "createdTime":"Tiempo de creado"
+    }
+  }
+}

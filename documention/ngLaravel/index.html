@@ -1,0 +1,1902 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>ngLaravel v2.0.1 - CRUD Angularjs WebApp and Laravel Backend + Ionic</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="YEP TEMPLATE">
+	<meta name="copyright" content="YEP TEMPLATE">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2017-01-09T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.jpg);}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-nglaravel-v20">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation" title="Installation">Installation</a>
+				<ul>
+					<li><a href="#installation_requirement">Requirement:</a>
+					<li><a href="#installation_manual_installation">Manual Installation:</a>
+					<li><a href="#installation_web_wizard_installation">Web Wizard Installation:</a>
+				</ul>
+			</li>
+			<li><a href="#laravel_back_end" title="Laravel Back-End">Laravel Back-End</a>
+				<ul>
+					<li><a href="#laravel_back_end_how_to_add_jwt_security_to_your_project">How to add JWT security to your project</a>
+					<li><a href="#laravel_back_end_1_installation_nbspstronglaravel_users_strong">1. Installation&nbsp;Laravel Users</a>
+					<li><a href="#laravel_back_end_2_migration_and_seeding">2. Migration and Seeding</a>
+					<li><a href="#laravel_back_end_3_usage">3. Usage</a>
+					<li><a href="#laravel_back_end_31_authenticate_with_json_web_token">3.1. Authenticate with JSON Web Token</a>
+					<li><a href="#laravel_back_end_32_role_based_permissions">3.2. Role-based Permissions</a>
+					<li><a href="#laravel_back_end__nbsp">&nbsp;</a>
+					<li><a href="#laravel_back_end_33_forgot_password">3.3 Forgot password</a>
+					<li><a href="#laravel_back_end_34_middlewares">3.4 Middlewares</a>
+				</ul>
+			</li>
+			<li><a href="#access_to_back_end_api" title="Access To Back-End API">Access To Back-End API</a>
+				<ul>
+					<li><a href="#access_to_back_end_api_what_39s_postman">What&#39;s Postman?</a>
+					<li><a href="#access_to_back_end_api_how_to_install_postman">How to Install Postman?</a>
+					<li><a href="#access_to_back_end_api_create_token_by_authntication">Create Token by authntication</a>
+					<li><a href="#access_to_back_end_api_how_to_access_to_other_api">How to access to other API</a>
+					<li><a href="#access_to_back_end_api_all_route_in_nglaravel">All route in ngLaravel</a>
+				</ul>
+			</li>
+			<li><a href="#angularjs_front_end" title="Angularjs Front-End">Angularjs Front-End</a>
+				<ul>
+					<li><a href="#angularjs_front_end_file_amp_folder_structure">File &amp; Folder Structure:</a>
+					<li><a href="#angularjs_front_end_configurations">Configurations</a>
+					<li><a href="#angularjs_front_end_appjs_file_content">app.js file content</a>
+					<li><a href="#angularjs_front_end_configconstantjs_file_content">config.constant.js file content:</a>
+					<li><a href="#angularjs_front_end_configrouterjs_file_content">config.router.js file content:</a>
+				</ul>
+			</li>
+			<li><a href="#authorization_for_your_app" title="Authorization for your app">Authorization for your app</a>
+				<ul>
+					<li><a href="#authorization_for_your_app__nbsp">&nbsp;</a>
+					<li><a href="#authorization_for_your_app_permits">Permits</a>
+					<li><a href="#authorization_for_your_app_withonly">withOnly</a>
+					<li><a href="#authorization_for_your_app__nbsp">&nbsp;</a>
+					<li><a href="#authorization_for_your_app_withall">withAll</a>
+					<li><a href="#authorization_for_your_app__nbsp">&nbsp;</a>
+					<li><a href="#authorization_for_your_app_withany">withAny</a>
+					<li><a href="#authorization_for_your_app_directives">Directives</a>
+				</ul>
+			</li>
+			<li><a href="#multi_language" title="Multi Language">Multi Language</a>
+				<ul>
+					<li><a href="#multi_language_strongi18n_for_your_angular_apps_strong">i18n for your Angular apps</a>
+					<li><a href="#multi_language_quick_start_multi_language_with_nglaravel">Quick Start Multi Language With ngLaravel</a>
+				</ul>
+			</li>
+			<li><a href="#how_to_add_module" title="How to add module">How to add module</a>
+				<ul>
+					<li><a href="#how_to_add_module_how_to_create_module_in_nglaravel_part_1_laravel_back_end_nbsp">How to create module in ngLaravel Part 1 Laravel Back End&nbsp;</a>
+					<li><a href="#how_to_add_module_how_to_create_module_in_nglaravel_part_2_angular_front_end_nbsp">How to create module in ngLaravel Part 2 Angular Front End&nbsp;</a>
+				</ul>
+			</li>
+			<li><a href="#other_video_resource" title="Other Video Resource">Other Video Resource</a>
+				<ul>
+					<li><a href="#other_video_resource__quotlaravel_restangular_quot_by_andrew_del_prete_laravel_dfw_meetup_september_2014">&quot;Laravel + Restangular&quot; by Andrew Del Prete - Laravel DFW Meetup September 2014</a>
+					<li><a href="#other_video_resource_angularjs_tutorial_for_beginners_learn_angularjs_using_ui_router">Angularjs Tutorial for Beginners - learn Angular.js using UI-Router</a>
+				</ul>
+			</li>
+			<li><a href="#admin_template" title="Admin Template">Admin Template</a></li>
+			<li><a href="#ionic" title="IONIC">IONIC</a></li>
+			<li><a href="#upgrade" title="Upgrade">Upgrade</a></li>
+			<li><a href="#updates" title="Updates">Updates</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright YEP TEMPLATE 2017<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>ngLaravel v2.0.1</h1>
+	<h2>CRUD Angularjs WebApp and Laravel Backend + Ionic</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 03/26/2016</li>
+	<li>latest update: 01/9/2017</li>
+	<li>by: YEP TEMPLATE</li>
+	
+	<li>email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for purchasing ngLaravel. If you have any questions that are beyond the scope of this help file, please feel free to comment us via the comment or support section of Codecanyon.net.</p>
+	</section>
+	
+	<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<h4 id="installation_requirement">Requirement:</h4>
+<ul>
+	<li>
+		PHP &gt;= 5.5.9 (Laravel 5.1)</li>
+	<li>
+		PHP &gt;= 5.6.4 (Laravel 5.3)</li>
+	<li>
+		OpenSSL PHP Extension</li>
+	<li>
+		PDO PHP Extension</li>
+	<li>
+		Mbstring PHP Extension</li>
+	<li>
+		Tokenizer PHP Extension</li>
+	<li>
+		Composer latest version</li>
+</ul>
+<h4 id="installation_manual_installation">Manual Installation:</h4>
+<ol>
+	<li>
+		Connect to MySQL database and create <font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">ng-laravel</span></font> database.</li>
+	<li>
+		Extract downloaded <font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">.zip</span></font>&nbsp;file to root &nbsp;directory of web server.</li>
+	<li>
+		Run CMD and go to <span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/</span></li>
+	<li>
+		Run command&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">php artisan migrate</span></font>&nbsp;.</li>
+	<li>
+		Open Browser and go to <font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">http://localhost/[extract_zip_file]/Developer/angular-frontend/#/login</span></font></li>
+</ol>
+<p>
+	&nbsp;</p>
+<h4 id="installation_web_wizard_installation">Web Wizard Installation:</h4>
+<ol>
+	<li>
+		Connect to MySQL database and create&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">ng-laravel</span></font>&nbsp;database.</li>
+	<li>
+		Extract downloaded&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">.zip</span></font>&nbsp;file to root &nbsp;directory of web server.</li>
+	<li>
+		Open browser and go to <span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">http://[extract_zip_file]/Developer/laravel-backend/public/install</span></li>
+	<li>
+		Now open the web wizard installation</li>
+	<li>
+		click&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">Next Step&nbsp;</span>button</li>
+	<li>
+		In Enviroment Setting enter your database configuration setting like sample and click&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">Save .env</span>&nbsp; and then click&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">Next Step</span></li>
+	<li>
+		In Requirements step check your laravel requirement and then click&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">Next Step</span></li>
+	<li>
+		In Permissions step check directory permission&nbsp;and then click&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">Next Step and please wait...</span></li>
+	<li>
+		After that you should wait until see the successful page.</li>
+	<li>
+		Open Browser and go to&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">http://localhost/[extract_zip_file]/Developer/angular-frontend/#/login</span></font></li>
+</ol>
+</section>
+<section id="laravel_back_end">
+	<div class="page-header"><h3>Laravel Back-End</h3><hr class="notop"></div>
+<h4 id="laravel_back_end_how_to_add_jwt_security_to_your_project">How to add JWT security to your project</h4>
+<p>
+	You should use&nbsp;<strong>Laravel Users Module:</strong></p>
+<p>
+	&nbsp;</p>
+<div>
+	This module is use JWTAuth and ENTRUST libraries</div>
+<ol>
+	<li>
+		https://github.com/tymondesigns/jwt-auth (JSON Web Token)</li>
+	<li>
+		https://github.com/Zizaco/entrust (Role-based Permissions)</li>
+</ol>
+<p>
+	&nbsp;</p>
+<h4 id="laravel_back_end_1_installation_nbspstronglaravel_users_strong">1. Installation&nbsp;<strong>Laravel Users</strong></h4>
+<p>
+	Install via composer - edit your&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">composer.json</span>&nbsp;to require the package.</p>
+<pre class="prettyprint lang-plain linenums">
+&quot;require&quot;: {
+    // ...
+    &quot;php-soft/laravel-users&quot;: &quot;dev-master&quot;,
+}</pre>
+<p>
+	Then run&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">composer update</span>&nbsp;in your terminal to pull it in. Once this has finished, you will need to add the service&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">providers&nbsp;</span>to the providers array in your&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">app.php</span>&nbsp;config as follows:</p>
+<pre class="prettyprint lang-php linenums">
+&#39;providers&#39; =&gt; [
+    // ...
+    PhpSoft\ArrayView\Providers\ArrayViewServiceProvider::class,
+    PhpSoft\Users\Providers\UserServiceProvider::class,
+    Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+    Zizaco\Entrust\EntrustServiceProvider::class,
+]</pre>
+<p>
+	Next, also in the&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">app.php</span>&nbsp;config file, under the&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">aliases&nbsp;</span>array, you may want to add facades.</p>
+<pre class="prettyprint lang-php linenums">
+&#39;aliases&#39; =&gt; [
+    // ...
+    &#39;JWTAuth&#39; =&gt; Tymon\JWTAuth\Facades\JWTAuth::class,
+    &#39;Entrust&#39; =&gt; Zizaco\Entrust\EntrustFacade::class,
+]</pre>
+<p>
+	You will want to publish the config using the following command:</p>
+<pre class="prettyprint lang-plain linenums">
+$ php artisan vendor:publish --provider=&quot;PhpSoft\Users\Providers\UserServiceProvider&quot;</pre>
+<p>
+	<em><strong>Don&#39;t forget to set a secret key in the jwt config file!</strong></em></p>
+<p>
+	I have included a helper command to generate a key as follows:</p>
+<pre class="prettyprint lang-plain linenums">
+$ php artisan jwt:generate</pre>
+<p>
+	this will generate a new random key, which will be used to sign your tokens.</p>
+<p>
+	&nbsp;</p>
+<h4 id="laravel_back_end_2_migration_and_seeding">2. Migration and Seeding</h4>
+<p>
+	Now generate the migration:</p>
+<pre class="prettyprint lang-plain linenums">
+$ php artisan ps-users:migrate</pre>
+<p>
+	It will generate the&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">&lt;timestamp&gt;_entrust_setup_tables.php&nbsp;</span>migration. You may now run it with the artisan migrate command:</p>
+<pre class="prettyprint lang-plain linenums">
+$ php artisan migrate</pre>
+<p>
+	Running Seeders with command:</p>
+<pre class="prettyprint lang-plain linenums">
+$ php artisan db:seed --class=UserModuleSeeder</pre>
+<p>
+	&nbsp;</p>
+<h4 id="laravel_back_end_3_usage">3. Usage</h4>
+<h4 id="laravel_back_end_31_authenticate_with_json_web_token">3.1. Authenticate with JSON Web Token</h4>
+<p>
+	You need to change class&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">App\User</span>&nbsp;to inherit from&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">PhpSoft\Users\Models\User</span>&nbsp;as follows:</p>
+<pre class="prettyprint lang-php linenums">
+namespace App;
+// ...
+use PhpSoft\Users\Models\User as PhpSoftUser;
+class User extends PhpSoftUser implements AuthenticatableContract, CanResetPasswordContract
+{
+    // ...
+    // You need allows fill attributes as follows
+    protected $fillable = [
+        &#39;name&#39;,
+        &#39;email&#39;,
+        &#39;password&#39;,
+        &#39;username&#39;,
+        &#39;location&#39;,
+        &#39;country&#39;,
+        &#39;biography&#39;,
+        &#39;occupation&#39;,
+        &#39;website&#39;,
+        &#39;image&#39;,
+        &#39;birthday&#39;,
+        &#39;gender&#39;
+    ];
+    // ...
+}</pre>
+<p>
+	Remove middlewares in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">app/Http/Kernel.php</span></p>
+<div>
+	<ul style="box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; color: rgb(51, 51, 51); font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; line-height: 25.6px;">
+		<li style="box-sizing: border-box;">
+			<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">\App\Http\Middleware\EncryptCookies::class</code></li>
+		<li style="box-sizing: border-box;">
+			<code style="box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; padding: 0.2em 0px; margin: 0px; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157);">\App\Http\Middleware\VerifyCsrfToken::class</code></li>
+	</ul>
+</div>
+<p>
+	Add route middlewares in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">app/Http/Kernel.php</span></p>
+<pre class="prettyprint lang-php linenums">
+protected $routeMiddleware = [
+    // ...
+    &#39;jwt.auth&#39; =&gt; \PhpSoft\Users\Middleware\Authenticate::class,
+    &#39;jwt.refresh&#39; =&gt; \Tymon\JWTAuth\Middleware\RefreshToken::class,
+];</pre>
+<p>
+	Add routes in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">app/Http/Kernel.php</span></p>
+<pre class="prettyprint lang-php linenums">
+Route::post(&#39;/auth/login&#39;, &#39;\PhpSoft\Users\Controllers\AuthController@login&#39;);
+Route::group([&#39;middleware&#39;=&gt;&#39;auth&#39;], function() { // use middleware jwt.auth if use JSON Web Token
+    Route::post(&#39;/auth/logout&#39;, &#39;\PhpSoft\Users\Controllers\AuthController@logout&#39;);
+    Route::get(&#39;/me&#39;, &#39;\PhpSoft\Users\Controllers\UserController@authenticated&#39;);
+    Route::patch(&#39;/me&#39;, &#39;\PhpSoft\Users\Controllers\UserController@updateProfile&#39;);
+    Route::put(&#39;/me/password&#39;, &#39;\PhpSoft\Users\Controllers\PasswordController@change&#39;);
+});
+
+Route::post(&#39;/passwords/forgot&#39;, &#39;\PhpSoft\Users\Controllers\PasswordController@forgot&#39;);
+Route::post(&#39;/passwords/reset&#39;, &#39;\PhpSoft\Users\Controllers\PasswordController@reset&#39;);
+Route::group([&#39;middleware&#39;=&gt;&#39;routePermission&#39;], function() {
+    Route::post(&#39;/users&#39;, &#39;\PhpSoft\Users\Controllers\UserController@store&#39;);
+    Route::get(&#39;/users&#39;, &#39;\PhpSoft\Users\Controllers\UserController@index&#39;);
+    Route::get(&#39;/users/{id}&#39;, &#39;\PhpSoft\Users\Controllers\UserController@show&#39;);
+    Route::delete(&#39;/users/{id}&#39;, &#39;\PhpSoft\Users\Controllers\UserController@destroy&#39;);
+    Route::patch(&#39;/users/{id}&#39;, &#39;\PhpSoft\Users\Controllers\UserController@update&#39;);
+    Route::post(&#39;/users/{id}/block&#39;, &#39;\PhpSoft\Users\Controllers\UserController@block&#39;);
+    Route::post(&#39;/users/{id}/unblock&#39;, &#39;\PhpSoft\Users\Controllers\UserController@unblock&#39;);
+});</pre>
+<p>
+	Apache seems to discard the Authorization header if it is not a base64 encoded user/pass combo. So to fix this you can add the following to your apache config</p>
+<pre class="prettyprint lang-plain linenums">
+RewriteEngine On
+
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]</pre>
+<p>
+	Alternatively you can include the token via a query string</p>
+<pre class="prettyprint lang-plain linenums">
+http://api.mysite.com/me?token={yourtokenhere}</pre>
+<p>
+	&nbsp;</p>
+<h4 id="laravel_back_end_32_role_based_permissions">3.2. Role-based Permissions</h4>
+<p>
+	Use the&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">UserTrait</span>&nbsp;trait in your existing&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">App\User</span>&nbsp;model. For example:</p>
+<pre class="prettyprint lang-php linenums">
+use Illuminate\Database\Eloquent\Model;
+use PhpSoft\Users\Models\UserTrait;
+
+class User extends Model
+{
+    use UserTrait; // add this trait to your user model
+    // ...
+}</pre>
+<div>
+	Create&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">Role&nbsp;</span>and&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">Permission&nbsp;</span>follows</div>
+<div>
+	<pre class="prettyprint lang-php linenums">
+// create role admin (default this role has been created on UserModuleSeeder)
+$admin = new Role();
+$admin-&gt;name         = &#39;admin&#39;;
+$admin-&gt;display_name = &#39;User Administrator&#39;; // optional
+$admin-&gt;description  = &#39;User is allowed to manage and edit other users&#39;; // optional
+$admin-&gt;save();
+
+// role attach alias
+$user-&gt;attachRole($admin); // parameter can be an Role object, array, or id
+
+// or eloquent&#39;s original technique
+$user-&gt;roles()-&gt;attach($admin-&gt;id); // id only
+
+// create permission
+$createPost = new Permission();
+$createPost-&gt;name         = &#39;create-post&#39;;
+$createPost-&gt;display_name = &#39;Create Posts&#39;; // optional
+$createPost-&gt;description  = &#39;create new blog posts&#39;; // optional
+$createPost-&gt;save();
+
+$admin-&gt;attachPermission($createPost);
+// equivalent to $admin-&gt;perms()-&gt;sync(array($createPost-&gt;id));</pre>
+	<p>
+		Now we can check for roles and permissions simply by doing:</p>
+	<pre class="prettyprint lang-php linenums">
+$user-&gt;hasRole(&#39;owner&#39;);   // false
+$user-&gt;hasRole(&#39;admin&#39;);   // true
+$user-&gt;can(&#39;edit-user&#39;);   // false
+$user-&gt;can(&#39;create-post&#39;); // true</pre>
+	<p>
+		Both&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">hasRole()</span>&nbsp;and&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">can()</span>&nbsp;can receive an array of roles &amp; permissions to check:</p>
+	<pre class="prettyprint lang-php linenums">
+$user-&gt;hasRole([&#39;owner&#39;, &#39;admin&#39;]);       // true
+$user-&gt;can([&#39;edit-user&#39;, &#39;create-post&#39;]); // true</pre>
+	<h4 id="laravel_back_end__nbsp">&nbsp;</h4>
+	<h4 id="laravel_back_end_33_forgot_password">3.3 Forgot password</h4>
+	<div>
+		To send mail forgot password,</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		You need to add address and name of sender in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">config\mail.php</span>&nbsp;as follows:</div>
+	<pre class="prettyprint lang-plain linenums">
+&#39;from&#39; =&gt; [&#39;address&#39; =&gt; &#39;&#110;&#111;&#45;&#114;&#101;&#112;&#108;&#121;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;&#39;, &#39;name&#39; =&gt; &#39;System&#39;],</pre>
+</div>
+<p>
+	You need to create email view: Create&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">password.blade.php&nbsp;</span>&nbsp;file in folder&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">resources\views\emails</span>&nbsp;with contents as follows:</p>
+<pre class="prettyprint lang-plain linenums">
+&lt;h3&gt;You are receiving this e-mail because you requested resetting your password to domain.com&lt;/h3&gt;
+Please click this URL to reset your password: &lt;a href=&quot;http://domain.com/passwords/reset?token={{$token}}&quot;&gt;http://domain.com/passwords/reset?token={{$token}}&lt;/a&gt;</pre>
+<div>
+	You can change contents of this view for your using.</div>
+<div>
+	&nbsp;</div>
+<div>
+	By other way, you can use other view and config&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">password.email</span>&nbsp;in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">config\auth.php</span>:</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+&#39;password&#39; =&gt; [
+        &#39;email&#39; =&gt; &#39;emails.password&#39;,
+        &#39;table&#39; =&gt; &#39;password_resets&#39;,
+        &#39;expire&#39; =&gt; 60,
+    ],</pre>
+</div>
+<p>
+	&nbsp;</p>
+<h4 id="laravel_back_end_34_middlewares">3.4 Middlewares</h4>
+<div>
+	<strong>PhpSoft\Users\Middleware\Permission</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This middleware is used to check permission for an action.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Add route middlewares in app/Http/Kernel.php</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+protected $routeMiddleware = [
+    // ...
+    &#39;permission&#39; =&gt; \PhpSoft\Users\Middleware\Permission::class,
+];</pre>
+	<p>
+		Usage</p>
+	<pre class="prettyprint lang-plain linenums">
+Route::post(&#39;/posts&#39;, [
+    &#39;middleware&#39; =&gt; &#39;permission:create-post&#39;, // Only allows user have create-post permission (or have admin role) access to this route
+    function () {
+        // ...
+    }
+]);</pre>
+</div>
+<div>
+	<strong>PhpSoft\Users\Middleware\RoutePermission</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This middleware is used to check permission for a route dynamic by database.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Add route middlewares in app/Http/Kernel.php</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+protected $routeMiddleware = [
+    // ...
+    &#39;routePermission&#39; =&gt; \PhpSoft\Users\Middleware\RoutePermission::class,
+];</pre>
+</div>
+<div>
+	Usage</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+Route::group([&#39;middleware&#39;=&gt;&#39;routePermission&#39;], function() { 
+    Route::post(&#39;/blog&#39;, function () {
+        //
+    });
+});</pre>
+</div>
+<p>
+	Require permission for a route as follows</p>
+<pre class="prettyprint lang-plain linenums">
+// require permissions
+PhpSoft\Users\Models\RoutePermission::setRoutePermissions(&#39;POST /blog&#39;, [&#39;create-blog&#39;]);
+
+// require roles
+PhpSoft\Users\Models\RoutePermission::setRouteRoles(&#39;POST /blog&#39;, [&#39;creator&#39;]);
+
+// require permissions or roles
+PhpSoft\Users\Models\RoutePermission::setRoutePermissionsRoles(&#39;POST /blog&#39;, [&#39;create-blog&#39;], [&#39;creator&#39;]);
+</pre>
+<p>
+	&nbsp;</p>
+<div>
+	<strong>PhpSoft\Users\Middleware\Validate</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	This middleware is used to check validate for fields on different applications which use this package.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Add route middlewares in app/Http/Kernel.php</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+protected $routeMiddleware = [
+    // ...
+    &#39;validate&#39;   =&gt; \PhpSoft\Users\Middleware\Validate::class,
+];</pre>
+</div>
+<p>
+	Usage</p>
+<pre class="prettyprint lang-plain linenums">
+Route::post(&#39;/user&#39;, [&#39;middleware&#39;=&gt;&#39;validate: App\Http\Validators\UserValidate&#39;,
+    function () {
+        //
+    }
+]);</pre>
+<div>
+	With&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">App\Http\Validators\UserValidate</span>, it&#39;s class which you need to declare in route. This class is used to declare rules to validate.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can also use other class to declare rules for validate in your application but It have to implements&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">PhpSoft\Users\Contracts\Validator&nbsp;</span>class.</div>
+<div>
+	&nbsp;</div>
+<div>
+	For example, I declared rules in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">App\Http\Validators\UserValidate</span>&nbsp;class as follows:</div>
+<div>
+	<pre class="prettyprint lang-php linenums">
+use PhpSoft\Users\Contracts\Validator;
+
+/**
+ * User Validate
+ *
+ * return array
+ */
+
+class UserValidate implements Validator
+{
+    /**
+     * Custom validator
+     * 
+     * @return boolean
+     */
+
+    public static function boot($request)
+    {
+        IlluminateValidator::extend(&#39;validate_name&#39;, function($attribute, $value, $parameters) {
+                return $value == &#39;validate_name&#39;;
+            }, &#39;The name is in valid.&#39;
+        );
+    }
+
+    /**
+     * Declare rules
+     * 
+     * @return array
+     */
+    public static function rules()
+    {
+        return [
+            &#39;name&#39;     =&gt; &#39;required|max:255|validate_name&#39;,
+            &#39;email&#39;    =&gt; &#39;required|email&#39;,
+            &#39;password&#39; =&gt; &#39;required|confirmed|min:6&#39;
+        ];
+    }
+}</pre>
+	<p>
+		Here, you will declare fields that you want to validate them in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">rules()</span>&nbsp;function. And You can also custom validator fields that you want by declare them in&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">boot()</span>&nbsp;function.</p>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="access_to_back_end_api">
+	<div class="page-header"><h3>Access To Back-End API</h3><hr class="notop"></div>
+<h3>
+	Wellcome to Yep ngLaravel</h3>
+<p>
+	This is sample app to work with AngularJS and Laravel based on JSON Web Token Security. We integrate JWT security laravel back-end with angularjs front-end. Also you can just use Laravel back-end for your production like mobile app and etc. Now you can test my api with <b>Postman</b> RESTful client.</p>
+<h4 id="access_to_back_end_api_what_39s_postman">What&#39;s Postman?</h4>
+<p>
+	Powerful tools to work, build, test and document your APIs easily and quickly.</p>
+<br>
+<h4 id="access_to_back_end_api_how_to_install_postman">How to Install Postman?</h4>
+<p>
+	In Google Chrome browser setting select <b>Extensions</b>. Click the <b>Get More Extensions</b> link on the page and search for Postman. Follow the directions to install the extension and Then go to url <code>chrome://apps/</code> run it.</p>
+<br>
+<br>
+<h4 id="access_to_back_end_api_create_token_by_authntication">Create Token by authntication</h4>
+<p>
+	Enter this url <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/authenticate?email=&#121;&#101;&#112;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;&amp;password=123456</code> and copy and keep token to future requests.</p>
+<p>
+	Please note base url API is <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/</code> and for authentication you should use <code>authenticate</code> and use <code>email</code> and <code>password</code> parameters.</p>
+<br>
+<br>
+<h4 id="access_to_back_end_api_how_to_access_to_other_api">How to access to other API</h4>
+<p>
+	To access other API:<br>
+	1.you should create token with above way and then copy token<br>
+	2.Enter your route with token parameter like: <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/user?token=YOUR_COPY_TOKEN</code><br>
+	3.See result :)</p>
+<br>
+<h4 id="access_to_back_end_api_all_route_in_nglaravel">All route in ngLaravel</h4>
+<pre>
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+| Domain | Method   | URI                              | Name                   | Action                                                   | Middleware |
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+|        | GET|HEAD | api/authenticate                 | api.authenticate.index | App\Http\Controllers\AuthenticateController@index        |            |
+|        | POST     | api/authenticate                 |                        | App\Http\Controllers\AuthenticateController@authenticate |            |
+|        | POST     | api/category                     | api.category.store     | App\Http\Controllers\CategoryController@store            | jwt.auth   |
+|        | GET|HEAD | api/category                     | api.category.index     | App\Http\Controllers\CategoryController@index            | jwt.auth   |
+|        | GET|HEAD | api/category/create              | api.category.create    | App\Http\Controllers\CategoryController@create           | jwt.auth   |
+|        | GET|HEAD | api/category/{category}          | api.category.show      | App\Http\Controllers\CategoryController@show             | jwt.auth   |
+|        | PUT      | api/category/{category}          | api.category.update    | App\Http\Controllers\CategoryController@update           | jwt.auth   |
+|        | DELETE   | api/category/{category}          | api.category.destroy   | App\Http\Controllers\CategoryController@destroy          | jwt.auth   |
+|        | PATCH    | api/category/{category}          |                        | App\Http\Controllers\CategoryController@update           | jwt.auth   |
+|        | GET|HEAD | api/category/{category}/edit     | api.category.edit      | App\Http\Controllers\CategoryController@edit             | jwt.auth   |
+|        | GET|HEAD | api/comment                      | api.comment.index      | App\Http\Controllers\CommentController@index             | jwt.auth   |
+|        | POST     | api/comment                      | api.comment.store      | App\Http\Controllers\CommentController@store             | jwt.auth   |
+|        | GET|HEAD | api/comment/create               | api.comment.create     | App\Http\Controllers\CommentController@create            | jwt.auth   |
+|        | GET|HEAD | api/comment/search               |                        | App\Http\Controllers\CommentController@search            | jwt.auth   |
+|        | PUT      | api/comment/{comment}            | api.comment.update     | App\Http\Controllers\CommentController@update            | jwt.auth   |
+|        | DELETE   | api/comment/{comment}            | api.comment.destroy    | App\Http\Controllers\CommentController@destroy           | jwt.auth   |
+|        | GET|HEAD | api/comment/{comment}            | api.comment.show       | App\Http\Controllers\CommentController@show              | jwt.auth   |
+|        | PATCH    | api/comment/{comment}            |                        | App\Http\Controllers\CommentController@update            | jwt.auth   |
+|        | GET|HEAD | api/comment/{comment}/edit       | api.comment.edit       | App\Http\Controllers\CommentController@edit              | jwt.auth   |
+|        | POST     | api/deleteimage/{id}             |                        | App\Http\Controllers\UploadController@deleteUpload       |            |
+|        | GET|HEAD | api/gallery                      | api.gallery.index      | App\Http\Controllers\GalleryController@index             | jwt.auth   |
+|        | POST     | api/gallery                      | api.gallery.store      | App\Http\Controllers\GalleryController@store             | jwt.auth   |
+|        | GET|HEAD | api/gallery/create               | api.gallery.create     | App\Http\Controllers\GalleryController@create            | jwt.auth   |
+|        | GET|HEAD | api/gallery/search               |                        | App\Http\Controllers\GalleryController@search            | jwt.auth   |
+|        | PATCH    | api/gallery/{gallery}            |                        | App\Http\Controllers\GalleryController@update            | jwt.auth   |
+|        | DELETE   | api/gallery/{gallery}            | api.gallery.destroy    | App\Http\Controllers\GalleryController@destroy           | jwt.auth   |
+|        | GET|HEAD | api/gallery/{gallery}            | api.gallery.show       | App\Http\Controllers\GalleryController@show              | jwt.auth   |
+|        | PUT      | api/gallery/{gallery}            | api.gallery.update     | App\Http\Controllers\GalleryController@update            | jwt.auth   |
+|        | GET|HEAD | api/gallery/{gallery}/edit       | api.gallery.edit       | App\Http\Controllers\GalleryController@edit              | jwt.auth   |
+|        | POST     | api/password/email               |                        | App\Http\Controllers\Auth\PasswordController@postEmail   |            |
+|        | POST     | api/password/reset               |                        | App\Http\Controllers\Auth\PasswordController@postReset   |            |
+|        | POST     | api/permission                   | api.permission.store   | App\Http\Controllers\PermissionController@store          | jwt.auth   |
+|        | GET|HEAD | api/permission                   | api.permission.index   | App\Http\Controllers\PermissionController@index          | jwt.auth   |
+|        | GET|HEAD | api/permission/create            | api.permission.create  | App\Http\Controllers\PermissionController@create         | jwt.auth   |
+|        | GET|HEAD | api/permission/search            |                        | App\Http\Controllers\PermissionController@search         | jwt.auth   |
+|        | DELETE   | api/permission/{permission}      | api.permission.destroy | App\Http\Controllers\PermissionController@destroy        | jwt.auth   |
+|        | PUT      | api/permission/{permission}      | api.permission.update  | App\Http\Controllers\PermissionController@update         | jwt.auth   |
+|        | PATCH    | api/permission/{permission}      |                        | App\Http\Controllers\PermissionController@update         | jwt.auth   |
+|        | GET|HEAD | api/permission/{permission}      | api.permission.show    | App\Http\Controllers\PermissionController@show           | jwt.auth   |
+|        | GET|HEAD | api/permission/{permission}/edit | api.permission.edit    | App\Http\Controllers\PermissionController@edit           | jwt.auth   |
+|        | POST     | api/role                         | api.role.store         | App\Http\Controllers\RoleController@store                | jwt.auth   |
+|        | GET|HEAD | api/role                         | api.role.index         | App\Http\Controllers\RoleController@index                | jwt.auth   |
+|        | GET|HEAD | api/role/create                  | api.role.create        | App\Http\Controllers\RoleController@create               | jwt.auth   |
+|        | GET|HEAD | api/role/search                  |                        | App\Http\Controllers\RoleController@search               | jwt.auth   |
+|        | DELETE   | api/role/{role}                  | api.role.destroy       | App\Http\Controllers\RoleController@destroy              | jwt.auth   |
+|        | PATCH    | api/role/{role}                  |                        | App\Http\Controllers\RoleController@update               | jwt.auth   |
+|        | PUT      | api/role/{role}                  | api.role.update        | App\Http\Controllers\RoleController@update               | jwt.auth   |
+|        | GET|HEAD | api/role/{role}                  | api.role.show          | App\Http\Controllers\RoleController@show                 | jwt.auth   |
+|        | GET|HEAD | api/role/{role}/edit             | api.role.edit          | App\Http\Controllers\RoleController@edit                 | jwt.auth   |
+|        | POST     | api/tag                          | api.tag.store          | App\Http\Controllers\TagController@store                 | jwt.auth   |
+|        | GET|HEAD | api/tag                          | api.tag.index          | App\Http\Controllers\TagController@index                 | jwt.auth   |
+|        | GET|HEAD | api/tag/create                   | api.tag.create         | App\Http\Controllers\TagController@create                | jwt.auth   |
+|        | GET|HEAD | api/tag/search                   |                        | App\Http\Controllers\TagController@search                | jwt.auth   |
+|        | DELETE   | api/tag/{tag}                    | api.tag.destroy        | App\Http\Controllers\TagController@destroy               | jwt.auth   |
+|        | PATCH    | api/tag/{tag}                    |                        | App\Http\Controllers\TagController@update                | jwt.auth   |
+|        | GET|HEAD | api/tag/{tag}                    | api.tag.show           | App\Http\Controllers\TagController@show                  | jwt.auth   |
+|        | PUT      | api/tag/{tag}                    | api.tag.update         | App\Http\Controllers\TagController@update                | jwt.auth   |
+|        | GET|HEAD | api/tag/{tag}/edit               | api.tag.edit           | App\Http\Controllers\TagController@edit                  | jwt.auth   |
+|        | GET|HEAD | api/task                         | api.task.index         | App\Http\Controllers\TaskController@index                | jwt.auth   |
+|        | POST     | api/task                         | api.task.store         | App\Http\Controllers\TaskController@store                | jwt.auth   |
+|        | GET|HEAD | api/task/create                  | api.task.create        | App\Http\Controllers\TaskController@create               | jwt.auth   |
+|        | GET|HEAD | api/task/search                  |                        | App\Http\Controllers\TaskController@search               | jwt.auth   |
+|        | PATCH    | api/task/{task}                  |                        | App\Http\Controllers\TaskController@update               | jwt.auth   |
+|        | DELETE   | api/task/{task}                  | api.task.destroy       | App\Http\Controllers\TaskController@destroy              | jwt.auth   |
+|        | GET|HEAD | api/task/{task}                  | api.task.show          | App\Http\Controllers\TaskController@show                 | jwt.auth   |
+|        | PUT      | api/task/{task}                  | api.task.update        | App\Http\Controllers\TaskController@update               | jwt.auth   |
+|        | GET|HEAD | api/task/{task}/edit             | api.task.edit          | App\Http\Controllers\TaskController@edit                 | jwt.auth   |
+|        | POST     | api/uploadimage                  |                        | App\Http\Controllers\UploadController@uploadimage        |            |
+|        | GET|HEAD | api/user                         | api.user.index         | App\Http\Controllers\UserController@index                | jwt.auth   |
+|        | POST     | api/user                         | api.user.store         | App\Http\Controllers\UserController@store                | jwt.auth   |
+|        | GET|HEAD | api/user/create                  | api.user.create        | App\Http\Controllers\UserController@create               | jwt.auth   |
+|        | GET|HEAD | api/user/search                  |                        | App\Http\Controllers\UserController@search               | jwt.auth   |
+|        | PUT      | api/user/{user}                  | api.user.update        | App\Http\Controllers\UserController@update               | jwt.auth   |
+|        | PATCH    | api/user/{user}                  |                        | App\Http\Controllers\UserController@update               | jwt.auth   |
+|        | GET|HEAD | api/user/{user}                  | api.user.show          | App\Http\Controllers\UserController@show                 | jwt.auth   |
+|        | DELETE   | api/user/{user}                  | api.user.destroy       | App\Http\Controllers\UserController@destroy              | jwt.auth   |
+|        | GET|HEAD | api/user/{user}/edit             | api.user.edit          | App\Http\Controllers\UserController@edit                 | jwt.auth   |
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+
+                                </pre>
+</section>
+<section id="angularjs_front_end">
+	<div class="page-header"><h3>Angularjs Front-End</h3><hr class="notop"></div>
+<h4 id="angularjs_front_end_file_amp_folder_structure">File &amp; Folder Structure:</h4>
+<pre class="prettyprint lang-plain linenums">
+└───angular-frontend
+    ├───index.html                 (include master css and js library like jquery.js, angular.js and etc. Also you can change &lt;title&gt; tag or other meta tag)
+    │
+    └───app
+        ├─── app.js                (include startup configuration of angular app)
+        ├─── config.constant.js    (include all dependency constant. you can define your library or directive)
+        ├─── config.router.js      (include all route in app with ui-router and app config)
+        │
+        ├───+directives            (include YEP custom directive)  
+        ├───+modules               (include all modules like category, task,...)
+        │   ├───category
+        │   │   ├───controllers
+        │   │   ├───services
+        │   │   └───views
+        │   │
+        │   ├───comment
+        │   │   └───...
+        │   ├───permission
+        │   │   └───....
+        .   .
+        .   .
+        .   .
+        │   └───_sample             (this is one sample to create your custom module)
+        │       ├───controllers
+        │       |      │--- SampleCreateCtrl.js
+        │       |      |--- SampleEditCtrl.js
+        │       |      |--- SampleListCtrl.js
+        │       |      |--- SampleViewCtrl.js
+        │       |
+        │       ├───services
+        │       │      |--- SampleService.js
+        │       │
+        │       └───views
+        │             |--- sampleform.html
+        │             |--- samples.html
+        │
+        ├───shared                   (include shared or common controllers, filter, service and views for all of ngLaravel)
+        │   ├───controllers
+        │   │       AdminCtrl.js
+        │   │       DashboardCtrl.js
+        │   │       ProfileCtrl.js
+        │   │
+        │   ├───filters
+        │   │       uiSelectFilter.js
+        │   │
+        │   ├───services
+        │   └───views
+        │           admin.html
+        │           dashboard.html
+        │           login.html
+        │           profile.html
+        │
+        └───vendors                   (include third-party directive and plugins that related to AngularJS)</pre>
+<h4 id="angularjs_front_end_configurations">Configurations</h4>
+<div class="alert">
+	You need to have a basic knowledge of AngularJS &nbsp;to begin your project.</div>
+<p class="c_1">
+	You now begin to customize the ng-laravel angularjs app</p>
+<h4 id="angularjs_front_end_appjs_file_content">app.js file content</h4>
+<p>
+	&nbsp;</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Consolas';font-size:10.5pt;">
+<span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;use strict&#39;</span><span style="font-size: 10.5pt; color: rgb(204, 120, 50);">;</span>
+
+<span style="color:#9876aa;">angular</span>.<span style="color:#ffc66d;">module</span>(<span style="color:#6a8759;">&quot;ng-laravel&quot;</span><span style="color:#cc7832;">, </span>[
+    <span style="color:#6a8759;">&#39;ngSanitize&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// it&#39;s require for some plugins
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ngRoute&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// it&#39;s require for some plugins
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ngResource&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// it&#39;s require for some plugins
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;restangular&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// AngularJS service to handle Rest API Restful Resources properly and easily
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ui.router&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// Powerful routing framework for AngularJS
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;oc.lazyLoad&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// Lazy load modules &amp; components on page load in AngularJS
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ui.jq&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// AngularJS module for jquery library loading
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ngAA&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// authentication and authorization for angular and ui-router based on JWT security
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ngAnimate&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// it&#39;s require for some plugins
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;anim-in-out&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// An animation directive to use with ngAnimate 1.2+ and ui-router to animate effect in page load
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;ncy-angular-breadcrumb&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// Generate a breadcrumb from ui-router&#39;s states
+</span><span style="color:#808080;">    </span><span style="color:#6a8759;">&#39;cfp.hotkeys&#39; </span><span style="color:#808080;">// Configuration-centric keyboard shortcuts for your Angular apps
+</span>])<span style="color:#cc7832;">;
+</span>
+<span style="color:#cc7832;font-weight:bold;">var </span>app = <span style="color:#9876aa;">angular</span>.<span style="color:#ffc66d;">module</span>(<span style="color:#6a8759;">&#39;ng-laravel&#39;</span>)<span style="color:#cc7832;">;</span></pre>
+<p>
+	&nbsp;</p>
+<h4 id="angularjs_front_end_configconstantjs_file_content">config.constant.js file content:</h4>
+<p>
+	In this file you can define your plugins, directives and other assets(css, js) as module. So on the specific route, load dynamically without any worry. As matter of fact you can load plugins on-demand and on-load-page.</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Consolas';font-size:10.5pt;">
+app.<span style="color:#ffc66d;">config</span>([<span style="color:#6a8759;">&#39;$ocLazyLoadProvider&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function</span>($ocLazyLoadProvider) {
+    $ocLazyLoadProvider.<span style="color:#ffc66d;">config</span>({
+        <span style="color:#9876aa;">debug</span>: <span style="color:#cc7832;font-weight:bold;">false</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">events</span>: <span style="color:#cc7832;font-weight:bold;">true</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">modules</span>: [
+            {
+                <span style="color:#9876aa;">name</span>:<span style="color:#6a8759;">&#39;bootbox&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">files</span>:[
+                    <span style="color:#6a8759;">&#39;../assets/vendors/bootbox/js/bootbox.js&#39;
+</span><span style="color:#6a8759;">                </span>]
+            }<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">            </span>{
+                <span style="color:#9876aa;">name</span>:<span style="color:#6a8759;">&#39;bs-example&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">insertBefore</span>: <span style="color:#6a8759;">&#39;#yep-style&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">files</span>:[
+                    <span style="color:#6a8759;">&#39;../assets/css/bs-example.min.css&#39;
+</span><span style="color:#6a8759;">                </span>]
+            }<span style="color:#cc7832;">,
+...</span></pre>
+<p>
+	&nbsp;</p>
+<h4 id="angularjs_front_end_configrouterjs_file_content">config.router.js file content:</h4>
+<p>
+	In this file you can define all your route with ui-router. Also you can define your modules that&#39;s nedded in related page or route to load on-demand.</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Consolas';font-size:10.5pt;">
+app.<span style="color:#ffc66d;">run</span>(<span style="color:#cc7832;font-weight:bold;">function</span>($rootScope<span style="color:#cc7832;">, </span>$state<span style="color:#cc7832;">,</span>$stateParams) {
+        <span style="color:#808080;">// add listener for change page title and parent menu activation
+</span><span style="color:#808080;">        </span>$rootScope.<span style="color:#9876aa;">$state </span>= $state
+        $rootScope.<span style="color:#9876aa;">$stateParams </span>= $stateParams<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>})
+    .<span style="color:#ffc66d;">config</span>(<span style="color:#cc7832;font-weight:bold;">function</span>($stateProvider<span style="color:#cc7832;">,</span>$urlRouterProvider<span style="color:#cc7832;">,</span>$locationProvider<span style="color:#cc7832;">,</span>$breadcrumbProvider<span style="color:#cc7832;">,</span>$authProvider<span style="color:#cc7832;">,</span>RestangularProvider) {
+
+        <span style="color:#808080;">/* Restangular API URL*/
+</span><span style="color:#808080;">        </span>RestangularProvider.<span style="color:#ffc66d;">setBaseUrl</span>(<span style="color:#6a8759;">&#39;../laravel-backend/public/api&#39;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span><span style="color:#808080;">/* force Restangular&#39;s getList to work with Laravel 5&#39;s pagination object  */
+</span><span style="color:#808080;">        </span>RestangularProvider.<span style="color:#ffc66d;">addResponseInterceptor</span>(<span style="color:#ffc66d;">parseApiResponse</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span><span style="color:#cc7832;font-weight:bold;">function </span><span style="color:#ffc66d;">parseApiResponse</span>(data<span style="color:#cc7832;">, </span>operation) {
+            <span style="color:#cc7832;font-weight:bold;">var </span>response = data<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">            </span><span style="color:#cc7832;font-weight:bold;">if </span>(operation === <span style="color:#6a8759;">&#39;getList&#39; </span>&amp;&amp; data.<span style="color:#9876aa;">data</span>) {
+                response = data.<span style="color:#9876aa;">data</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">                </span>response.<span style="color:#9876aa;">metadata </span>= <span style="color:#9876aa;">_</span>.<span style="color:#ffc66d;">omit</span>(data<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&#39;data&#39;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">            </span>}
+            <span style="color:#cc7832;font-weight:bold;">return </span>response<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+
+
+        <span style="color:#808080;">/* ngAA Config */
+</span><span style="color:#808080;">        </span>$authProvider.<span style="color:#9876aa;">signinUrl </span>= <span style="color:#6a8759;">&#39;../laravel-backend/public/api/authenticate&#39;</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>$authProvider.<span style="color:#9876aa;">signinState </span>= <span style="color:#6a8759;">&#39;login&#39;</span><span style="color:#cc7832;">;</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">        </span>$authProvider.<span style="color:#9876aa;">signinTemplateUrl </span>=<span style="color:#6a8759;">&#39;app/shared/views/login.html&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">        </span>$authProvider.<span style="color:#9876aa;">afterSigninRedirectTo </span>= <span style="color:#6a8759;">&#39;admin&#39;</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>$authProvider.<span style="color:#9876aa;">afterSignoutRedirectTo </span>= <span style="color:#6a8759;">&#39;login&#39;</span><span style="color:#cc7832;">;
+</span>
+<span style="color:#cc7832;">        </span><span style="color:#808080;">// breadcrumb config
+</span><span style="color:#808080;">        </span>$breadcrumbProvider.<span style="color:#ffc66d;">setOptions</span>({
+            <span style="color:#9876aa;">template</span>: <span style="color:#6a8759;">&#39;bootstrap3&#39;
+</span><span style="color:#6a8759;">        </span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#cc7832;">        </span><span style="color:#808080;">// config prefix and unmatched route handler
+</span><span style="color:#808080;">        </span>$urlRouterProvider.<span style="color:#ffc66d;">otherwise</span>(<span style="color:#6a8759;">&quot;/admin&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>$stateProvider
+            .<span style="color:#ffc66d;">state</span>(<span style="color:#6a8759;">&#39;admin&#39;</span><span style="color:#cc7832;">, </span>{
+                <span style="color:#9876aa;">url</span>: <span style="color:#6a8759;">&#39;/admin&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">templateUrl</span>: <span style="color:#6a8759;">&#39;app/shared/views/admin.html&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">ncyBreadcrumb</span>: {
+                    <span style="color:#9876aa;">label</span>: <span style="color:#6a8759;">&#39;Admin&#39;
+</span><span style="color:#6a8759;">                </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">data</span>:{ // use ngAA to authenticate user access
+                    <span style="color:#9876aa;">authenticated</span>:<span style="color:#cc7832;font-weight:bold;">true
+</span><span style="color:#cc7832;font-weight:bold;">                </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">controller</span>:<span style="color:#6a8759;">&#39;AdminCtrl&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">resolve</span>: {
+                    <span style="color:#9876aa;">dep</span>: [<span style="color:#6a8759;">&#39;$ocLazyLoad&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                        </span><span style="color:#cc7832;font-weight:bold;">function</span>( $ocLazyLoad ){
+                            <span style="color:#cc7832;font-weight:bold;">return </span>$ocLazyLoad.<span style="color:#ffc66d;">load</span>([<span style="color:#6a8759;">&#39;app/shared/controllers/AdminCtrl.js&#39;</span>])<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">                        </span>}]
+                }
+            })
+            .<span style="color:#ffc66d;">state</span>(<span style="color:#6a8759;">&#39;admin.dashboard&#39;</span><span style="color:#cc7832;">,</span>{
+                <span style="color:#9876aa;">url</span>: <span style="color:#6a8759;">&quot;/dashboard&quot;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">templateUrl</span>: <span style="color:#6a8759;">&quot;app/shared/views/dashboard.html&quot;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">ncyBreadcrumb</span>: {
+                    <span style="color:#9876aa;">label</span>: <span style="color:#6a8759;">&#39;Dashboard&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                    </span><span style="color:#9876aa;">parent</span>:<span style="color:#6a8759;">&#39;admin&#39;
+</span><span style="color:#6a8759;">                </span>}<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">data</span>: { // for ngAA
+                    <span style="color:#9876aa;">permits</span>: { <span style="color:#808080;">//check for authenticity and permissions
+</span><span style="color:#808080;">                        </span><span style="color:#9876aa;">withOnly</span>: <span style="color:#6a8759;">&#39;view_dashboard&#39;
+</span><span style="color:#6a8759;">                    </span>}
+                }<span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">controller</span>:<span style="color:#6a8759;">&#39;DashboardCtrl&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                </span><span style="color:#9876aa;">resolve</span>: {
+                    <span style="color:#9876aa;">dep</span>: [<span style="color:#6a8759;">&#39;$ocLazyLoad&#39;</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">                        </span><span style="color:#cc7832;font-weight:bold;">function</span>( $ocLazyLoad ){
+                            <span style="color:#cc7832;font-weight:bold;">return </span>$ocLazyLoad.<span style="color:#ffc66d;">load</span>([<span style="color:#6a8759;">&#39;</span><span style="color: rgb(106, 135, 89); font-size: 10.5pt;">bs-example</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;</span><span style="font-size: 10.5pt; color: rgb(204, 120, 50);">,</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;</span><span style="color: rgb(106, 135, 89); font-size: 10.5pt;">bootbox</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;</span><span style="font-size: 10.5pt; color: rgb(204, 120, 50);">,</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;easypiechart&#39;</span><span style="font-size: 10.5pt; color: rgb(204, 120, 50);">,</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;momentjs&#39;</span><span style="font-size: 10.5pt; color: rgb(204, 120, 50);">,</span><span style="font-size: 10.5pt; color: rgb(106, 135, 89);">&#39;jquery-ui-custom&#39;</span><span style="font-size: 10.5pt;">]).</span><span style="font-size: 10.5pt; color: rgb(255, 198, 109);">then</span><span style="font-size: 10.5pt;">(</span>
+                                <span style="color:#cc7832;font-weight:bold;">function</span>(){
+                                    <span style="color:#cc7832;font-weight:bold;">return </span>$ocLazyLoad.<span style="color:#ffc66d;">load</span>([<span style="color:#6a8759;">&#39;panel-flat&#39;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&#39;fullcalendar&#39;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&#39;daterangepicker&#39;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&#39;app/shared/controllers/DashboardCtrl.js&#39;</span>])<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">                                </span>}
+                            )<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">                        </span>}]
+                }
+            })
+            ...</pre>
+<p>
+	<strong>UI-Router</strong> is a routing framework for AngularJS, which allows you to organize the parts of your interface into a state machine. Unlike the&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">$route&nbsp;</span>service in the Angular ngRoute module, which is organized around URL routes, UI-Router is organized around states, which may optionally have routes, as well as other behavior, attached. Check the <a href="http://angular-ui.github.io/ui-router" target="_blank"> official documentation </a> .&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>ngAA</strong> DRY authentication and authorization for angular and ui-router. It uses json web tokens and http authorization header for it authentication workflow and restrict state access by permits. ngAA works only with ui-router.&nbsp;Check the&nbsp;<a href="https://github.com/lykmapipo/ngAA">official documentation&nbsp;.</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>ocLazyLoad </strong>is a Lazy load modules &amp; components on page load in AngularJS. This is very useful for reducing the time of page load. Check the&nbsp;<a href="https://github.com/ocombe/ocLazyLoad">official documentation</a>.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>ncyBreadcrumb </strong>is a module for AngularJS, which generates a breadcrumb for any page of your application. It is strongly based on the ui-router framework and its hierarchical tree of states. Check the&nbsp;<a href="http://ncuillery.github.io/angular-breadcrumb/#/home">official documentation&nbsp;</a>.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h3>
+	admin.html file content:</h3>
+<p>
+	In <span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">angular-frontend/app/shared/views/admin.html&nbsp;</span>&nbsp;you can customize admin panel, that&#39;s include <strong>#MainMenu&nbsp;</strong>and <strong>Nested ui-route.</strong></p>
+<p>
+	you can find<strong> #MainMenu&nbsp;</strong>and change or add a menu item in the list as follows:</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Consolas';font-size:10.5pt;">
+<span style="color:#e8bf6a;">&lt;li </span><span style="color:#bababa;">ui-sref-active=</span><span style="color:#a5c261;">&quot;open active&quot; </span><span style="color:#bababa;">show-if-has-permit=</span><span style="color:#a5c261;">&quot;view_dashboard&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">    &lt;a </span><span style="color:#bababa;">ui-sref=</span><span style="color:#a5c261;">&quot;admin.dashboard&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">        &lt;i </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-icon fa fa-tachometer&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/i&gt;
+</span><span style="color:#e8bf6a;">        &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-text&quot;</span><span style="color:#e8bf6a;">&gt; </span>Dashboard <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">    &lt;/a&gt;
+</span>
+<span style="color:#e8bf6a;">    &lt;b </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;arrow&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/b&gt;
+</span><span style="color:#e8bf6a;">&lt;/li&gt;</span></pre>
+<p>
+	or</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Consolas';font-size:10.5pt;">
+<span style="color:#e8bf6a;">&lt;li </span><span style="color:#bababa;">ui-sref-active=</span><span style="color:#a5c261;">&quot;active open&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">    &lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;dropdown-toggle&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">        &lt;i </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-icon fa fa-desktop&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/i&gt;
+</span><span style="color:#e8bf6a;">        &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-text&quot;</span><span style="color:#e8bf6a;">&gt; </span>UI <span style="color:#6d9cbe;">&amp;amp; </span>Elements <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">        &lt;b </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;arrow fa fa-angle-down&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/b&gt;
+</span><span style="color:#e8bf6a;">    &lt;/a&gt;
+</span><span style="color:#e8bf6a;">    &lt;b </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;arrow&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/b&gt;
+</span><span style="color:#e8bf6a;">    &lt;ul </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;submenu nav-show&quot;  </span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">        &lt;li </span><span style="color:#bababa;">ng-class=</span><span style="color:#a5c261;">&quot;{</span><span style="color:#9876aa;">active</span><span style="color:#a5c261;">:</span><span style="color:#ffc66d;">$state</span><span style="color:#a5c261;">.</span><span style="color:#ffc66d;">includes</span><span style="color:#a5c261;">(&#39;generalelements&#39;)}&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">            &lt;a </span><span style="color:#bababa;">ui-sref=</span><span style="color:#a5c261;">&quot;generalelements&quot; </span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">                &lt;i </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-icon fa fa-caret-right&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/i&gt;
+</span><span style="color:#e8bf6a;">                &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;menu-text&quot;</span><span style="color:#e8bf6a;">&gt;</span>General Elements<span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">            &lt;/a&gt;
+</span><span style="color:#e8bf6a;">            &lt;b </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;arrow&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/b&gt;
+</span><span style="color:#e8bf6a;">        &lt;/li&gt;
+</span><span style="color:#e8bf6a;">    &lt;/ul&gt;
+</span><span style="color:#e8bf6a;">&lt;/li&gt;</span></pre>
+<p>
+	You&#39;ll notice we also added some links with <strong>ui-sref </strong>directives. this directive auto-generates the <strong>href</strong> attribute of the <strong>&lt;a /&gt;</strong> element it&#39;s attached to, if the corresponding state has a URL.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="authorization_for_your_app">
+	<div class="page-header"><h3>Authorization for your app</h3><hr class="notop"></div>
+<h4 id="authorization_for_your_app__nbsp">&nbsp;</h4>
+<p>
+	With&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">ngAA</span>&nbsp;you can restrict state transition to only authenticated user using&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">authenticated:true</span>&nbsp;state data. To ensure authenticity on state define it as below:</p>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ng-laravel&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    authenticated:true
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization_for_your_app_permits">Permits</h4>
+<p>
+	ngAA restrict state transition to only allowed user using permits state data. If there is no permits state data, ngAA wont protect the state. You should define your permits using one the following:</p>
+<div>
+	&nbsp;</div>
+<h4 id="authorization_for_your_app_withonly">withOnly</h4>
+<div>
+	Which tells ngAA to allow user with only provided permission to access the state. To tell ngAA to permit user with only one permission in your state definition, you do as bellow:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ng-laravel&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withOnly: &#39;Post:delete&#39;
+                    }
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization_for_your_app__nbsp">&nbsp;</h4>
+<h4 id="authorization_for_your_app_withall">withAll</h4>
+<div>
+	Which tells ngAA to allow user with all given permissions to access the state. To tell ngAA to permit user with all given permissions in your state definition, you do as bellow:</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ngAPP&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withAll: [&#39;Post:delete&#39;,&#39;Post:create&#39;]
+                    }
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization_for_your_app__nbsp">&nbsp;</h4>
+<h4 id="authorization_for_your_app_withany">withAny</h4>
+<div>
+	Which tells ngAA to allow user with any of the given permissions to access the state. To tell ngAA to permit user with any of the given permissions in your state definition, you do as bellow:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ngAPP&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withAny: [&#39;Post:delete&#39;,&#39;Comment:delete&#39;]
+                    }
+                }
+            });
+            ...
+    });</pre>
+<div>
+	&nbsp;</div>
+<h4 id="authorization_for_your_app_directives">Directives</h4>
+<h5>
+	signout</h5>
+<div>
+	&nbsp;</div>
+<div>
+	ngAA provide a signout directive which can be used in templates to signout the current sign-in user</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li ng-show=&quot;isAuthenticated&quot;&gt;
+    &lt;a data-signout&gt;Signout&lt;/a&gt;
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-permit</h5>
+<div>
+	ngAA provide a show-if-has-permit directive which can be used in templates to show or hide HTML elements when current signed in user has a given permission.</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-any-permit=&quot;edit_task&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-permits</h5>
+<div>
+	ngAA provide a show-if-has-permits directive which can be used in templates to show or hide HTML elements when current signed in user has all of the provided permissions.</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-permits=&quot;edit_task, add_task&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-any-permit</h5>
+<div>
+	ngAA provide a show-if-has-any-permit directive which can be used in templates to show or hide HTML elements when current signed in user has any of the provided permissions.</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-any-permits=&quot;view_task, add_comment&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<p>
+	&nbsp;</p>
+</section>
+<section id="multi_language">
+	<div class="page-header"><h3>Multi Language</h3><hr class="notop"></div>
+<h4 id="multi_language_strongi18n_for_your_angular_apps_strong"><strong>i18n for your Angular apps</strong></h4>
+<p>
+	We use <strong>angular-translate&nbsp;</strong>for i18n.&nbsp;angular-translate is an AngularJS module that makes your life much easier when it comes to i18n and l10n including lazy loading and pluralization.</p>
+<p>
+	&nbsp;</p>
+<h4 id="multi_language_quick_start_multi_language_with_nglaravel">Quick Start Multi Language With ngLaravel</h4>
+<div>
+	&nbsp;</div>
+<div>
+	1- In every module we put a &quot;<strong>Lang</strong>&quot; directory. you can create or edit a file with <strong>JSON </strong>format as <strong>locale_[YOUR_LANGUAGE_KEY]</strong> like this:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-plain linenums">
+locale_en-us.json
+----------------------------------
+{
+    &quot;HELLO_TRANSLATE_ID&quot;:&quot;hello&quot;,
+    &quot;TITILE_TRANSLATE&quot;:&quot;title&quot;
+    &quot;NAME_SPACE&quot;:{
+        &quot;SUB_NAME_SPACE&quot;:{
+            &quot;PARAGRAPH&quot;: &quot;And it comes with awesome features!&quot;
+        }
+    }
+}</pre>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Note: if you want see TRANSLATE_ID in other language you should add your TRANSLATE_ID in other language file.</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	2- After that you should add <strong>YOUR_LANGUAGE_KEY </strong>in app config that put &#39;<strong>config.router.js</strong>&#39;</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+app.config([&#39;$translateProvider&#39;,..., function($translateProvider,...) {
+.
+.
+.
+$translateProvider
+    .useSanitizeValueStrategy(null)// for prevent from XSS vulnerability but this has problem with utf-8 language
+    .fallbackLanguage(&#39;en-us&#39;) // Registering a fallback language
+    .registerAvailableLanguageKeys([&#39;en-us&#39;, &#39;ar-ae&#39;,&#39;pt-br&#39;,&#39;YOUR_LANGUAGE_KEY&#39;], { // register your language key
+        &#39;en_*&#39;: &#39;en-us&#39;,
+        &#39;ar_*&#39;: &#39;ar-ae&#39;,
+        &#39;pt_*&#39;: &#39;pt-br&#39;,
+        &#39;*_*&#39; :&#39;YOUR_LANGUAGE_KEY&#39;
+    })
+.
+.
+.</pre>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	3- If you want create sepreate language file for your module, you should add translate modules address to <strong>ui-router resolve</strong> (Optional). With this option you can <strong>lazy load</strong>&nbsp;(using <strong>$<span style="line-height: 19px;">translatePartialLoader</span></strong>) your language file per module and per route url.</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+In app.config
+-------------------------------
+$translateProvider
+    .
+    .
+    .
+    .useLoader(&#39;$translatePartialLoader&#39;, { // for lazy load we use this service
+        urlTemplate: &#39;app/{part}/lang/locale_{lang}.json&#39;, // in this section we define our structure and browser key find
+        loadFailureHandler: &#39;MyErrorHandler&#39; // it&#39;s a factory to error handling
+    })
+    .
+    .
+    .</pre>
+<div>
+	and in module route:</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+.state(&#39;admin.users&#39;,{
+    url: &quot;/users&quot;,
+    .
+    .
+    .
+    controller:&#39;UserListCtrl&#39;,
+    resolve: {
+        trans:[&#39;RequireTranslations&#39;,//&lt;- In this section you should require your parts
+            function (RequireTranslations) {
+                RequireTranslations(&#39;modules/user&#39;);// in this section you should define part module address
+            }],
+        dep: [&#39;trans&#39;,&#39;$ocLazyLoad&#39;,
+            function(trans,$ocLazyLoad){
+                return $ocLazyLoad.load([&#39;sweet-alert&#39;,&#39;ui-bs-paging&#39;,&#39;UserServiceModule&#39;]).then(
+                    function(){
+                        return $ocLazyLoad.load([&#39;app/modules/user/controllers/UserListCtrl.js&#39;]);
+                    }
+                );
+            }],
+        resolvedItems:[&#39;dep&#39;,&#39;UserService&#39;,
+            function(dep,UserService) {
+                return UserService.cachedList().then(function(data){
+                    return data;
+                });
+            }]
+    }
+})</pre>
+</div>
+<div>
+	and also you should add&nbsp;<strong>$translatePartialLoader </strong>and <strong>trans&nbsp;</strong>to your module controller:</div>
+<div>
+	<div>
+		<pre class="prettyprint lang-js linenums">
+var app = angular.module(&#39;ng-laravel&#39;,[&#39;ui.bootstrap&#39;]);
+app.controller(&#39;UserListCtrl&#39;,function(...,$translatePartialLoader,trans){</pre>
+		<div>
+			&nbsp;</div>
+	</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	4- Translate your app:</div>
+<div>
+	&nbsp; &nbsp;&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+HTML FILE
+-------------------------------
+&lt;h1&gt;{{ &#39;HELLO_TRANSLATE_ID&#39; | translate }}&lt;/h1&gt;
+&lt;p translate&gt;TITILE_TRANSLATE&lt;/p&gt;
+&lt;p translate=&quot;TITILE_TRANSLATE&quot;&gt;&lt;/p&gt;
+&lt;p&gt;{{ &#39;NAME_SPACE.SUB_NAME_SPACE.PARAGRAPH&#39; | translate }}&lt;/p&gt;
+
+&lt;div translate-namespace=&quot;NAME_SPACE.SUB_NAME_SPACE&quot;&gt;
+    &lt;p translate&gt;.PARAGRAPH&lt;/p&gt;
+&lt;/div&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+Controller File
+---------------------------------
+var app = angular.module(&#39;ng-laravel&#39;);
+app.controller(&#39;TestCtrl&#39;,function($scope,$translate,$rootScope,$translatePartialLoader,trans){
+
+$rootScope.$on(&#39;$translateChangeSuccess&#39;, function() {
+    $scope.hello_text = $translate.instant(&#39;HELLO_TRANSLATE_ID&#39;);
+}</pre>
+<div>
+	&nbsp;</div>
+<div>
+	To learn more about angular-translate check&nbsp;<a href="https://angular-translate.github.io/docs/#/guide">official documention</a></div>
+</section>
+<section id="how_to_add_module">
+	<div class="page-header"><h3>How to add module</h3><hr class="notop"></div>
+<h4 id="how_to_add_module_how_to_create_module_in_nglaravel_part_1_laravel_back_end_nbsp">How to create module in ngLaravel Part 1 Laravel Back End&nbsp;</h4>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="480" src="https://www.youtube-nocookie.com/embed/yMchhnDTjoM?rel=0" width="853"></iframe></p>
+<p>
+	&nbsp;</p>
+<h4 id="how_to_add_module_how_to_create_module_in_nglaravel_part_2_angular_front_end_nbsp">How to create module in ngLaravel Part 2 Angular Front End&nbsp;</h4>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="480" src="https://www.youtube-nocookie.com/embed/le_zSY-a_p0?rel=0" width="853"></iframe></p>
+</section>
+<section id="other_video_resource">
+	<div class="page-header"><h3>Other Video Resource</h3><hr class="notop"></div>
+<h4 id="other_video_resource__quotlaravel_restangular_quot_by_andrew_del_prete_laravel_dfw_meetup_september_2014">&quot;Laravel + Restangular&quot; by Andrew Del Prete - Laravel DFW Meetup September 2014</h4>
+<p>
+	Andrew Del Prete will be talking about Restangular and how to use Angular JS, Laravel, and REST principles. It&#39;s going to be good!</p>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube-nocookie.com/embed/6Lde4LilB-M?rel=0" width="640"></iframe></p>
+<p>
+	&nbsp;</p>
+<h4 id="other_video_resource_angularjs_tutorial_for_beginners_learn_angularjs_using_ui_router">Angularjs Tutorial for Beginners - learn Angular.js using UI-Router</h4>
+<div>
+	Working Angularjs Code Sample on Plunkr: <a href="http://plnkr.co/edit/YJvbrV2AFq2r6LjS" spfieldtype="null">http://plnkr.co/edit/YJvbrV2AFq2r6LjS</a></div>
+<div>
+	This tutorial will teach you how to build a single page javascript application using Angular.js from Google. Angular is an amazing framework for rapid development and building stable apps with little effort.</div>
+<div>
+	&nbsp;</div>
+<p>
+	<iframe allowfullscreen="" frameborder="0" height="480" src="https://www.youtube-nocookie.com/embed/QETUuZ27N0w?rel=0" width="640"></iframe></p>
+</section>
+<section id="admin_template">
+	<div class="page-header"><h3>Admin Template</h3><hr class="notop"></div>
+<p>
+	To access Yep Golabi Admin Template refer to [extract_zip_file]/Documention/Yep Golabi Admin Template/</p>
+</section>
+<section id="ionic">
+	<div class="page-header"><h3>IONIC</h3><hr class="notop"></div>
+<p>
+	To access Yep Golabi Admin Template refer to [extract_zip_file]/Documention/Ionic Client App/</p>
+</section>
+<section id="upgrade">
+	<div class="page-header"><h3>Upgrade</h3><hr class="notop"></div>
+	<p>
+	Upgrade ngLaravel v2.0 to v2.0.1</p>
+<ul>
+	<li>
+		replace <span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/dev/laravel-backend5.3/routes/web.php</li> with web.php of your project.
+	<li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.7.5 to v2.0</p>
+<ul>
+	<li>
+		Update PHP version to 5.6.4 or above.</li>
+	<li>
+		Rename&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/dev/laravel-backend5.3/&nbsp;</span>folder to &nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/dev/laravel-backend/&nbsp;</span></li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.7.1 to v1.7.5</p>
+<ul>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/angular-frontend/&nbsp;</span>folder&nbsp;</li>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/assets/&nbsp;</span>folder&nbsp;</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.6.1 to v1.7.1</p>
+<ul>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/angular-frontend/&nbsp;</span>folder&nbsp;</li>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/assets/css/&nbsp;</span>folder&nbsp;</li>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/&nbsp;</span>folder</li>
+	<li>
+		Run CMD and go to&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/&nbsp;</span>and run command&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">php artisan migrate</span></font>&nbsp;.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.5.2 to v1.6.1</p>
+<ul>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/angular-frontend/&nbsp;</span>folder&nbsp;</li>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/assets/css/&nbsp;</span>folder&nbsp;</li>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/&nbsp;</span>folder</li>
+	<li>
+		Run CMD and go to&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/&nbsp;</span>and run command&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">php artisan migrate</span></font>&nbsp;.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.5.1 to v1.5.2</p>
+<ul>
+	<li>
+		Copy and replace&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/app/&nbsp;</span>folder&nbsp;</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.3.6 to v1.5.1</p>
+<ul>
+	<li>
+		Without any job :)</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.3.4 to v1.3.6</p>
+<ul>
+	<li>
+		Copy and replace [angular-frontend] , [assets], [laravel-backend] directory.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.2.3 to v1.3.4</p>
+<ul>
+	<li>
+		Copy and replace [angular-frontend] , [assets], [laravel-backend] directory.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.1.3 to v1.2.3</p>
+<ul>
+	<li>
+		Copy and replace [angular-frontend] , [assets], [laravel-backend] directory.</li>
+	<li>
+		Run CMD and go to&nbsp;<span style="color: rgb(199, 37, 78); font-family: monospace; font-size: 10.8px; background-color: rgb(249, 242, 244);">[extract_zip_file]/Developer/laravel-backend/ and&nbsp;</span>and run command&nbsp;<font color="#c7254e" face="monospace"><span style="font-size: 10.8px; background-color: rgb(249, 242, 244);">php artisan migrate</span></font>&nbsp;.</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Upgrade ngLaravel v1.0 to v1.1.3</p>
+<ul>
+	<li>
+		Copy and replace [angular-frontend] , [assets], [laravel-backend] directory.</li>
+</ul>
+</section>
+<section id="updates">
+	<div class="page-header"><h3>Updates</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+					<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+						<div>
+							ngLaravel 2.0.1</div>
+						<div>
+							<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+								<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+									Fix route issue</li>
+							</ul>
+							<p>
+								&nbsp;</p>
+						</div>
+						<div>
+							&nbsp;</div>
+						<div>
+							ngLaravel 2.0</div>
+						<div>
+							<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+								<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+									Upgrade Laravel 5.1 to 5.3</li>
+							</ul>
+							<p>
+								&nbsp;</p>
+						</div>
+						<div>
+							&nbsp;</div>
+						<div>
+							ngLaravel 1.7.5</div>
+						<div>
+							<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+								<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+									Improvement for NG-PLMB</li>
+								<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+									add sweet-alert2&nbsp;</li>
+								<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+									fix some issues</li>
+							</ul>
+							<p>
+								&nbsp;</p>
+						</div>
+						<div>
+							ngLaravel 1.7.1</div>
+						<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+							<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+								Add user registration</li>
+							<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+								Fix active &amp; deactive user issue</li>
+						</ul>
+						<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+							&nbsp;</p>
+					</div>
+					<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+						Version 1.6.1</div>
+					<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+						<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+							<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+								Add user profile&nbsp;</li>
+							<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+								Add setup wizard for ngLaravel back-end</li>
+							<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+								Fix LTR and RTL issue in safari</li>
+						</ul>
+						<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+							&nbsp;</p>
+					</div>
+				</div>
+				<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+					Version 1.5.2</div>
+				<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+					<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+						<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+							Fix namespace issues&nbsp;in linux server (Doesn&#39;t login in linux server)</li>
+					</ul>
+				</div>
+			</div>
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				&nbsp;</div>
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				Version 1.5.1</div>
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+						Add IONIC Client version of ngLaravel</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+						Add Fallback image source directive</li>
+					<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+						Fix Access-Control-Allow-Origin in laravel-backend</li>
+				</ul>
+			</div>
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				&nbsp;</div>
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				Version 1.3.6</div>
+			<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+				<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+					Fix search in user list issue</li>
+				<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+					<div>
+						Fix search &amp; per page toggle issue</div>
+				</li>
+			</ul>
+		</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			Version 1.3.4</div>
+		<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add multi language feature with change direction for RTL languages</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add and imporove notification &nbsp;</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add dynamic load angular-local</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add modular partial loading language file by module<span class="Apple-tab-span" style="white-space:pre"> </span></li>
+		</ul>
+		<p style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			&nbsp;</p>
+	</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			Version 1.2.3</div>
+		<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add preloader in login page</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add cacheFactory</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add Import wizard from XLS &amp; CSV file</span></li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add export XLS &amp; CSV &amp; PDF</span></li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Improve load page speed with cache method</span></li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix Task delete issue as promis</span></li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix user password in edit mode</span></li>
+		</ul>
+	</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			Version 1.2.3</div>
+		<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				Add preloader in login page</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					Add cacheFactory</div>
+			</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add Import wizard from XLS &amp; CSV file</span></div>
+			</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add export XLS &amp; CSV &amp; PDF</span></div>
+			</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Improve load page speed with cache method</span></div>
+			</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix Task delete issue as promis</span></div>
+			</li>
+			<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+				<div>
+					<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix user password in edit mode</span></div>
+			</li>
+		</ul>
+	</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		&nbsp;</div>
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		Version 1.1</div>
+	<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				Add preloader in login page</div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add preloader in stateChange</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add Demo version restriction&nbsp;</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add load data before opening page</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Improve documention and add video tutorial</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix Task edit issue</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix user list preview issues</span></div>
+		</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			<div>
+				<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix edit image gallery with multi uploader </span><span class="Apple-tab-span" style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em; white-space: pre;"> </span></div>
+		</li>
+	</ul>
+</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	&nbsp;</div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	Version 1.0</div>
+<ul style="margin: 18px 0px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Initial release</li>
+</ul>
+<div style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+	Version 1.1</div>
+<ul style="padding-right: 0px; padding-left: 0px; color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Add preloader in login page</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add preloader in stateChange</span></li>
+</ul>
+<div style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+	Version 1.2.3</div>
+<ul style="padding-right: 0px; padding-left: 0px; color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Add preloader in login page</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Add cacheFactory</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add Import wizard from XLS &amp; CSV file</span></li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Add export XLS &amp; CSV &amp; PDF</span></li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Improve load page speed with cache method</span></li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix Task delete issue as promis</span></li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		<span style="font-family: inherit; font-style: inherit; font-weight: inherit; line-height: 1.5em;">Fix user password in edit mode</span></li>
+</ul>
+<div style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif;">
+	ngLaravel 1.7.1</div>
+<ul style="padding-right: 0px; padding-left: 0px; color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Add user registration</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+		Fix active &amp; deactive user issue</li>
+	<li>
+		&nbsp;</li>
+</ul>
+<div>
+	ngLaravel 1.7.5</div>
+<div>
+	<ul style="padding-right: 0px; padding-left: 0px; color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			Improvement for NG-PLMB</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			add sweet-alert2&nbsp;</li>
+		<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+			fix some issues</li>
+		<li>
+			&nbsp;</li>
+	</ul>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<div>
+	jQuery 1.11.2 - Dual licensed under the MIT or GPL licenses - https://jquery.org/</div>
+<div>
+	jQuery UI 1.11.4 - https://github.com/jquery/jquery-ui/blob/master/LICENSE.txt - https://github.com/jquery/jquery-ui</div>
+<div>
+	Twitter Bootstrap 3.3.4 - MIT License - https://github.com/twbs/bootstrap</div>
+<div>
+	Angularjs v1.4.8 - MIT License - https://github.com/angular/angular.js</div>
+<div>
+	Font awesome 4.3.0 - MIT License - http://fontawesome.io</div>
+<div>
+	jQuery Searchable v1.1.0 - MIT license - https://github.com/stidges/jquery-searchable</div>
+<div>
+	jQuery fullscreen 1.1.5 - https://github.com/kayahr/jquery-fullscreen-plugin</div>
+<div>
+	Dropzone v4.2.0 - MIT license - https://github.com/enyo/dropzone</div>
+<div>
+	Summernote v0.8.1 - MIT license - https://github.com/summernote/summernote</div>
+<div>
+	Momentjs 2.9.0 - MIT license - http://momentjs.com</div>
+<div>
+	Select2 v3.5.2 - MIT License - https://github.com/select2/select2</div>
+<div>
+	Awesome bootstrap checkbox v0.3.4 - MIT License - https://github.com/flatlogic/awesome-bootstrap-checkbox/releases</div>
+<div>
+	JQuery Sparklines v2.1.2 - New BSD License - https://github.com/gwatts/jquery.sparkline</div>
+<div>
+	Flot Chart v0.8.3 - MIT license - http://www.flotcharts.org/</div>
+<div>
+	Morrisjs v0.5.1 - BSD-2-Clause License - https://github.com/morrisjs/morris.js &nbsp;realated to raphaeljs</div>
+<div>
+	Raphaeljs v2.1.0 - MIT license - http://raphaeljs.com/</div>
+<div>
+	AnimateCSS v3.3 - MIT License - https://github.com/daneden/animate.css</div>
+<div>
+	Bootstrap daterangepicker v2.0.8 - MIT License - https://github.com/dangrossman/bootstrap-daterangepicker</div>
+<div>
+	<div>
+		Sweetalert2 v4.2.5 - MIT License - https://github.com/limonte/sweetalert2</div>
+	<div>
+		Socket.io v1.4.5 - MIT License - http://socket.io/</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	--------------------------------------------Angular Component ---------------------------------------</div>
+<div>
+	ocLazyLoad v1.0.9 - MIT License - https://github.com/ocombe/ocLazyLoad</div>
+<div>
+	Sweetalert v1.1.3 - MIT License - https://github.com/t4t5/sweetalert</div>
+<div>
+	Underscore v1.8.3 - MIT License - https://github.com/jashkenas/underscore</div>
+<div>
+	Fancybox-plus v1.3.7 - MIT License - https://github.com/igorlino/fancybox-plus</div>
+<div>
+	<div>
+		Angular-breadcrumb v0.4.1 - MIT license - https://github.com/ncuillery/angular-breadcrumb</div>
+	<div>
+		Restangular v1.5.2 - MIT License - https://github.com/mgonto/restangular</div>
+	<div>
+		ngAA v0.2.4 - MIT License - https://github.com/lykmapipo/ngAA</div>
+	<div>
+		Angular-jwt v0.0.9 - MIT License - https://github.com/auth0/angular-jwt</div>
+	<div>
+		ngStorage v0.3.10 - MIT License - https://github.com/gsklee/ngStorage</div>
+	<div>
+		ngBootbox v0.1.3 - MIT License - https://github.com/eriktufvesson/ngBootbox</div>
+	<div>
+		angular-ui-jq v0.1.1 - MIT License - https://github.com/puxos/angular-ui-jq</div>
+	<div>
+		angular-morris-chart v1.1.0 - MIT License - https://github.com/stewones/angular-morris-chart</div>
+	<div>
+		angular-ui-router-anim-in-out v1.0.2 - MIT License - https://github.com/homerjam/angular-ui-router-anim-in-out</div>
+	<div>
+		ng-daterange v1.0.1 - GNU General Public License - https://github.com/miamarti/ng.daterangepicker</div>
+	<div>
+		ngSweetAlert v1.1.0 - MIT License - https://github.com/oitozero/ngSweetAlert/</div>
+	<div>
+		angular-flot v0.0.16 - MIT License - https://github.com/develersrl/angular-flot</div>
+	<div>
+		angular-ui-tree v2.15.0 - MIT License - https://github.com/angular-ui-tree/angular-ui-tree</div>
+	<div>
+		angular-hotkeys v1.7.0 - MIT License - https://github.com/chieffancypants/angular-hotkeys</div>
+	<div>
+		angular-ui-bootstrap 1.2.1 - MIT License - http://angular-ui.github.io/bootstrap/</div>
+	<div>
+		ui-select v0.14.9 - MIT License - https://github.com/angular-ui/ui-select</div>
+	<div>
+		angular-daterangepicker v0.2.2 - MIT License - https://github.com/fragaria/angular-daterangepicker/</div>
+	<div>
+		angular-summernote v0.8.0 - MIT License - https://github.com/summernote/angular-summernote</div>
+	<div>
+		angular-fancybox-plus v1.0.3 - MIT License - https://github.com/igorlino/angular-fancybox-plus</div>
+	<div>
+		<div>
+			angular-cache v4.5.0 - MIT License - https://github.com/jmdobry/angular-cache</div>
+		<div>
+			angular-wizard v0.6.1 - MIT License - https://github.com/mgonto/angular-wizard</div>
+		<div>
+			<div>
+				angular-translate v2.11.0 - MIT License - https://github.com/angular-translate/angular-translate</div>
+			<div>
+				angular-dynamic-locale v0.1.23 - MIT License - https://github.com/lgalfaso/angular-dynamic-locale</div>
+			<div>
+				angular-ui-notification v0.2.0 - MIt License - https://github.com/alexcrack/angular-ui-notification</div>
+			<div>
+				<div>
+					Google reCaptcha - Apache 2.0 License - https://developers.google.com/recaptcha/</div>
+				<div>
+					angular-recaptcha v3.0.4 - MIT License - https://github.com/vividcortex/angular-recaptcha</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<div>
+			---------------------------------------- Laravel Component --------------------------------</div>
+		<div>
+			laravel/laravel v5.1.* - MIT License - https://github.com/laravel/laravel</div>
+		<div>
+			laravel/laravel v5.3.* - MIT License - https://github.com/laravel/laravel</div>
+		<div>
+			nicolaslopezj/searchable v1.* - MIT license - https://github.com/nicolaslopezj/searchable/</div>
+		<div>
+			php-soft/laravel-users dev-master - MIT License - https://github.com/php-soft/laravel-users</div>
+		<div>
+			tymon/jwt-auth v0.5.* - MIT License - https://github.com/tymondesigns/jwt-auth</div>
+		<div>
+			zizaco/entrust v5.2.x-dev - MIT License - https://github.com/Zizaco/entrust</div>
+		<div>
+			laravel-dompdf &nbsp;v0.6.*&nbsp;- MIT License - https://github.com/barryvdh/laravel-dompdf</div>
+		<div>
+			Laravel-Excel v2.1.0 - MIT License -https://github.com/Maatwebsite/Laravel-Excel</div>
+		<div>
+			LaravelInstaller - MIT License&nbsp;- https://github.com/RachidLaasri/LaravelInstaller</div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	------------------------------------------ Ionic Client App ----------------------------------------</p>
+<div>
+	ionic framework v1.3.1 - MIT License - http://ionicframework.com/</div>
+<div>
+	Ionic-Material v0.4.2 - MIT License - https://github.com/zachfitz/Ionic-Material</div>
+<div>
+	ngCordova v0.1.26-alpha - MIT License - http://ngcordova.com/</div>
+<div>
+	restangular v1.5.2 - MIT License - https://github.com/mgonto/restangular</div>
+<div>
+	ngAA v0.3.0 - MIT License - https://github.com/lykmapipo/ngAA</div>
+<div>
+	angular-jwt v0.0.9 - MIT License - https://github.com/auth0/angular-jwt</div>
+<div>
+	ngStorage v0.3.10 - MIT License - https://github.com/gsklee/ngStorage</div>
+<div>
+	angular-cache v4.5.0 - MIT License - https://github.com/jmdobry/angular-cache</div>
+<div>
+	ionic-toast v0.3.0 - MIT License - https://github.com/rajeshwarpatlolla/ionic-toast</div>
+<div>
+	waves v0.6.6 - MIT License - https://github.com/fians/Waves</div>
+<div>
+	momentjs v2.9.0 - MIT License - https://github.com/moment/moment</div>
+<div>
+	angular-moment v0.9.0 - MIT License - https://github.com/urish/angular-moment</div>
+<div>
+	ion-autocomplete v0.3.2 - MIT license - https://github.com/guylabs/ion-autocomplete</div>
+<div>
+	angular-img-fallback v0.2.0 - MIT License - https://github.com/dcohenb/angular-img-fallback</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

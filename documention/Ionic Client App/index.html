@@ -1,0 +1,657 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>ngLaravel - Ionic Client App v1.0.1 - Ionic Client App For ngLaravel CRUD </title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="YEP TEMPLATE">
+	<meta name="copyright" content="YEP TEMPLATE">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-07-17T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.jpg);}
+		a{color:#008C9E;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #008C9E #008C9E #bfbfbf;
+		  background-color: #006673;
+		}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ul{border-top:1px solid #212424;}
+		#documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ul a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-nglaravel-ionic-client-app-v101">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#structure" title="Structure">Structure</a></li>
+			<li><a href="#authorization" title="Authorization">Authorization</a></li>
+			<li><a href="#access_to_back_end_api" title="Access To Back-End API">Access To Back-End API</a></li>
+			<li><a href="#good_resource" title="Good Resource">Good Resource</a></li>
+			<li><a href="#admin_template" title="Admin Template">Admin Template</a></li>
+			<li><a href="#nglaravel_web_angularjs" title="ngLaravel Web AngularJS">ngLaravel Web AngularJS</a></li>
+			<li><a href="#updates" title="Updates">Updates</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright YEP TEMPLATE 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>ngLaravel - Ionic Client App v1.0.1</h1>
+	<h2>Ionic Client App For ngLaravel CRUD </h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 07/17/2016</li>
+	<li>latest update: 07/17/2016</li>
+	<li>by: YEP TEMPLATE</li>
+	
+	<li>email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#121;&#101;&#112;&#116;&#101;&#109;&#112;&#108;&#97;&#116;&#101;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for purchasing ngLaravel. If you have any questions that are beyond the scope of this help file, please feel free to comment us via the comment or support section of Codecanyon.net.</p>
+	</section>
+	
+	<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<h4 id="installation_what_really_is_ionic">What Really is Ionic?</h4>
+<div>
+	<div>
+		<a href="http://ionicframework.com/docs/overview/">Ionic </a>is a front-end SDK for building cross-platform mobile apps. Built on top of Angular, Ionic also provides a platform for integrating services like push notifications and analytics.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Ionic is not an alternative option to Cordova, but instead a UI library to make a better Cordova project. Ionic can be compared to a framework like Bootstrap or Foundation but this time for Mobile and not Web.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		In this tutorial which has a nice demo, we will make a mobile app using Ionic framework and Cordova. I will also explain how to build mobile apps with Phonegap app so we won&rsquo;t have to bother with installing Platform SDKs.</div>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h4 id="installation_what_you_should_know">WHAT YOU SHOULD KNOW</h4>
+<div>
+	Fortunately you just need to understand the basics of JavaScript and its popular library AngularJS. Ionic is completely made up of Angular directives and components and uses its popular ui router for SPA.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Currently, Ionic v1.3 &nbsp;works with Angular 1.x, but the <a href="http://ionicframework.com/docs/v2/">Ionic 2 Alpha</a> that works with Angular 2 was announced.</div>
+<div>
+	&nbsp;</div>
+<h4 id="installation__nbsp">&nbsp;</h4>
+<div>
+	<h4 id="installation_setup_android_environment">Setup Android Environment</h4>
+	<ol>
+		<li>
+			Install <strong>Java SE Runtime Environment &nbsp;7</strong> (If you installed version 8, you should remove it)</li>
+		<li>
+			Install&nbsp;<strong>Java SE Development Kit 7</strong>&nbsp;(If you installed version 8, you should remove it)</li>
+		<li>
+			Download and Install <strong>Android Studio 2.1</strong> - Please checked&nbsp;<strong>android_sdk </strong>&amp; <strong>android_virual_device</strong> during installation.</li>
+		<li>
+			Config&nbsp;<strong>Environment Variable</strong> for android:</li>
+	</ol>
+	<pre class="prettyprint lang-plain linenums">
+ANDROID_HOME =   F:\android_sdk
+JAVA_HOME    =   C:\Program Files\Java\jdk1.7.0_45
+Path         =   C:\Program Files\Java\jdk1.7.0_45\bin; %ANDROID_HOME%\platform-tools; %ANDROID_HOME%\tools</pre>
+	<p>
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5. After Install Android Studio 2.1 open it and following <strong>wizard </strong>to download other requirement.</p>
+	<p>
+		Note: If you have problem in setup Environment check <a href="http://ionicframework.com/docs/guide/installation.html">link</a></p>
+	<h4 id="installation__nbsp">&nbsp;</h4>
+	<h4 id="installation_ionic_setup_and_installation">Ionic Setup and Installation</h4>
+	<ol>
+		<li>
+			Install <a href="https://nodejs.org/">Node.js</a> and npm CLI</li>
+		<li>
+			Run the following command after installing Node:</li>
+	</ol>
+	<pre class="prettyprint lang-plain linenums">
+npm install -g cordova ionic</pre>
+	<p>
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3. Now finish.</p>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="installation_create_custom_project_with_ionic">Create Custom Project with Ionic</h4>
+	<p>
+		To create project run command:</p>
+	<pre class="prettyprint lang-plain linenums">
+Syntax:  ionic start {appname} {template}
+Example#&gt; ionic start sample blank</pre>
+</div>
+<p>
+	&nbsp;</p>
+<p>
+	To config platform run command:</p>
+<pre class="prettyprint lang-plain linenums">
+<span style="font-family: Arial, Verdana, sans-serif;">Syntax:    </span>ionic platform add {platform}
+
+##Example##
+cd sample-folder
+ionic platform add ios
+ionic platform add android</pre>
+<p>
+	&nbsp;</p>
+<p>
+	To run web server to UI view:</p>
+<pre class="prettyprint lang-plain linenums">
+ionic serve</pre>
+<p>
+	&nbsp;</p>
+<p>
+	To run App on the device or emulator:</p>
+<pre class="prettyprint lang-plain linenums">
+Syntax: ionic run &lt;PLATFORM&gt; 
+        ionic emulate &lt;PLATFORM&gt;
+
+##Example##
+ionic run android</pre>
+<p>
+	&nbsp;</p>
+<h4 id="installation_customize_your_project">Customize your project</h4>
+<div>
+	Fine we have a good ionic app but then it is useless. We agreed on making a Todo app not a blank app so let us complete the deal.</div>
+<div>
+	Ionic is a basically a SPA web app, we need a master index.html though we don&rsquo;t need routes as the Todo app is just a one view app.</div>
+<div>
+	We should first update our app&rsquo;s www/index.html and www/js/app.js to make sure the structure looks like the one below.</div>
+<div>
+	&nbsp;</div>
+<div>
+	To learn about ionic check <a href="https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic">create-your-first-mobile-app-with-angularjs-and-ionic</a>&nbsp;article.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<h4 id="structure_folder_structure_of_nglaravel_client_app">Folder structure of ngLaravel Client App:</h4>
+<pre class="prettyprint lang-plain linenums">
+├───hooks
+├───platforms // include files that related to iOS &amp; andoid
+├───plugins   // include cordova plugins that connect to OS
+├───resource  // include icon &amp; splash screen for your app
+├───scss      // include SASS style file of your project 
+├───www       // include all page &amp; route and js that you should customize it.
+└───config.xml    //include name, description, id and version of your app
+</pre>
+<p>
+	&nbsp;</p>
+<h4 id="structure_www_folder">www folder:</h4>
+<pre class="prettyprint lang-plain linenums">
+├───css   // include custom css that use in this project
+├───fonts
+│   └───RobotoDraft
+├───img  // include image that use in project
+├───js 
+|   <span style="font-family: Arial, Verdana, sans-serif;">├-----  app.js     // include name and dependancy that use in this project</span><span style="font-family: Arial, Verdana, sans-serif;">
+</span>|   <span style="font-family: Arial, Verdana, sans-serif;">└</span><span style="font-family: Arial, Verdana, sans-serif;">----- </span>config.router.js  // include route &amp; basic configuration of plugin and module
+├───lib   // include 3-party plugin and library
+│   ├───angular-cache
+│   ├───angular-img-fallback
+.   .
+.   .
+│   └───underscore
+│  
+├───modules // we categories module by name
+│   ├───category
+│   │   ├───controllers
+│   │   ├───services
+│   │   └───views
+│   ├───ionic-feature
+.   .
+.   .
+├───shared  // include shared and common controllers, views, services
+|   ├───controllers
+|   ├───filters
+|   ├───services
+|   └───views
+└── index.html  // describe it in blew</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h4 id="structure_modules_strucure">Modules Strucure:</h4>
+<p>
+	Client App module like ngLaravel web client has controllers, services, views. Service in web version is exactly the same service, but controllers and views changed.</p>
+<pre class="prettyprint lang-plain linenums">
+├───category              // include category module
+│   ├───controllers       // include category controllers that diffrent from ngLaravel web angularjs version
+│   ├───services          // include category services that is same ngLaravel web angularjs version
+│   └───views             // include category views that created by ionic component
+├───ionic-feature         // include ionic cordova/phonegap plugin
+│   ├───barcode           
+│   │   ├───controllers   // include functions to use barcode scanner
+│   │   └───views
+.   .
+.   .
+│   └───vibration
+│       ├───controllers
+│       └───views
+├───tag
+│   └───services
+├───task                   // like other modules
+│   ├───controllers       
+│   ├───services
+│   └───views
+└───user</pre>
+<p>
+	&nbsp;</p>
+<h4 id="structure_route">Route:</h4>
+<p>
+	Ionic use ui-router to route page. to customize your route refer to www/js/config.route.js. This file is similar to&nbsp;ngLaravel web angularjs version.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<h4 id="structure_side_menu">Side ​Menu</h4>
+<p>
+	To change your side menu app refer to shared/views/admin.html</p>
+</section>
+<section id="authorization">
+	<div class="page-header"><h3>Authorization</h3><hr class="notop"></div>
+<h4 id="authorization__nbsp">&nbsp;</h4>
+<p>
+	With&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">ngAA</span>&nbsp;you can restrict state transition to only authenticated user using&nbsp;<span style="color: rgb(51, 51, 51); font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; line-height: 21.76px; background-color: rgba(0, 0, 0, 0.0392157);">authenticated:true</span>&nbsp;state data. To ensure authenticity on state define it as below:</p>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ng-laravel&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    authenticated:true
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization_permits">Permits</h4>
+<p>
+	ngAA restrict state transition to only allowed user using permits state data. If there is no permits state data, ngAA wont protect the state. You should define your permits using one the following:</p>
+<div>
+	&nbsp;</div>
+<h4 id="authorization_withonly">withOnly</h4>
+<div>
+	Which tells ngAA to allow user with only provided permission to access the state. To tell ngAA to permit user with only one permission in your state definition, you do as bellow:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ng-laravel&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withOnly: &#39;Post_delete&#39;
+                    }
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization__nbsp">&nbsp;</h4>
+<h4 id="authorization_withall">withAll</h4>
+<div>
+	Which tells ngAA to allow user with all given permissions to access the state. To tell ngAA to permit user with all given permissions in your state definition, you do as bellow:</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ngAPP&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withAll: [&#39;Post_delete&#39;,&#39;Post_create&#39;]
+                    }
+                }
+            });
+            ...
+    });</pre>
+<h4 id="authorization__nbsp">&nbsp;</h4>
+<h4 id="authorization_withany">withAny</h4>
+<div>
+	Which tells ngAA to allow user with any of the given permissions to access the state. To tell ngAA to permit user with any of the given permissions in your state definition, you do as bellow:</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-js linenums">
+&#39;use strict&#39;;
+angular
+    .module(&#39;ngAPP&#39;, [
+        &#39;ui.router&#39;,
+        &#39;ngAA&#39;
+    ])
+    .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+        $stateProvider
+            .state(&#39;about&#39;, {
+                url: &#39;/about&#39;,
+                templateUrl: &#39;views/about.html&#39;,
+                controller: &#39;AboutCtrl&#39;,
+                data: {
+                    permits: {
+                        withAny: [&#39;Post_delete&#39;,&#39;Comment_delete&#39;]
+                    }
+                }
+            });
+            ...
+    });</pre>
+<div>
+	&nbsp;</div>
+<h4 id="authorization_directives">Directives</h4>
+<h5>
+	signout</h5>
+<div>
+	&nbsp;</div>
+<div>
+	ngAA provide a signout directive which can be used in templates to signout the current sign-in user</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li ng-show=&quot;isAuthenticated&quot;&gt;
+    &lt;a data-signout&gt;Signout&lt;/a&gt;
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-permit</h5>
+<div>
+	ngAA provide a show-if-has-permit directive which can be used in templates to show or hide HTML elements when current signed in user has a given permission.</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-any-permit=&quot;edit_task&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-permits</h5>
+<div>
+	ngAA provide a show-if-has-permits directive which can be used in templates to show or hide HTML elements when current signed in user has all of the provided permissions.</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-permits=&quot;edit_task, add_task&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<div>
+	&nbsp;</div>
+<h5>
+	show-if-has-any-permit</h5>
+<div>
+	ngAA provide a show-if-has-any-permit directive which can be used in templates to show or hide HTML elements when current signed in user has any of the provided permissions.</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;li show-if-has-any-permits=&quot;view_task, add_comment&quot;&gt;
+    ...
+&lt;/li&gt;</pre>
+<p>
+	&nbsp;</p>
+</section>
+<section id="access_to_back_end_api">
+	<div class="page-header"><h3>Access To Back-End API</h3><hr class="notop"></div>
+<h3>
+	Wellcome to Yep ngLaravel</h3>
+<p>
+	This is sample app to work with AngularJS and Laravel based on JSON Web Token Security. We integrate JWT security laravel back-end with angularjs front-end. Also you can just use Laravel back-end for your production like mobile app and etc. Now you can test my api with <b>Postman</b> RESTful client.</p>
+<h4 id="access_to_back_end_api_what_39s_postman">What&#39;s Postman?</h4>
+<p>
+	Powerful tools to work, build, test and document your APIs easily and quickly.</p>
+<br>
+<h4 id="access_to_back_end_api_how_to_install_postman">How to Install Postman?</h4>
+<p>
+	In Google Chrome browser setting select <b>Extensions</b>. Click the <b>Get More Extensions</b> link on the page and search for Postman. Follow the directions to install the extension and Then go to url <code>chrome://apps/</code> run it.</p>
+<br>
+<br>
+<h4 id="access_to_back_end_api_create_token_by_authntication">Create Token by authntication</h4>
+<p>
+	Enter this url <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/authenticate?email=&#121;&#101;&#112;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;&amp;password=123456</code> and copy and keep token to future requests.</p>
+<p>
+	Please note base url API is <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/</code> and for authentication you should use <code>authenticate</code> and use <code>email</code> and <code>password</code> parameters.</p>
+<br>
+<br>
+<h4 id="access_to_back_end_api_how_to_access_to_other_api">How to access to other API</h4>
+<p>
+	To access other API:<br>
+	1.you should create token with above way and then copy token<br>
+	2.Enter your route with token parameter like: <code>http://188.40.252.106/ng-laravel/CURRENT_VERSION/Developer/laravel-backend/public/api/user?token=YOUR_COPY_TOKEN</code><br>
+	3.See result :)</p>
+<br>
+<h4 id="access_to_back_end_api_all_route_in_nglaravel">All route in ngLaravel</h4>
+<pre>
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+| Domain | Method   | URI                              | Name                   | Action                                                   | Middleware |
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+|        | GET|HEAD | api/authenticate                 | api.authenticate.index | App\Http\Controllers\AuthenticateController@index        |            |
+|        | POST     | api/authenticate                 |                        | App\Http\Controllers\AuthenticateController@authenticate |            |
+|        | POST     | api/category                     | api.category.store     | App\Http\Controllers\CategoryController@store            | jwt.auth   |
+|        | GET|HEAD | api/category                     | api.category.index     | App\Http\Controllers\CategoryController@index            | jwt.auth   |
+|        | GET|HEAD | api/category/create              | api.category.create    | App\Http\Controllers\CategoryController@create           | jwt.auth   |
+|        | GET|HEAD | api/category/{category}          | api.category.show      | App\Http\Controllers\CategoryController@show             | jwt.auth   |
+|        | PUT      | api/category/{category}          | api.category.update    | App\Http\Controllers\CategoryController@update           | jwt.auth   |
+|        | DELETE   | api/category/{category}          | api.category.destroy   | App\Http\Controllers\CategoryController@destroy          | jwt.auth   |
+|        | PATCH    | api/category/{category}          |                        | App\Http\Controllers\CategoryController@update           | jwt.auth   |
+|        | GET|HEAD | api/category/{category}/edit     | api.category.edit      | App\Http\Controllers\CategoryController@edit             | jwt.auth   |
+|        | GET|HEAD | api/comment                      | api.comment.index      | App\Http\Controllers\CommentController@index             | jwt.auth   |
+|        | POST     | api/comment                      | api.comment.store      | App\Http\Controllers\CommentController@store             | jwt.auth   |
+|        | GET|HEAD | api/comment/create               | api.comment.create     | App\Http\Controllers\CommentController@create            | jwt.auth   |
+|        | GET|HEAD | api/comment/search               |                        | App\Http\Controllers\CommentController@search            | jwt.auth   |
+|        | PUT      | api/comment/{comment}            | api.comment.update     | App\Http\Controllers\CommentController@update            | jwt.auth   |
+|        | DELETE   | api/comment/{comment}            | api.comment.destroy    | App\Http\Controllers\CommentController@destroy           | jwt.auth   |
+|        | GET|HEAD | api/comment/{comment}            | api.comment.show       | App\Http\Controllers\CommentController@show              | jwt.auth   |
+|        | PATCH    | api/comment/{comment}            |                        | App\Http\Controllers\CommentController@update            | jwt.auth   |
+|        | GET|HEAD | api/comment/{comment}/edit       | api.comment.edit       | App\Http\Controllers\CommentController@edit              | jwt.auth   |
+|        | POST     | api/deleteimage/{id}             |                        | App\Http\Controllers\UploadController@deleteUpload       |            |
+|        | GET|HEAD | api/gallery                      | api.gallery.index      | App\Http\Controllers\GalleryController@index             | jwt.auth   |
+|        | POST     | api/gallery                      | api.gallery.store      | App\Http\Controllers\GalleryController@store             | jwt.auth   |
+|        | GET|HEAD | api/gallery/create               | api.gallery.create     | App\Http\Controllers\GalleryController@create            | jwt.auth   |
+|        | GET|HEAD | api/gallery/search               |                        | App\Http\Controllers\GalleryController@search            | jwt.auth   |
+|        | PATCH    | api/gallery/{gallery}            |                        | App\Http\Controllers\GalleryController@update            | jwt.auth   |
+|        | DELETE   | api/gallery/{gallery}            | api.gallery.destroy    | App\Http\Controllers\GalleryController@destroy           | jwt.auth   |
+|        | GET|HEAD | api/gallery/{gallery}            | api.gallery.show       | App\Http\Controllers\GalleryController@show              | jwt.auth   |
+|        | PUT      | api/gallery/{gallery}            | api.gallery.update     | App\Http\Controllers\GalleryController@update            | jwt.auth   |
+|        | GET|HEAD | api/gallery/{gallery}/edit       | api.gallery.edit       | App\Http\Controllers\GalleryController@edit              | jwt.auth   |
+|        | POST     | api/password/email               |                        | App\Http\Controllers\Auth\PasswordController@postEmail   |            |
+|        | POST     | api/password/reset               |                        | App\Http\Controllers\Auth\PasswordController@postReset   |            |
+|        | POST     | api/permission                   | api.permission.store   | App\Http\Controllers\PermissionController@store          | jwt.auth   |
+|        | GET|HEAD | api/permission                   | api.permission.index   | App\Http\Controllers\PermissionController@index          | jwt.auth   |
+|        | GET|HEAD | api/permission/create            | api.permission.create  | App\Http\Controllers\PermissionController@create         | jwt.auth   |
+|        | GET|HEAD | api/permission/search            |                        | App\Http\Controllers\PermissionController@search         | jwt.auth   |
+|        | DELETE   | api/permission/{permission}      | api.permission.destroy | App\Http\Controllers\PermissionController@destroy        | jwt.auth   |
+|        | PUT      | api/permission/{permission}      | api.permission.update  | App\Http\Controllers\PermissionController@update         | jwt.auth   |
+|        | PATCH    | api/permission/{permission}      |                        | App\Http\Controllers\PermissionController@update         | jwt.auth   |
+|        | GET|HEAD | api/permission/{permission}      | api.permission.show    | App\Http\Controllers\PermissionController@show           | jwt.auth   |
+|        | GET|HEAD | api/permission/{permission}/edit | api.permission.edit    | App\Http\Controllers\PermissionController@edit           | jwt.auth   |
+|        | POST     | api/role                         | api.role.store         | App\Http\Controllers\RoleController@store                | jwt.auth   |
+|        | GET|HEAD | api/role                         | api.role.index         | App\Http\Controllers\RoleController@index                | jwt.auth   |
+|        | GET|HEAD | api/role/create                  | api.role.create        | App\Http\Controllers\RoleController@create               | jwt.auth   |
+|        | GET|HEAD | api/role/search                  |                        | App\Http\Controllers\RoleController@search               | jwt.auth   |
+|        | DELETE   | api/role/{role}                  | api.role.destroy       | App\Http\Controllers\RoleController@destroy              | jwt.auth   |
+|        | PATCH    | api/role/{role}                  |                        | App\Http\Controllers\RoleController@update               | jwt.auth   |
+|        | PUT      | api/role/{role}                  | api.role.update        | App\Http\Controllers\RoleController@update               | jwt.auth   |
+|        | GET|HEAD | api/role/{role}                  | api.role.show          | App\Http\Controllers\RoleController@show                 | jwt.auth   |
+|        | GET|HEAD | api/role/{role}/edit             | api.role.edit          | App\Http\Controllers\RoleController@edit                 | jwt.auth   |
+|        | POST     | api/tag                          | api.tag.store          | App\Http\Controllers\TagController@store                 | jwt.auth   |
+|        | GET|HEAD | api/tag                          | api.tag.index          | App\Http\Controllers\TagController@index                 | jwt.auth   |
+|        | GET|HEAD | api/tag/create                   | api.tag.create         | App\Http\Controllers\TagController@create                | jwt.auth   |
+|        | GET|HEAD | api/tag/search                   |                        | App\Http\Controllers\TagController@search                | jwt.auth   |
+|        | DELETE   | api/tag/{tag}                    | api.tag.destroy        | App\Http\Controllers\TagController@destroy               | jwt.auth   |
+|        | PATCH    | api/tag/{tag}                    |                        | App\Http\Controllers\TagController@update                | jwt.auth   |
+|        | GET|HEAD | api/tag/{tag}                    | api.tag.show           | App\Http\Controllers\TagController@show                  | jwt.auth   |
+|        | PUT      | api/tag/{tag}                    | api.tag.update         | App\Http\Controllers\TagController@update                | jwt.auth   |
+|        | GET|HEAD | api/tag/{tag}/edit               | api.tag.edit           | App\Http\Controllers\TagController@edit                  | jwt.auth   |
+|        | GET|HEAD | api/task                         | api.task.index         | App\Http\Controllers\TaskController@index                | jwt.auth   |
+|        | POST     | api/task                         | api.task.store         | App\Http\Controllers\TaskController@store                | jwt.auth   |
+|        | GET|HEAD | api/task/create                  | api.task.create        | App\Http\Controllers\TaskController@create               | jwt.auth   |
+|        | GET|HEAD | api/task/search                  |                        | App\Http\Controllers\TaskController@search               | jwt.auth   |
+|        | PATCH    | api/task/{task}                  |                        | App\Http\Controllers\TaskController@update               | jwt.auth   |
+|        | DELETE   | api/task/{task}                  | api.task.destroy       | App\Http\Controllers\TaskController@destroy              | jwt.auth   |
+|        | GET|HEAD | api/task/{task}                  | api.task.show          | App\Http\Controllers\TaskController@show                 | jwt.auth   |
+|        | PUT      | api/task/{task}                  | api.task.update        | App\Http\Controllers\TaskController@update               | jwt.auth   |
+|        | GET|HEAD | api/task/{task}/edit             | api.task.edit          | App\Http\Controllers\TaskController@edit                 | jwt.auth   |
+|        | POST     | api/uploadimage                  |                        | App\Http\Controllers\UploadController@uploadimage        |            |
+|        | GET|HEAD | api/user                         | api.user.index         | App\Http\Controllers\UserController@index                | jwt.auth   |
+|        | POST     | api/user                         | api.user.store         | App\Http\Controllers\UserController@store                | jwt.auth   |
+|        | GET|HEAD | api/user/create                  | api.user.create        | App\Http\Controllers\UserController@create               | jwt.auth   |
+|        | GET|HEAD | api/user/search                  |                        | App\Http\Controllers\UserController@search               | jwt.auth   |
+|        | PUT      | api/user/{user}                  | api.user.update        | App\Http\Controllers\UserController@update               | jwt.auth   |
+|        | PATCH    | api/user/{user}                  |                        | App\Http\Controllers\UserController@update               | jwt.auth   |
+|        | GET|HEAD | api/user/{user}                  | api.user.show          | App\Http\Controllers\UserController@show                 | jwt.auth   |
+|        | DELETE   | api/user/{user}                  | api.user.destroy       | App\Http\Controllers\UserController@destroy              | jwt.auth   |
+|        | GET|HEAD | api/user/{user}/edit             | api.user.edit          | App\Http\Controllers\UserController@edit                 | jwt.auth   |
++--------+----------+----------------------------------+------------------------+----------------------------------------------------------+------------+
+
+                                </pre>
+</section>
+<section id="good_resource">
+	<div class="page-header"><h3>Good Resource</h3><hr class="notop"></div>
+<p>
+	<a href="https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic">https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic</a></p>
+<p>
+	<a href="http://ionicframework.com/docs/">http://ionicframework.com/docs/</a></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="admin_template">
+	<div class="page-header"><h3>Admin Template</h3><hr class="notop"></div>
+<p>
+	To access Yep Golabi Admin Template refer to [extract_zip_file]/Documention/Yep Golabi Admin Template/</p>
+</section>
+<section id="nglaravel_web_angularjs">
+	<div class="page-header"><h3>ngLaravel Web AngularJS</h3><hr class="notop"></div>
+<p>
+	To access Yep Golabi Admin Template refer to [extract_zip_file]/Documention/nglaravel/</p>
+</section>
+<section id="updates">
+	<div class="page-header"><h3>Updates</h3><hr class="notop"></div>
+<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+				Version 1.0.1</div>
+			<ul style="padding-right: 0px; padding-left: 0px; margin: 18px 0px; border: 0px; outline: 0px; vertical-align: baseline; line-height: 1.5em;">
+				<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: square;">
+					Released verison</li>
+			</ul>
+		</div>
+		<div style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline;">
+			&nbsp;</div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<div>
+	ionic framework v1.3.1 - MIT License - http://ionicframework.com/</div>
+<div>
+	Ionic-Material v0.4.2 - MIT License - https://github.com/zachfitz/Ionic-Material</div>
+<div>
+	ngCordova v0.1.26-alpha - MIT License - http://ngcordova.com/</div>
+<div>
+	restangular v1.5.2 - MIT License - https://github.com/mgonto/restangular</div>
+<div>
+	ngAA v0.3.0 - MIT License - https://github.com/lykmapipo/ngAA</div>
+<div>
+	angular-jwt v0.0.9 - MIT License - https://github.com/auth0/angular-jwt</div>
+<div>
+	ngStorage v0.3.10 - MIT License - https://github.com/gsklee/ngStorage</div>
+<div>
+	angular-cache v4.5.0 - MIT License - https://github.com/jmdobry/angular-cache</div>
+<div>
+	ionic-toast v0.3.0 - MIT License - https://github.com/rajeshwarpatlolla/ionic-toast</div>
+<div>
+	waves v0.6.6 - MIT License - https://github.com/fians/Waves</div>
+<div>
+	momentjs v2.9.0 - MIT License - https://github.com/moment/moment</div>
+<div>
+	angular-moment v0.9.0 - MIT License - https://github.com/urish/angular-moment</div>
+<div>
+	ion-autocomplete v0.3.2 - MIT license - https://github.com/guylabs/ion-autocomplete</div>
+<div>
+	angular-img-fallback v0.2.0 - MIT License - https://github.com/dcohenb/angular-img-fallback</div>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>
