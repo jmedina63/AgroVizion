@@ -1,0 +1,104 @@
+.page-login {
+    background-image: url("../assets/img/background_login.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    form {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 42.5%;
+    }
+
+    form ion-item {
+        background-color: transparent;
+    }
+
+    form .buttons {
+        margin-top: 5%;
+        width: 100%;
+        position: relative;
+        text-align: right;
+    }
+
+    form .buttons > button {
+        background-color: #56be5b;
+        color: white;
+        width: 60%;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 0 0 1px #a4a4a4;
+        font-weight: 100;
+        text-transform: uppercase;
+        font-size: 1em;
+        height: 2.4em;
+    }
+
+    form > ion-row {
+        margin-bottom: 5%;
+        padding-right: 5%;
+    }
+
+    form > ion-row > ion-item .input-wrapper {
+        padding-left: 0.5em;
+    }
+
+    form .footer {
+        margin-top: 5%;
+        width: 100%;
+        position: relative;
+        margin-left: 5%;
+    }
+
+    form .footer > button {
+        background-color: transparent;
+        color: grey;
+    }
+
+    form .footer > #register {
+        color: grey;
+        position: absolute;
+        right: 0;
+    }
+
+    form > ion-row .footer > #recover {
+        opacity: 0.4;
+        position: absolute;
+    }
+
+    & .buttons #btnInfo {
+        font-size: 1.7em;
+        margin-right: 15%;
+        color: gray;
+        opacity: 0.5;
+        position: relative;
+        top: 10%;
+    }
+}
+
+ion-app.md [padding] .scroll-content {
+    padding: 0;
+}
+$placeholder-weight: 100;
+$placeholder-color: #d5d5d5;
+
+::-webkit-input-placeholder {
+    color: $placeholder-color !important;
+    font-weight: $placeholder-weight;
+}
+
+*:-moz-placeholder {
+    color: $placeholder-color !important;
+    font-weight: $placeholder-weight;
+}
+
+*:-ms-input-placeholder {
+    color: $placeholder-color !important;
+    font-weight: $placeholder-weight;
+}
+
+.item-md.item-input.input-has-focus .item-inner,
+.item-md.item-input.item-input-hasfocus .item-inner {
+    border-bottom-color: #56be5b;
+    box-shadow: inset 0 -1px 0 0 #56be5b;
+}

@@ -1,0 +1,55 @@
+<ion-content padding class="page-menuMinistration" overflow-scroll="false">
+    <div class="header" ion-fixed>
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <!-- <label id="user-name">Aldo Fernandez</label> -->
+                <label id="user-number">{{storage.user.phone}}</label>
+                <!-- <label id="user-number">6862344567</label> -->
+            </div>
+            <div class="user-pic">
+                <!-- <img src="{{storage.user.avatar_url}}" alt="Usuario"> -->
+                <img src="assets/img/userpic.png" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-title">
+            <div class="title-text"><label>{{balance}}</label></div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li (click)="goTo(pages['cash'])">
+                    <div class="icon">
+                        <img src="assets/img/money_white.png" alt="Monetario">
+                    </div>
+                     <div class="label">Monetario</div>
+                 </li>
+                <li (click)="goTo(pages['supplies'])">
+                    <div class="icon">
+                        <img src="assets/img/carshop_icon_white.png" alt="Insumos">
+                    </div>
+                    <div class="label">Insumos</div>
+                </li>
+                <li (click)="goTo(pages['quimics'])">
+                    <div class="icon">
+                        <img src="assets/img/quimics_icon_white.png" alt="Agroquimicos">
+                    </div>
+                    <div class="label">Agroquímicos</div>
+                </li>
+                <li (click)="goTo(pages['water'])">
+                    <div class="icon">
+                        <img src="assets/img/water_icon_white.png" alt="Agua">
+                    </div>
+                    <div class="label">Agua</div>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <img src="assets/img/white_logo.png" alt="logo">
+        </div>
+    </div>
+</ion-content>

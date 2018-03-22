@@ -1,0 +1,193 @@
+.page-menu {
+    background-color: white;
+
+    button {
+        color: white;
+    }
+
+    .header {
+        background-image: url('../assets/img/farm.jpg');
+        height: 37.5%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+        clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+    }
+
+    .header button {
+        background-color: transparent;
+    }
+
+    .header > .user-info {
+        padding-left: 10%;
+        padding-top: 5%;
+        display: inline-flex;
+        width: 100%;
+        height: 35%;
+    }
+
+    .header > .user-info > .user-image {
+        width: 22%;
+        height: 100%;
+    }
+
+    .header > .user-info > .user-image img {
+        height: 100%;
+        width: 97%;
+        border-radius: 50%;
+        border: 2px solid rgba(220, 238, 198, 0.8);
+    }
+
+    .header > .user-info > .user-data {
+        color: white;
+        width: 65%;
+        height: 100%;
+        margin-left: 5%;
+        padding-top: 5%;
+    }
+
+    .header > .user-info > .user-data label {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header > .user-info > .user-data #user-name {
+        font-size: 1.3em;
+    }
+
+    .header > .user-info > .user-data #user-num {
+        font-size: 0.9em;
+        font-weight: 100;
+        letter-spacing: 0.1em;
+    }
+
+    .content {
+        width: 100%;
+        height: 60%;
+    }
+
+    .content > .icons {
+        width: 100%;
+        height: 15%;
+        padding-left: 15%;
+        position: relative;
+    }
+
+    .content > .icons > .logo {
+        width: 10%;
+        height: 90%;
+        position: absolute;
+        bottom: 100%;
+    }
+
+    .content > .icons > .logo img {
+        height: 95%;
+        width: 95%;
+    }
+
+    .content > .icons > .notification {
+        height: 100%;
+        right: 0;
+        position: absolute;
+        text-align: right;
+        padding-right: 5%;
+        display: inline-flex;
+        bottom: 75%;
+
+        & .icon-circle {
+            text-align: center;
+            width: 1.5em;
+            font-size: 2.2em;
+            height: 1.5em;
+            border-radius: 38px;
+            color: white;
+            text-align: center;
+        }
+        & .red {
+            background-color: #e21616;
+        }
+        & .blue {
+            background-color: #1892eb;
+        }
+        & .green {
+            background-color: #47b94c;
+        }
+        & .icon-circle:nth-child(1) {
+            margin-right: 0.4em;
+        }
+        & ion-icon {
+            vertical-align: bottom;
+            font-size: 0.9em;
+        }
+    }
+
+    .content > .menu {
+        width: 95%;
+        height: 65%;
+    }
+
+    .content > .menu ul {
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        bottom: 10%;
+        padding-left: 5%;
+    }
+
+    .content > .menu ul > li {
+        background-color: white;
+        height: 24%;
+        margin-bottom: 10%;
+        border-radius: 5px 5px 5px 5px;
+        padding-left: 7.5%;
+        position: relative;
+        box-shadow: 0px 0 grey, 0px 0 grey, 0 2px 6px 0px grey;
+        display: inline-flex;
+        position: relative;
+        width: 100%;
+    }
+    .content > .menu ul .icon {
+        height: 100%;
+        width: 20%;
+        position: relative;
+    }
+    .content > .menu ul > li img {
+        top: 15%;
+        position: absolute;
+        height: 65%;
+        width: 70%;
+    }
+    .content > .menu ul > li .label {
+        top: 30%;
+        position: relative;
+        height: 65%;
+        width: 70%;
+        color: grey;
+        font-weight: 500;
+    }
+    .content > .footer {
+        height: 15%;
+        width: 100%;
+        margin-top: 5%;
+    }
+    .content > .footer button {
+        background-color: #56be5b;
+        height: 75%;
+        width: 65%;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        display: inherit;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        font-weight: 100;
+    }
+}
+// Nav Toggle button modification
+
+.button-md {
+    box-shadow: initial;
+}

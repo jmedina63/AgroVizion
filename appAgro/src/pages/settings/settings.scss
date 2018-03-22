@@ -1,0 +1,150 @@
+.page-settings {
+    background-color: white;
+
+    .header {
+        width: 100%;
+        height: 25%;
+        background-color: rgba(0,0,0, 0.5);
+        display: flex;
+        border-bottom: 1px solid #28932e;
+        position: relative;
+    }
+
+    .header button {
+        background-color: transparent;
+        position: absolute;
+        right: 3%;
+        top: 5%;
+    }
+
+    .user-info {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin: auto;
+    }
+
+    .user-info > .user-data {
+        display: block;
+        height: initial;
+        margin: auto 0;
+        width: initial;
+        text-align: left;
+        margin-left: 3%;
+    }
+
+    .user-info > .user-data label {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: white;
+    }
+
+    .user-info > .user-data #user-name {
+        font-size: 1.3em;
+    }
+
+    .user-info > .user-data #user-number {
+        font-size: 0.8em;
+        color: #a9ee9d;
+    }
+
+    .user-info > .user-data #user-pic {
+        font-size: 0.7em;
+    }
+
+    .user-info > .user-pic {
+        width: 25%;
+        display: block;
+        margin: auto 0;
+        height: initial;
+    }
+
+    .user-info > .user-pic img {
+        width: 90%;
+        border: 2px solid #b7e2a1;
+        border-radius: 50%;
+        margin-top: 10%;
+    }
+
+    .menu {
+        width: 95%;
+        height: 40%;
+        margin-top: 8%;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-left: 5%;
+    }
+
+    .menu ul > li {
+        background-color: white;
+        height: 25%;
+        margin-bottom: 7%;
+        border-radius: 5px 5px 5px 5px;
+        padding-left: 7.5%;
+        position: relative;
+        box-shadow: 0px 0 grey, 0px 0 grey, 0 2px 6px 0px grey;
+        display: inline-flex;
+        position: relative;
+        width: 100%;
+    }
+    .menu ul .icon {
+        width: 20%;
+        position: relative;
+        margin-right: 7%;
+        display: block;
+        margin: auto 0;
+    }
+    .menu ul .icon ion-icon {
+        font-size: 2em;
+        color: gray;
+    }
+    .menu ul > li img { /// posiblemente se quite
+        top: 15%;
+        position: absolute;
+        height: 65%;
+        width: 70%;
+    }
+    .menu ul > li .label {
+        top: 35%;
+        position: relative;
+        height: 65%;
+        width: 70%;
+        color: grey;
+        font-weight: 500;
+    }
+    .footer {
+        height: 10%;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        margin-top: 7%;
+    }
+    .footer img {
+        height: 100%;
+        width: 12.5%;
+        position: relative;
+        // bottom: 30%;
+    }
+    .footer button {
+        background-color: #56be5b;
+        height: 65%;
+        width: 65%;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        display: inherit;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        font-weight: 100;
+        color: white;
+        margin-top: 8%;
+    }
+}

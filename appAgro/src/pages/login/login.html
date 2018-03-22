@@ -1,0 +1,29 @@
+<ion-content padding class="page-login" overflow-scroll="true">
+    <form (ngSubmit)="login(ionForm)" #ionForm="ngForm">
+        <ion-row>
+            <ion-item class="txtUser">
+                <ion-input type="text" disabled></ion-input>
+            </ion-item>
+        </ion-row>
+        <ion-row>
+            <ion-item class="txtPass">
+                <ion-label>
+                    <ion-icon name="md-lock"></ion-icon>
+                </ion-label>
+                <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="password" maxlength="25" required></ion-input>
+            </ion-item>
+        </ion-row>
+        <ion-row>
+            <div class="buttons">
+                <ion-icon name="ios-information-circle-outline" id="btnInfo" (click)="showInfo()"></ion-icon>
+                <button type="submit" [disabled]="!ionForm.form.valid">Entrar</button>
+            </div>
+        </ion-row>
+        <ion-row>
+            <div class="footer">
+                <button id="recover" (click)="forgotten()" type="button">Recuperar contraseña</button>
+                <button id="register" (click)="register()" type="button">Registrarse</button>
+            </div>
+        </ion-row>
+    </form>
+</ion-content>

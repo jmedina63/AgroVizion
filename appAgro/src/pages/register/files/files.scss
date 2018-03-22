@@ -1,0 +1,186 @@
+.page-files {
+    background-color: white;
+    background-image: url("../assets/img/logo_grey.png");
+    background-position: top;
+    background-size: 140% 90%;
+    background-repeat: no-repeat;
+
+    .header {
+        width: 100%;
+        height: 12%;
+        background-color: #47b84c;
+        display: flex;
+        border-bottom: 1px solid #28932e;
+    }
+
+    .header button {
+        background-color: transparent;
+        margin: auto;
+    }
+
+    .user-info {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin: auto;
+        padding-right: 10%;
+    }
+    .user-info label {
+        font-size: 1.4em;
+        margin: auto;
+        color: white;
+        font-weight: 500;
+    }
+    .content {
+        width: 95%;
+        height: 100%;
+    }
+    .content ul {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding-left: 5%;
+    }
+
+    .content ul > li {
+        background-color: white;
+        height: 8%;
+        margin-bottom: 6%;
+        padding-left: 7.5%;
+        position: relative;
+        box-shadow: 0px 0 grey, 0px 0 grey, 0 2px 6px 0px grey;
+        display: inline-flex;
+        position: relative;
+        width: 100%;
+        padding-right: 5%;
+    }
+    .content ul .icon {
+        margin: auto;
+        & ion-icon {
+            border-radius: 50%;
+            width: 1.5em;
+            height: 1.5em;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+            &.grey {
+                background-color: #bababa;
+            }
+            &.green {
+                background-color:  #47b84c;
+            }
+        }
+        .ion-md-camera:before, .ion-ios-checkmark:before{
+            margin-top: 1px;
+            vertical-align: sub;
+        }
+        .ion-md-camera:before {
+            padding-top: 0.25em;
+        }
+        .ion-ios-checkmark:before {
+            font-size: 1.4em;
+        }
+    }
+    .content ul > li .label {
+        top: 30%;
+        position: relative;
+        height: 65%;
+        width: 85%;
+        color: grey;
+        font-weight: 500;
+        font-size: 0.9em;
+    }
+
+    .content > .footer {
+        height: 9%;
+        width: 100%;
+        margin-top: 25%;
+    }
+    .content > .footer button {
+        background-color: #56be5b;
+        height: 75%;
+        width: 65%;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        display: inherit;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        font-weight: 100;
+        color: white;
+    }
+    & .success-dialog {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        position: fixed;
+        -webkit-transition: opacity .35s ease 0s, visibility linear .35s, visibility .35s;
+        transition: opacity .35s ease 0s, visibility linear .35s, visibility .35s;
+
+        & .dialog-icon {
+            position: relative;
+            width: 30%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            margin-bottom: 10%;
+        }
+        & .dialog-title {
+            position: relative;
+            width: 65%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+        & .dialog-title label {
+            color: white;
+            font-size: 1.2em;
+        }
+        & .dialog-title label span {
+            font-size: 1.3em;
+        }
+        & .dialog-background {
+            background-color: black;
+            opacity: 0.8;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        & .dialog-body {
+            position: relative;
+            width: 60%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            opacity: 0.55;
+            color: white;
+        }
+        & .dialog-footer {
+            z-index: 10;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            bottom: 20%;
+        }
+        & .dialog-footer button {
+            background-color: #56be5b;
+            height: 75%;
+            width: 65%;
+            border-radius: 5px 5px 5px 5px;
+            margin: auto;
+            display: inherit;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            font-weight: 100;
+            color: white;
+        }
+        &.close {
+            // display: none;
+            // z-index: -1000;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+<ion-content padding class="page-menu" overflow-scroll="true">
+    <div class="header">
+        <!-- <button ion-button icon-only type="button" (click)="goTo(pages['settings'])">
+            <ion-icon name="md-menu"></ion-icon>
+        </button> -->
+        <!-- <div class="user-info">
+            <div class="user-image">
+                <img src="{{storage.user.avatar_url}}" alt="user">
+            </div>
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-num">{{storage.user.phone}}</label>
+            </div>
+        </div> -->
+    </div>
+    <div class="content">
+        <div class="icons">
+            <div class="logo">
+                <img src="assets/img/green_logo.png" alt="green logo">
+            </div>
+            <div class="notification">
+                <!-- <img src="assets/img/green_notification.png" alt="notification" (click)="goTo(pages['notification'])">
+                <img src="assets/img/green_notification.png" alt="notification" (click)="goTo(pages['notification'])"> -->
+                <div class="icon-circle blue">
+                    <ion-icon name="md-chatboxes"></ion-icon>
+                </div>
+                <div class="icon-circle green">
+                    <ion-icon name="notifications"></ion-icon>
+                    <!-- <span><label>3</label></span> -->
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li (click)="goTo(pages['credit'])">
+                    <div class="icon">
+                        <img src="assets/img/credit_icon.png" alt="crédito">
+                    </div>
+                     <div class="label">Créditos</div>
+                 </li>
+                <li (click)="goTo(pages['ministration'])">
+                    <div class="icon">
+                        <img src="assets/img/carshop_icon.png" alt="Ministraciones">
+                    </div>
+                    <div class="label">Ministraciones</div>
+                </li>
+                <li (click)="goTo(pages['movement'])">
+                    <div class="icon">
+                        <img src="assets/img/movement_icon.png" alt="Movimientos">
+                    </div>
+                    <div class="label">Saldos y Movimientos</div>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <button type="button" (click)="logout()">Salir</button>
+        </div>
+    </div>
+</ion-content>

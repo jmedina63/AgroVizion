@@ -1,0 +1,53 @@
+<ion-content padding class="page-credit" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="icon">
+            <img src="assets/img/credit_icon_white.png" alt="imagen crédito">
+        </div>
+    </div>
+    <div class="title" (click)="goTo(pages.creditRequest)">
+        <div class="icon">
+            <img src="assets/img/credit_icon.png" alt="crédito">
+        </div>
+         <div class="label">Solicitud de Crédito</div>
+    </div>
+    <div class="menu">
+        <ul>
+            <div class="group-element" *ngFor="let credit of storage.credits; let i = index;">
+                <li class="first-dialog" #i>
+                    <div class="item-title">
+                        <div class="item-icon">
+                            <img src="assets/img/credit_green.png" alt="tarjeta">
+                        </div>
+                        <div class="item-label"><label>Créditos</label></div>
+                    </div>
+                    <div class="date"><label>{{credit.creditCreated}}</label></div>
+                    <div class="info">
+                        <div class="info-label">
+                            <label [innerHTML]="credit.appText" [style.color]="'#'+credit.colorHEX"></label>
+                        </div>
+                        <div class="info-icon">
+                            <div class="button-icon" [style.background-color]="'#'+credit.colorHEX" (click)="openInfo(i)"><ion-icon name="add"></ion-icon></div>
+                        </div>
+                    </div>
+                 </li>
+                 <li class="second-dialog hide">
+                    <div class="info1">
+                        <div class="culture"><label>Cultivo:</label><label>{{credit.shortCultivation}}</label></div>
+                        <div class="size align-right"><label>Hectareas:</label><label>{{credit.hectares}}</label></div>
+                        <div class="doc align-right"><label>Folio:</label><label>{{credit.id}}</label></div>
+                    </div>
+                    <div class="info2" *ngIf="(credit.status_id != 1 && credit.status_id != 7)">
+                        <div class="money" [style.color]="'#'+credit.colorHEX"><label>Monto del crédito:</label><label>{{credit.amount}}MN</label></div>
+                        <div class="ends"><label>Vence:</label><label>{{credit.creditExpiration}}</label></div>
+                    </div>
+                 </li>
+             </div>
+        </ul>
+    </div>
+    <!-- <div class="footer">
+        <img src="assets/img/grey_logo.png" alt="AgroVizión">
+    </div> -->
+</ion-content>

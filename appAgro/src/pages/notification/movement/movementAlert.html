@@ -1,0 +1,43 @@
+<ion-content padding class="page-movementAlert" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="topic">
+            <div class="icon"><img src="assets/img/money2_circle.png" alt="icono"></div>
+            <div class="message">
+                <label id="data">Balance general</label>
+                <label id="status">01 de Octubre 2017</label>
+            </div>
+        </div>
+        <div class="main-message">
+            <label id="message-info">
+                !En Hora Buena! <p>
+                La solicitud con folio 3445 ha sido aprobada, aquí encontrará los pasos para liberar y utlizar el crédito de su solicitud.
+            </label>
+            <label id="steps">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </label>
+        </div>
+        <div class="footer">
+            <img src="assets/img/white_logo.png" alt="logo">
+        </div>
+    </div>
+</ion-content>

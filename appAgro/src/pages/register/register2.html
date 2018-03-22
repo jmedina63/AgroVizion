@@ -1,0 +1,53 @@
+<ion-content padding class="page-register" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only type="button" (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <label>Registro</label>
+        </div>
+    </div>
+    <div class="content">
+        <form (ngSubmit)="next(ionForm)" #ionForm="ngForm">
+            <ion-row>
+                <ion-item>
+                    <ion-label floating>Hectareas de cultivo</ion-label>
+                    <ion-input type="number" [(ngModel)]="culture" name="culture" maxlength="6" minlength="1" required></ion-input>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item>
+                    <ion-label floating>Tamaño de la empresa</ion-label>
+                    <ion-select cancelText="Cancelar" okText="Ok" [(ngModel)]="companySize" name="companySize" required>
+                        <ion-option value=1>Mayor a 50 empleados</ion-option>
+                        <ion-option value=2>Entre 50 y 20 empleados</ion-option>
+                        <ion-option value=3>Menor a 20 empleados</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item>
+                    <ion-label floating>Hectareas propias</ion-label>
+                    <ion-input type="number" [(ngModel)]="owned" name="owned" maxlength="6" minlength="1" required></ion-input>
+                </ion-item>
+            </ion-row>
+            <ion-row>
+                <ion-item>
+                    <ion-label floating>Hectareas a financiar</ion-label>
+                    <ion-input type="number" [(ngModel)]="finance" name="finance" maxlength="6" minlength="1" required></ion-input>
+                </ion-item>
+            </ion-row>
+            <ion-item>
+                <ion-label floating>Tipo de Garantía</ion-label>
+                <ion-select cancelText="Cancelar" okText="Ok" [(ngModel)]="guarantee" name="guarantee" required>
+                    <ion-option value="Hipotecaria">Hipotecaria</ion-option>
+                    <ion-option value="Hipotecaria y Prendaria">Hipotecaria y Prendaria</ion-option>
+                    <ion-option value="Prendaria">Prendaria</ion-option>
+                </ion-select>
+            </ion-item>
+            <div class="footer">
+                <button type="submit" [disabled]="!ionForm.form.valid">Siguiente</button>
+            </div>
+        </form>
+    </div>
+</ion-content>

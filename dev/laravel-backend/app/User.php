@@ -39,6 +39,7 @@ class User extends Model implements AuthenticatableContract,
      * @var string
      */
     protected $table = 'users';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
@@ -59,7 +60,8 @@ class User extends Model implements AuthenticatableContract,
         'timezone',
         'language',
         'confirmation_code',
-        'online'
+        'online',
+        'rfc'
     ];
 
     /**
@@ -85,6 +87,10 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Comment');
     }
+    public function getAuthPassword() {
+        return $this->password;
+    }
    #### import fields
     public  $import_fields=['email','password','role','name','gender','status','phone','site','department','title','timezone','language'];
+
 }

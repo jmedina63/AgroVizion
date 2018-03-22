@@ -1,0 +1,74 @@
+----- Credits view
+CREATE VIEW vw_credits AS
+SELECT
+credits.id,
+amount, 
+credits.expiration AS creditExpiration,
+DATE_FORMAT(credits.created_at, '%Y/%m/%d') AS creditCreated,
+request_id,
+hectares, 
+cultivation_id, 
+cultivations.description AS cultivation,
+cultivations.short_desc AS shortCultivation,
+docs_id,
+status_id,
+credit_status.description AS creditStatus,
+REPLACE(credit_status.appText, '%%', credits.id) AS appText,
+credit_status.colorHEX, 
+datediff(credit_docs.expiration, now()) AS docsLife,
+users.id AS user_id,
+users.name AS cliente
+FROM credits
+JOIN credit_request ON credits.request_id=credit_request.id
+JOIN credit_status ON credits.status_id=credit_status.id
+JOIN cultivations ON credit_request.cultivation_id=cultivations.id
+JOIN credit_docs ON credit_request.docs_id=credit_docs.id
+JOIN users ON credit_request.user_id=users.id
+
+----- Balance view
+CREATE VIEW vw_credit_balance AS
+SELECT
+user_id,
+CONCAT('$', FORMAT(SUM(amount), 2), ' MXN') AS balance
+FROM credits
+JOIN credit_request ON credits.request_id=credit_request.id
+WHERE status_id IN(2, 3, 6)
+GROUP BY user_id
+
+
+CREATE VIEW vw_credits_ministry AS
+select
+user_id,
+credit_ministry.credit_id,
+credit_ministry.ministry_id,
+ministry.description,
+CONCAT('$', FORMAT(credit_ministry.amount, 2), ' MXN') AS amount,
+CONCAT(hectares,'H - ', cultivations.short_desc) AS creditName
+FROM credit_request
+JOIN credits ON credit_request.id=credits.request_id
+JOIN credit_ministry ON credits.id=credit_ministry.credit_id
+JOIN ministry ON credit_ministry.ministry_id=ministry.id
+JOIN cultivations ON credit_request.cultivation_id=cultivations.id
+WHERE
+status_id IN(2, 3, 6) AND
+credit_ministry.status=1
+
+
+// trigger for credit ministrations
+DELIMITER $$
+
+CREATE TRIGGER CHK_Credit_Ministry_Amount BEFORE INSERT ON credit_ministry FOR EACH ROW
+BEGIN
+	SET @credit = (SELECT amount FROM credits WHERE id=NEW.credit_id AND status_id IN(2, 3, 6));
+	SET @ministry = (SELECT SUM(amount) FROM credit_ministry WHERE credit_id=NEW.credit_id);
+	
+	IF (NEW.amount <= 0) THEN
+		SIGNAL sqlstate '45001' set message_text = "Amount is less than 1";
+	END IF; 
+	IF (@credit <= 0 OR @credit IS NULL) THEN
+		SIGNAL sqlstate '45001' set message_text = "Credit amount is less than 1 or has an incorrect status";
+	END IF;
+	IF (@credit < (@ministry + NEW.amount)) THEN
+		SIGNAL sqlstate '45001' set message_text = "The sum of the ministry amounts is more than the credit";
+	END IF;
+END $$

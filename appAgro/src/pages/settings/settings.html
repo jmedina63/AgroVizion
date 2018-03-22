@@ -1,0 +1,42 @@
+<ion-content padding class="page-settings" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <ul>
+            <li>
+                <div class="icon">
+                    <ion-icon name="md-person"></ion-icon>
+                </div>
+                 <div class="label">Desbloquear clave</div>
+             </li>
+            <li (click)="goTo(pages['location'])">
+                <div class="icon">
+                    <ion-icon name="md-pin"></ion-icon>
+                </div>
+                <div class="label">Localizar sucursales</div>
+            </li>
+            <li (click)="noticePrivacy()">
+                <div class="icon">
+                    <ion-icon name="md-document"></ion-icon>
+                </div>
+                <div class="label">Aviso de privacidad</div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <img src="assets/img/grey_logo.png" alt="AgroVizión">
+        <button type="button" (click)="logout()">Salir</button>
+    </div>
+</ion-content>
