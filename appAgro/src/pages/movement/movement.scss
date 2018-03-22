@@ -1,0 +1,263 @@
+.page-movement {
+    background-color: white;
+    $color: #8d47b9;
+
+    button {
+        color: white;
+    }
+
+    .header {
+        background-image: url('../assets/img/movement_background.png');
+        height: 23%;
+        background-position: 80% 85%;
+        background-size: 175% 175%;
+        background-repeat: no-repeat;
+        -webkit-clip-path: polygon(0 0, 0 45%, 46% 70%, 100% 100%, 100% 0);
+        clip-path: polygon(0 0, 0 45%, 46% 70%, 100% 100%, 100% 0);
+    }
+
+    .header button {
+        background-color: transparent;
+    }
+
+    .header .icon {
+        height: 30%;
+        width: 100%;
+        position: relative;
+    }
+
+    .header .icon img {
+        height: 110%;
+        width: 15%;
+        right: 10%;
+        position: absolute;
+        bottom: 10%;
+    }
+
+    .info {
+        width: 97.5%;
+        height: 30%;
+    }
+
+    .info > .logo {
+        width: 100%;
+        height: 20%;
+        position: relative;
+    }
+
+    .info > .logo img {
+        width: 10%;
+        height: 115%;
+        position: absolute;
+        left: 15%;
+        bottom: 75%;
+    }
+
+    .info > .user-info {
+        width: 100%;
+        height: 35%;
+        position: relative;
+        padding-left: 12%;
+        display: flex;
+        bottom: 1%;
+    }
+
+    .info > .user-info > .user-pic {
+        width: 25%;
+        height: 100%;
+    }
+
+    .info > .user-info > .user-pic img {
+        width: 100%;
+        height: 105%;
+        border-radius: 50%;
+        border: 0.2em solid #8d47b9;
+    }
+
+    .info > .user-info > .user-data {
+        height: 100%;
+        width: 75%;
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+    .info > .user-info > .user-data label {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+    }
+    .info > .user-info > .user-data #user-name {
+        font-size: 1.3em;
+        color: #8d47b9;
+        font-weight: 600;
+    }
+
+    .info > .user-info > .user-data #user-number {
+        color: gray;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+    .info > .movement-info {
+        padding-left: 15%;
+        height: 10%;
+        width: 100%;
+        padding-top: 5%;
+        display: inline-flex;
+
+        & .options {
+            font-size: 1.4em;
+            padding-right: 4%;
+            padding-top: 4%;
+        }
+
+        & .options ion-icon {
+            color: #c3bfbf;
+        }
+
+        & #date {
+            font-weight: 500;
+        }
+    }
+    .info > .movement-info label {
+        width: 100%;
+        display: block;
+    }
+    .info > .movement-info #title{
+        color: grey;
+        font-size: 1.1em;
+    }
+    .list {
+        width: 100%;
+        height: 47%;
+    }
+    .list > .balance {
+        width: 95%;
+        height: 25%;
+        background-color: $color;
+        border-radius: 5px 5px 5px 5px;
+        margin-left: 2%;
+        position: relative;
+        padding-left: 10%;
+        padding-top: 2%;
+
+        & .title {
+            font-size: 0.4em;
+        }
+        & .content {
+            padding-left: 5%;
+            padding-top: 0.2em;
+        }
+    }
+    .list > .balance label {
+        color: white;
+        font-size: 2em;
+        bottom: 27.5%;
+        left: 10%;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 90%;
+    }
+    .list > .balance span {
+        font-size: 0.7em;
+    }
+    .list > .balance-apply, .list > .before-balance {
+        width: 65%;
+        height: 10%;
+        border: 1.2px solid $color;
+        margin: auto;
+        margin-top: 1em;
+        color: $color;
+
+        & .title {
+            font-size: 0.7em;
+        }
+        & label {
+            vertical-align: middle;
+            padding: 5%;
+        }
+        & .money {
+            font-weight: 500;
+        }
+    }
+
+    .list > .before-balance {
+        position: relative;
+        bottom: 5%;
+        & .money {
+            margin-left: 10%;
+        }
+    }
+    .movements > ul {
+        list-style: none;
+        width: 100%;
+        padding: 0 10%;
+    }
+    .movements > ul > li {
+        width: 100%;
+        display: flex;
+        height: 3.5em;
+    }
+    .movements > ul div {
+        width: 50%;
+    }
+    .movements > ul .description {
+        text-align: left;
+    }
+    .movements > ul .movement {
+        text-align: right;
+    }
+    .movements > ul label {
+        display: block;
+    }
+    .movements > ul .description .desc-title {
+        font-size: 1.1em;
+    }
+    .movements > ul .description .desc-date {
+        font-size: 0.7em;
+        color: gray;
+    }
+    .movements > ul .movement .move-money {
+        font-size: 1.2em;
+        font-weight: 500;
+
+        &.red {
+            color: red;
+        }
+        &.green {
+            color: #24de24;
+        }
+
+        & ion-icon {
+            vertical-align: middle;
+            margin-right: 0.3em;
+            font-size: 0.9em;
+        }
+    }
+    .movements > ul .movement .move-coin {
+        font-size: 0.8em;
+        color: gray;
+        font-weight: 100;
+    }
+    .desc-title, .move-money {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .footer {
+        height: 3.2em;
+        margin-top: 5%;
+        margin-bottom: 0.3em;
+        
+        & button {
+            background-color: #6a2a91;
+            height: 75%;
+            width: 65%;
+            border-radius: 5px 5px 5px 5px;
+            margin: auto;
+            display: inherit;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            font-weight: 100;
+        }
+    }
+}

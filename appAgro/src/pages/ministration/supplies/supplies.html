@@ -1,0 +1,155 @@
+<ion-content padding class="page-supplies" overflow-scroll="false">
+    <div class="header" ion-fixed>
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <!-- <label id="user-name">Aldo Fernandez</label> -->
+                <label id="user-number">{{storage.user.phone}}</label>
+                <!-- <label id="user-number">6862344567</label> -->
+            </div>
+            <div class="user-pic">
+                <!-- <img src="{{storage.user.avatar_url}}" alt="Usuario"> -->
+                <img src="assets/img/userpic.png" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-title">
+            <div class="title-icon">
+                <img src="assets/img/carshop_icon_white.png" alt="icono">
+                <label>Semillas y fertilizantes</label>
+            </div>
+            <div class="title-text"><label>$10,000 MXN</label></div>
+        </div>
+        <form (ngSubmit)="sendInfo(ionForm)" #ionForm="ngForm">
+            <div class="element-select">
+                <ion-label>Crédito</ion-label>
+                <ion-item>
+                    <ion-label select-text>Crédito</ion-label>
+                    <ion-select cancelText="Cancelar" okText="Ok" required>
+                        <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                        <ion-option value="1">1</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            <ion-grid>
+                <ion-row class="row-header">
+                    <ion-col col-3>Descripción</ion-col>
+                    <ion-col col-5>Cantidad</ion-col>
+                    <ion-col col-4>Fecha</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Fosfato monoamo.</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Urea</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Amoniaco</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Semilla de algodón</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Cosecha</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Variedad de semillas</ion-col>
+                    <ion-col col-9>
+                        <ion-item>
+                            <ion-label select-text>Semillas</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="grid-footer">
+                    <ion-col col-6>
+                        <label>Disponible: <span id="qtAvailable">25 Ton</span></label>
+                    </ion-col>
+                    <ion-col col-6>
+                        <label>$ Hoy: <span id="todayPrice">1,200 MXN</span></label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div class="footer">
+                <button type="button">Cambiar Sucursal&nbsp;&nbsp;<ion-icon name="ios-pin-outline"></ion-icon></button>
+                <button type="submit">Guardar Fechas</button>
+                <img src="assets/img/grey_logo.png" alt="logo">
+            </div>
+        </form>
+    </div>
+    <div class="success-dialog close" ion-fixed>
+        <div class="dialog-background"></div>
+        <div class="dialog-icon">
+            <img src="assets/img/acept_icon_blue.png" alt="">
+        </div>
+        <div class="dialog-title">
+            <label><span>¡GRACIAS!</span><br></label>
+            <label>Las fechas han sido cambiadas.</label>
+        </div>
+        <div class="dialog-footer">
+            <button (click)="exit()">Volver</button>
+        </div>
+    </div>
+</ion-content>

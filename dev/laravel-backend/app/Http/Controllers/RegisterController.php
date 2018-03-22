@@ -69,6 +69,50 @@ class RegisterController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function registerAPI(Request $request)
+    {
+        if ($request) {
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|min:3',
+                'fathername' => 'required|min:3',
+                'mothername' => 'required|min:3',
+                'rfc' => 'required|min:8|max:18|unique:users,rfc',
+                'email' => 'required|min:5|max:100|unique:users,email',
+                'phone' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return response()->json(['error' => $validator->errors()], 406);
+            }
+
+            // generate random code to verify
+            $request['confirmation_code'] = str_random(30);
+
+            // set default user role ID
+            $request['role_id'] = 2; // 2 = client role id
+
+            // define password
+            $user = User::create([
+                'name' => $request['name'].' '.$request['fathername'].' '.$request['mothername'],
+                'rfc' => $request['rfc'],
+                'email' => $request['email'],
+                'phone' => $request['phone'],
+                'confirmation_code' => $request['confirmation_code'],
+                'status' => 0
+            ]);
+
+            // set user role id in relationship table
+            DB::insert('insert into role_user (user_id, role_id) values (?, ?)', [$user->id, $request['role_id']]);
+
+            return response()->json('Congratulations! Your account created. Already ngLaravel system sent a verification email.', 200);
+        } else {
+            return response()->json(['error' => 'Form is empty!'], 401);
+        }
+    }
+
 
     /**
      * @param $confirmation_code

@@ -1,0 +1,125 @@
+.page-movementAlert{
+    background-color: #9650c1;
+    background-image: url("../assets/img/logo_purple.png");
+    background-position: top;
+    background-size: 140% 90%;
+    background-repeat: no-repeat;
+
+    .header {
+        width: 100%;
+        height: 12%;
+        background-color: transparent;
+        display: flex;
+        border-bottom: 1px solid #6a4c89;
+    }
+    .header button {
+        background-color: transparent;
+        margin: auto;
+    }
+    .user-info {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin: auto;
+    }
+    .user-info > .user-data {
+        width: 70%;
+        height: 100%;
+        text-align: right;
+        margin-top: 5%;
+    }
+
+    .user-info > .user-data label {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: white;
+    }
+    .user-info > .user-data #user-name {
+        font-size: 1.3em;
+    }
+    .user-info > .user-data #user-number {
+        font-size: 0.8em;
+        color: #dafdb8;
+    }
+    .user-info > .user-data #user-pic {
+        font-size: 0.7em;
+    }
+    .user-info > .user-pic {
+        width: 25%;
+        height: 100%;
+    }
+    .user-info > .user-pic img {
+        width: 75%;
+        border: 2px solid #b7e2a1;
+        border-radius: 50%;
+        margin-top: 10%;
+    }
+    .content {
+        height: 88%;
+        width: 100%;
+        padding-top: 5%;
+        padding-left: 7.5%;
+        padding-right: 5%;
+    }
+    .content > .topic {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        margin-bottom: 10%;
+    }
+    .content > .topic .icon {
+        width: 16%;
+        height: 90%;
+    }
+    .content > .topic .icon img {
+        width: 100%;
+        height: 100%;
+    }
+    .content > .topic .message {
+        width: 80%;
+        color: white;
+        height: 100%;
+        margin-left: 5%;
+    }
+    .content > .topic .message #data {
+        display: block;
+        font-weight: 100;
+        font-size: 1.1em;
+    }
+    .content > .topic .message #status {
+        display: block;
+        font-size: 1.5em;
+    }
+    .content > .topic .message label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .content > .main-message {
+        color: white;
+        font-weight: 100;
+        height: 65%;
+        width: 100%;
+    }
+    .content > .main-message ul {
+        list-style-type: decimal;
+        padding-left: 5%;
+    }
+    .content > .main-message ul li {
+        margin-bottom: 5%;
+    }
+    .content > .footer {
+        height: 12.5%;
+        width: 100%;
+        text-align: center;
+    }
+    .content > .footer img {
+        width: 15%;
+        height: 100%;
+        text-align: center;
+    }
+}

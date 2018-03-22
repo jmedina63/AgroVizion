@@ -1,0 +1,147 @@
+.page-menuMinistration {
+    background-color: $light-blue;
+
+    .header {
+        width: 100%;
+        height: 5em;
+        background-color: $light-blue;
+        display: flex;
+        border-bottom: 1px solid #0072c6;
+    }
+
+    .header button {
+        background-color: transparent;
+        margin: auto;
+    }
+
+    .user-info {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin: auto;
+    }
+
+    .user-info > .user-data {
+        width: 70%;
+        height: 100%;
+        text-align: right;
+        margin-top: 5%;
+    }
+
+    .user-info > .user-data label {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: white;
+    }
+
+    .user-info > .user-data #user-name {
+        font-size: 1.3em;
+    }
+
+    .user-info > .user-data #user-number {
+        font-size: 0.8em;
+        color: #81caff;
+    }
+
+    .user-info > .user-data #user-pic {
+        font-size: 0.7em;
+    }
+
+    .user-info > .user-pic {
+        width: 25%;
+        height: 100%;
+    }
+
+    .user-info > .user-pic img {
+        width: 75%;
+        border: 2px solid #b7e2a1;
+        border-radius: 50%;
+        margin-top: 10%;
+    }
+
+    .content {
+        margin-top: 22%;
+        width: 100%;
+        height: 87%;
+
+        & .content-title {
+            width: 100%;
+            height: 6.8em;
+            display: flex;
+        }
+        & .title-icon {
+            width: 42.5%;
+            text-align: right;
+            padding-right: 10%;
+
+            & img { height: 55%; }
+        }
+        & .title-text {
+            font-size: 1.6em;
+            font-weight: 500;
+            color: white;
+            margin: auto;
+        }
+    }
+
+    .content > .menu {
+        width: 95%;
+        height: 65%;
+    }
+
+    .content > .menu ul {
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        bottom: 7.5%;
+        padding-left: 5%;
+    }
+
+    .content > .menu ul > li {
+        background-color: #00497e;
+        height: 24%;
+        margin-bottom: 3%;
+        border-radius: 5px 5px 5px 5px;
+        padding-left: 15%;
+        position: relative;
+        display: inline-flex;
+        position: relative;
+        width: 100%;
+    }
+    .content > .menu ul .icon {
+        height: 100%;
+        width: 20%;
+        position: relative;
+    }
+    .content > .menu ul > li img {
+        top: 20%;
+        position: absolute;
+        height: 55%;
+        width: 65%;
+    }
+    .content > .menu ul > li .label {
+        top: 30%;
+        position: relative;
+        height: 65%;
+        width: 70%;
+        color: #3094de;
+        font-weight: 400;
+        font-size: 1.5em;
+        padding-left: 3%;
+    }
+    .content > .footer {
+        height: 3.5em;
+        width: 2.5em;
+        margin: auto;
+        margin-top: 0.5em;
+    }
+    .content > .footer > img {
+        height: 100%;
+        width: 100%;
+    }
+}

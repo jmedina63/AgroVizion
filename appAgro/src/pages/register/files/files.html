@@ -1,0 +1,103 @@
+<ion-content padding class="page-files" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only type="button" (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <label>Adjuntar</label>
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <li (click)="openCamera(document, 'votingLisense')">
+                 <div class="label">Identificación oficial</div>
+                 <div class="icon">
+                    <ion-icon name="camera" class="grey" *ngIf="(document.votingLisense.name == null)"></ion-icon>
+                    <ion-icon name="ios-checkmark" class="green" *ngIf="(document.votingLisense.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'addressDocument')">
+                 <div class="label">Comprobante de domicilio</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.addressDocument.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.addressDocument.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'birthCertificate')">
+                 <div class="label">Acta de nacimiento</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.birthCertificate.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.birthCertificate.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'curp')">
+                 <div class="label">Curp</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.curp.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.curp.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'endorseBirthCert')">
+                 <div class="label">Acta de nacimiento aval</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.endorseBirthCert.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.endorseBirthCert.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'rfc')">
+                 <div class="label">RFC</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.rfc.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.rfc.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'solidarityId')">
+                 <div class="label">Identificación de los solidarios</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.solidarityId.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.solidarityId.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'irrigationPermits')">
+                 <div class="label">Permisos de riego</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.irrigationPermits.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.irrigationPermits.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'leaseContract')">
+                 <div class="label">Contratos de arrendamiento</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.leaseContract.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.leaseContract.name != null)"></ion-icon>
+                 </div>
+             </li>
+            <li (click)="openCamera(document, 'curpEndorsement')">
+                 <div class="label">Curp aval</div>
+                 <div class="icon">
+                     <ion-icon name="camera" class="grey" *ngIf="(document.curpEndorsement.name == null)"></ion-icon>
+                     <ion-icon name="ios-checkmark" class="green" *ngIf="(document.curpEndorsement.name != null)"></ion-icon>
+                 </div>
+             </li>
+        </ul>
+        <div class="footer">
+            <button (click)="sendInfo()">Procesar</button>
+        </div>
+    </div>
+    <div class="success-dialog close">
+        <div class="dialog-background"></div>
+        <div class="dialog-icon">
+            <img src="assets/img/acept_icon.png" alt="">
+        </div>
+        <div class="dialog-title">
+            <label><span>¡GRACIAS!</span><br></label>
+            <label>Su registro ha sido enviado a revisión.</label>
+        </div>
+        <div class="dialog-body">
+            <label>¡En XX horas nos pondremos en contacto con usted!</label>
+        </div>
+        <div class="dialog-footer">
+            <button (click)="exit()">Volver</button>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-content padding class="page-notification" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="credit-alert" (click)="goTo(pages['creditAlert'])">
+            <div class="alert-header">
+                <div class="alert-icon">
+                    <img src="assets/img/credit_circle.png" alt="carrito">
+                </div>
+                <div class="alert-topic"><label>Créditos</label></div>
+                <div class="alert-logo"><img src="assets/img/grey_logo.png" alt="logo"></div>
+            </div>
+            <div class="alert-content">
+                <label>Su crédito con folio 3445 ha sido aprobado.</label>
+            </div>
+            <div class="alert-footer">
+                <label>!En hora buena! La solicitud con folio 3445 ha sido aprobada, aquí encontrara. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, vero.</label>
+            </div>
+        </div>
+        <div class="ministration-alert" (click)="goTo(pages['ministrationAlert'])">
+            <div class="alert-header">
+                <div class="alert-icon">
+                    <img src="assets/img/carshop_circle.png" alt="carrito">
+                </div>
+                <div class="alert-topic"><label>Ministraciones</label></div>
+                <div class="alert-logo"><img src="assets/img/grey_logo.png" alt="logo"></div>
+            </div>
+            <div class="alert-content">
+                <label>Confirmación de su pedido.</label>
+            </div>
+            <div class="alert-footer">
+                <label>Su proceso está en proceso de surtido. Prontro recibira una notificación cuando su pedido esté en.</label>
+            </div>
+        </div>
+        <div class="movement-alert" (click)="goTo(pages['movementAlert'])">
+            <div class="alert-header">
+                <div class="alert-icon">
+                    <img src="assets/img/money_circle.png" alt="carrito">
+                </div>
+                <div class="alert-topic"><label>Saldos y movimientos</label></div>
+                <div class="alert-logo"><img src="assets/img/grey_logo.png" alt="logo"></div>
+            </div>
+            <div class="alert-content">
+                <label>Balance general 01 de Octubre de 2017.</label>
+            </div>
+            <div class="alert-footer">
+                <label>Ya puede consultar la actualización del balance general de la fecha.</label>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,144 @@
+<ion-content padding class="page-cash" overflow-scroll="false">
+    <div class="header" ion-fixed>
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-title">
+            <div class="title-icon">
+                <img src="assets/img/money_white.png" alt="icono">
+                <label>Efectivo</label>
+            </div>
+            <div class="title-text"><label>{{creditSelected.amount}}</label></div>
+        </div>
+        <form (ngSubmit)="sendInfo(ionForm)" #ionForm="ngForm">
+            <div class="element-select">
+                <ion-label>Crédito</ion-label>
+                <ion-item>
+                    <ion-label select-text>Crédito</ion-label>
+                    <ion-select cancelText="Cancelar" okText="Ok" [(ngModel)]="creditSelected" name="creditSelected" required>
+                        <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            <ion-grid>
+                <ion-row class="row-header">
+                    <ion-col col-3>Descripción</ion-col>
+                    <ion-col col-5>Cantidad</ion-col>
+                    <ion-col col-4>Fecha</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Rentas</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" [(ngModel)]="rent" name="rent" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="rentDate" name="rentDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Preparación de terreno</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="preparation" name="preparation" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="preparationDate" name="preparationDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Siembra</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="sowing" name="sowing" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="sowingDate" name="sowingDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Labores Culturales</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="labors" name="labors" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="laborsDate" name="laborsDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Cosecha</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="harvest" name="harvest" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="harvestDate" name="harvestDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="row-title" col-3>Diversos</ion-col>
+                    <ion-col col-5>
+                        <ion-item>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="diverse" name="diverse" required></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-4>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            [(ngModel)]="diverseDate" name="diverseDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div class="footer">
+                <button type="submit">Guardar Fechas</button>
+                <img src="assets/img/grey_logo.png" alt="logo">
+            </div>
+        </form>
+    </div>
+    <div class="success-dialog close" ion-fixed>
+        <div class="dialog-background"></div>
+        <div class="dialog-icon">
+            <img src="assets/img/acept_icon_blue.png" alt="">
+        </div>
+        <div class="dialog-title">
+            <label><span>¡GRACIAS!</span><br></label>
+            <label>Las fechas han sido cambiadas.</label>
+        </div>
+        <div class="dialog-footer">
+            <button (click)="exit()">Volver</button>
+        </div>
+    </div>
+</ion-content>

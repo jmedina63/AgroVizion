@@ -1,0 +1,338 @@
+.page-quimics {
+    background-color: white;
+
+    .header {
+        width: 100%;
+        height: 5em;
+        background-color: $light-blue;
+        display: flex;
+        border-bottom: 1px solid #0072c6;
+    }
+
+    .header button {
+        background-color: transparent;
+        margin: auto;
+    }
+
+    .user-info {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        position: relative;
+        text-align: center;
+        margin: auto;
+    }
+
+    .user-info > .user-data {
+        width: 70%;
+        height: 100%;
+        text-align: right;
+        margin-top: 5%;
+    }
+
+    .user-info > .user-data label {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: white;
+    }
+
+    .user-info > .user-data #user-name {
+        font-size: 1.3em;
+    }
+
+    .user-info > .user-data #user-number {
+        font-size: 0.8em;
+        color: #81caff;
+    }
+
+    .user-info > .user-data #user-pic {
+        font-size: 0.7em;
+    }
+
+    .user-info > .user-pic {
+        width: 25%;
+        height: 100%;
+    }
+
+    .user-info > .user-pic img {
+        width: 75%;
+        border: 2px solid #b7e2a1;
+        border-radius: 50%;
+        margin-top: 10%;
+    }
+
+    .content {
+        margin-top: 5em;
+        width: 100%;
+        height: 87%;
+
+        & .content-title {
+            width: 100%;
+            height: 6.8em;
+            display: flex;
+            background-color: $dark-blue;
+        }
+        & .title-icon {
+            width: 50%;
+            margin: auto;
+            display: inline-flex;
+            padding-left: 7.5%;
+
+            & img { height: 2.6em; }
+            & label {
+                font-size: 1.3em;
+                color: $light-blue;
+                align-self: center;
+                margin-left: 12%;
+            }
+        }
+        & .title-text {
+            width: 50%;
+            text-align: right;
+            padding-right: 5%;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: white;
+            margin: auto;
+        }
+    }
+
+    .content > form {
+        padding-left: 5%;
+        padding-top: 3%;
+
+        & .item-md {
+            padding-left: 0px;
+            font-size: inherit;
+        }
+        & .item-md.item-block .item-inner {
+            border: 1px solid gray;
+            padding-right: 0px;
+        }
+        & .element-select {
+            width: 80%;
+        }
+        & .grid {
+            padding: initial;
+        }
+        & .row-header {
+            font-size: 0.8em;
+            color: $light-blue;
+        }
+        & ion-row > ion-col.row-title {
+            font-size: 0.8em;
+            align-self: center;
+        }
+        & ion-row > ion-col > ion-input {
+            font-size: 0.9em;
+        }
+        & .text-input-md {
+            margin: 8px 8px;
+        }
+        & .select-md .select-icon {
+            width: 19px;
+        }
+        & .datetime-md {
+            padding: 0px 0px 0px 0px;
+            padding-top: 5px;
+        }
+        & .datetime-text {
+            font-size: 0.85em;
+        }
+        ion-datetime {
+            text-align: center;
+            width: 100%;
+        }
+        & ion-datetime .datetime-text.datetime-placeholder {
+            font-size: 0.8em;
+        }
+        & .item.item-block.item-md.item-select, .item-block {
+            min-height: 2.5em;
+            height: 2.5em;
+        }
+        & .label-md {
+            margin: 11px 8px 9px 0;
+        }
+        & ion-select {
+            max-width: 100%;
+            text-align: left;
+            width: 100%;
+        }
+        & .select-md {
+            padding: 13px 8px 13px 5px;
+        }
+        & .grid-footer {
+            margin-top: 1em;
+
+            & label {
+                font-weight: 500;
+            }
+            & ion-col {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+        & #qtAvailable, #todayPrice {
+            margin-left: 0.5em;
+            color: $light-blue;
+            font-weight: 400;
+        }
+    }
+
+    .content > form .footer {
+        margin: auto;
+        margin-top: 2em;
+        height: 3.5em;
+        width: 60%;
+        text-align: center;
+    }
+    .content > form .footer > img {
+        margin-top: 1em;
+        height: 3.5em;
+        width: 2.5em;
+        margin-bottom: 0.5em;
+    }
+    .content > form .footer > button[type="button"] {
+        background-color: $light-blue;
+        height: 2.6em;
+        width: 80%;
+        margin: auto;
+        // display: inherit;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-weight: 100;
+        color: white;
+        margin-bottom: 2em;
+        position: relative;
+
+        & ion-icon {
+            position: absolute;
+            right: 0.8em;
+            font-size: 1.5em;
+            top: 0.3em;
+        }
+    }
+    .content > form .footer > button[type="submit"] {
+        background-color: $dark-blue;
+        height: 2.9em;
+        width: 100%;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        // display: inherit;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        font-weight: 100;
+        color: white;
+    }
+
+    // modal dialog
+    & .success-dialog {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        position: fixed;
+        -webkit-transition: opacity .35s ease 0s, visibility linear .35s, visibility .35s;
+        transition: opacity .35s ease 0s, visibility linear .35s, visibility .35s;
+
+        & .dialog-icon {
+            position: relative;
+            width: 30%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            margin-bottom: 10%;
+        }
+        & .dialog-title {
+            position: relative;
+            width: 65%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+        & .dialog-title label {
+            color: white;
+            font-size: 1.2em;
+        }
+        & .dialog-title label span {
+            font-size: 1.3em;
+        }
+        & .dialog-background {
+            background-color: black;
+            opacity: 0.8;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        & .dialog-body {
+            position: relative;
+            width: 60%;
+            margin: auto;
+            top: 20%;
+            text-align: center;
+            opacity: 0.55;
+            color: white;
+        }
+        & .dialog-footer {
+            z-index: 10;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            bottom: 20%;
+        }
+        & .dialog-footer button {
+            background-color: $light-blue;
+            height: 75%;
+            width: 65%;
+            border-radius: 5px 5px 5px 5px;
+            margin: auto;
+            display: inherit;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            font-weight: 100;
+            color: white;
+        }
+        &.close {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+    .col {
+        padding: 0px 5px;
+    }
+    // input for image upload
+    .input-compose {
+        margin-top: 2em;
+    }
+    .input-compose ion-label[icon-circle-right] {
+        position: absolute;
+        right: 5%;
+        height: 1.8em;
+        width: 1.8em;
+        background-color: $light-blue;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .input-compose ion-label[input-text] {
+        padding-left: 0.6em;
+    }
+    .input-compose ion-label[input-text], ion-input, ion-label[icon-circle-right], ion-select {
+        font-size: 0.9em;
+    }
+    .input-compose ion-label[icon-circle-right] > ion-icon {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 20% 0;
+        color: black;
+        font-size: 1.1em;
+    }
+    .input-compose ion-label[icon-circle-right] > ion-icon[name='ios-checkmark'] {
+        font-size: 2em;
+        padding: initial;
+    }
+}

@@ -1,0 +1,40 @@
+<ion-content padding class="page-location">
+    <div id="map">
+        <div class="nav" (click)="back()">
+            <button ion-button icon-only>
+                <ion-icon name="md-arrow-back"></ion-icon>
+            </button>
+        </div>
+        <div class="info-box" (pandown)="closeModal()">
+            <div class="modal">
+                <div class="icon">
+                    <img src="assets/img/car_icon.png" alt="carrito">
+                </div>
+                <div class="content">
+                    <div class="header">
+                        <div class="logo">
+                            <img src="assets/img/green_logo.png" alt="logo">
+                        </div>
+                        <div class="title">
+                            <label>{{currentMarker.name}}</label>
+                        </div>
+                    </div>
+                    <div class="content-data">
+                        <div class="row">
+                            <ion-icon name="pin"></ion-icon>
+                            <label>{{currentMarker.address}}</label>
+                        </div>
+                        <div class="row">
+                            <ion-icon name="md-call"></ion-icon>
+                            <label>{{currentMarker.phone}}</label>
+                        </div>
+                        <div class="row">
+                            <ion-icon name="md-time"></ion-icon>
+                            <label>Lun-Viern, 10 AM - 7 PM</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

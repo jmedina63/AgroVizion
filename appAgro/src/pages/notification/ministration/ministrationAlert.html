@@ -1,0 +1,42 @@
+<ion-content padding class="page-ministrationAlert" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="topic">
+            <div class="icon"><img src="assets/img/cars_circle.png" alt="icono"></div>
+            <div class="message">
+                <label id="data">Confirmación de su pedido:</label>
+                <label id="status">4362</label>
+            </div>
+        </div>
+        <div class="main-message">
+            <label id="message-info">
+                Su pedido está confirmado, la siguiente clave recoger su pedido.
+            </label>
+            <label id="steps">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </label>
+        </div>
+        <div class="footer">
+            <img src="assets/img/white_logo.png" alt="logo">
+        </div>
+    </div>
+</ion-content>

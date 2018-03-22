@@ -1,0 +1,153 @@
+.page-location {
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav {
+        height: 8%;
+        width: 15%;
+        position: absolute;
+        right: 14%;
+        top: 2%;
+        text-align: center;
+    }
+    .nav button {
+        background-color: transparent;
+        color: #53bf59;
+    }
+    .info-box {
+        position: absolute;
+        bottom: 0;
+        height: 52.5%;
+        width: 100%;
+        padding: 2.5%;
+        z-index: -1000;
+        overflow: hidden;
+
+        & .modal {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(110%);
+            transition: all 0.3s;
+        }
+        & .icon {
+            width: 100%;
+            height: 10%;
+
+            & img {
+                position: absolute;
+                height: 20%;
+                right: 5%;
+                z-index: 10;
+            }
+        }
+
+        & .content {
+            width: 100%;
+            height: 90%;
+            background-color: white;
+            border-radius: 0.3em;
+            position: relative;
+            padding-left: 7%;
+            padding-top: 7%;
+        }
+
+        & .header {
+            height: 25%;
+            width: 100%;
+            display: flex;
+        }
+        & .logo {
+            height: 90%;
+            width: 17%;
+            & img {
+                width: 65%;
+            }
+        }
+        & .title {
+            font-size: 1.2em;
+            margin: auto 0;
+            font-weight: 500;
+            width: 87%;
+            border-bottom: 1px solid #b8b8b8;
+            height: 100%;
+            & label {
+                vertical-align: -webkit-baseline-middle
+            }
+        }
+
+        & .content-data {
+            height: 75%;
+            width: 100%;
+            padding-top: 7%;
+
+            & .row {
+                width: 100%;
+                height: 33%;
+                display: flex;
+            }
+            & ion-icon {
+                font-size: 1.7em;
+                color: #b8b8b8;
+                width: 15%;
+            }
+            & label {
+                font-size: 0.9em;
+                width: 85%;
+            }
+        }
+    }
+    .modal.pop {
+        opacity: 1;
+        transform: translateY(0%);
+        transition: all 0.3s;
+    }
+    .info-box.display {
+        z-index: 10;
+    }
+}
+
+
+
+.mfp-move-from-top {
+
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+
+    transform: translateY(-100px);
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.2s;
+  }
+
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  /* animate out */
+  &.mfp-removing {
+
+    .mfp-with-anim {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+
+  }
+
+}

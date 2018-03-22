@@ -1,0 +1,37 @@
+<ion-content padding class="page-notice" overflow-scroll="true">
+    <div class="header">
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <ion-slides pager="true" paginationType="bullet" loop="true">
+            <ion-slide>
+                <div class="background">
+                    <img src="assets/img/roulette1.png" alt="imagen1">
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="background">
+                    <img src="assets/img/roulette3.png" alt="imagen2">
+                </div>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="background">
+                    <img src="assets/img/roulette2.png" alt="imagen3">
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

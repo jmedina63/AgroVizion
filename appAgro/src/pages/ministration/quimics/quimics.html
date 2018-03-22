@@ -1,0 +1,134 @@
+<ion-content padding class="page-quimics" overflow-scroll="false">
+    <div class="header" ion-fixed>
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <!-- <label id="user-name">Aldo Fernandez</label> -->
+                <label id="user-number">{{storage.user.phone}}</label>
+                <!-- <label id="user-number">6862344567</label> -->
+            </div>
+            <div class="user-pic">
+                <!-- <img src="{{storage.user.avatar_url}}" alt="Usuario"> -->
+                <img src="assets/img/userpic.png" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-title">
+            <div class="title-icon">
+                <img src="assets/img/quimics_icon_white.png" alt="icono">
+                <label>Agroquímicos</label>
+            </div>
+            <div class="title-text"><label>$22,000 MXN</label></div>
+        </div>
+        <form (ngSubmit)="sendInfo(ionForm)" #ionForm="ngForm">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <ion-label>Problema</ion-label>
+                        <ion-item>
+                            <ion-label select-text>Problemas</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-6>
+                        <ion-label>Crédito</ion-label>
+                        <ion-item>
+                            <ion-label select-text>Crédito</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-10>
+                        <ion-label>Producto</ion-label>
+                        <ion-item>
+                            <ion-label select-text>Producto</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-10>
+                        <ion-label>Proveedor</ion-label>
+                        <ion-item>
+                            <ion-label select-text>Proveedor</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        <ion-label>Cantidad</ion-label>
+                        <ion-item>
+                            <ion-input type="number"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-6>
+                        <ion-label>Fecha</ion-label>
+                        <ion-item>
+                            <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
+                            cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-10>
+                        <ion-label>Agregar Servicio</ion-label>
+                        <ion-item>
+                            <ion-label select-text>Servicio</ion-label>
+                            <ion-select cancelText="Cancelar" okText="Ok" required>
+                                <!-- <ion-option *ngFor="let credit of credits" [value]="credit">{{credit.creditName}}</ion-option> -->
+                                <ion-option value="1">1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-11>
+                        <div class="element">
+                            <ion-item class="input-compose">
+                                <ion-label input-text>Dictamen Técnico</ion-label>
+                                <ion-input type="text" disabled></ion-input>
+                                <ion-label icon-circle-right><ion-icon name="camera"></ion-icon></ion-label>
+                            </ion-item>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div class="footer">
+                <button type="button">¿Cómo llegar?<ion-icon name="ios-pin-outline"></ion-icon></button>
+                <button type="submit">Guardar Fechas</button>
+                <img src="assets/img/grey_logo.png" alt="logo">
+            </div>
+        </form>
+    </div>
+    <div class="success-dialog close" ion-fixed>
+        <div class="dialog-background"></div>
+        <div class="dialog-icon">
+            <img src="assets/img/acept_icon_blue.png" alt="">
+        </div>
+        <div class="dialog-title">
+            <label><span>¡GRACIAS!</span><br></label>
+            <label>Las fechas han sido cambiadas.</label>
+        </div>
+        <div class="dialog-footer">
+            <button (click)="exit()">Volver</button>
+        </div>
+    </div>
+</ion-content>
