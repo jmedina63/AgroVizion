@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreditStatusTableSeeder::class);
         $this->call(CultivationsTableSeeder::class);
         $this->call(MinistryTableSeeder::class);
+        $this->call(MinistryConceptTableSeeder::class);
+        $this->call(MinistryConceptDetailTableSeeder::class);
     }
 }
