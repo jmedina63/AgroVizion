@@ -17,9 +17,7 @@ class CreateCategoriesProductsTable extends Migration
         Schema::create('categories_products', function (Blueprint $table) {
             $table->increments('caterorie_id');
             $table->unsignedInteger('product_id');
-
             $table->index(["categorie_id"], 'fk_categori_product_categories1_idx');
-
             $table->foreign('product_id', 'fk_categori_product_products1_idx')
                 ->references('id')->on('product')
                 ->onDelete('cascade')
