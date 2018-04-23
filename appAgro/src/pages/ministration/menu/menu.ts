@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Storage } from '../../../app/provider/Storage';
 import { APIService } from '../../../app/provider/APIService';
@@ -19,7 +19,7 @@ export class MinistrationMenuPage {
 	private balance;
 
 	constructor(public navCtrl: NavController, statusBar: StatusBar, private http: APIService,
-		private alert: AlertService, private storage: Storage) {
+		private alert: AlertService, private storage: Storage, private navParams: NavParams) {
 		this.pages = {
 			cash: CashPage,
 			supplies: SuppliesPage,
@@ -48,6 +48,8 @@ export class MinistrationMenuPage {
 	* @return {void}
 	*/
 	back() {
-		this.navCtrl.pop();
+		this.navParams.get('parent').listOrders(() => {
+			this.navCtrl.pop();
+		});
 	}
 }

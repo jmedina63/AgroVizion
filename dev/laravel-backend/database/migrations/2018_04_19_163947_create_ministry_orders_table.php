@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCreditMinistryTable extends Migration
+class CreateMinistryOrdersTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $set_schema_table = 'credit_ministry';
+    public $set_schema_table = 'ministry_orders';
 
     /**
      * Run the migrations.
@@ -21,6 +21,7 @@ class CreateCreditMinistryTable extends Migration
     {
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('credit_id')->unsigned();
             $table->foreign('credit_id')
                 ->references('id')->on('credits')
@@ -31,10 +32,14 @@ class CreateCreditMinistryTable extends Migration
                 ->references('id')->on('ministry')
                 ->onDelete('cascade')
                 ->onUpdate('restrict');
-            $table->decimal('amount', 10, 2)->default(0);
-            $table->integer('status')->default('1');
+            $table->integer('ministry_request_id');
+            $table->integer('status_id')->unsigned();
+            $table->foreign('status_id')
+                ->references('id')->on('ministry_status')
+                ->onDelete('cascade')
+                ->onUpdate('restrict');
+            $table->integer('status')->default(1);
             $table->timestamps();
-            $table->primary(['credit_id', 'ministry_id']);
         });
     }
 

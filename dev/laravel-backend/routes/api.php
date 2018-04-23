@@ -62,3 +62,6 @@ Route::resource('creditministry', 'CreditMinistryController');
 
 // API Credits Ministry Route By userid and ministryId
 Route::get('creditministry/{userid}/{ministryid}', 'CreditMinistryController@show');
+
+// API Credits Ministry Route By userid and ministryId
+Route::resource('ministrycashrequest', 'MinistryCashRequestController');

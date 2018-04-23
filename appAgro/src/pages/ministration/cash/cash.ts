@@ -15,8 +15,8 @@ export class CashPage {
 	private creditSelected;
 	private rent;
 	private rentDate;
-	private preparation;
-	private preparationDate;
+	private ground;
+	private groundDate;
 	private sowing;
 	private sowingDate;
 	private labors;
@@ -56,14 +56,32 @@ export class CashPage {
 	 */
 	sendInfo(ionForm) {
 		var creditAmount = Number(this.creditSelected.amount.replace(/\$|MXN|,/g, ''));
-		var sumItems = Number(this.rent) + Number(this.preparation) + Number(this.sowing) + Number(this.labors) + Number(this.harvest) + Number(this.diverse);
+		var sumItems = Number(this.rent) + Number(this.ground) + Number(this.sowing) + Number(this.labors) + Number(this.harvest) + Number(this.diverse);
 		if (sumItems > creditAmount) {
 			var surplus = (sumItems - creditAmount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		    this.alert.showMessage("Crédito insuficiente", "Crédito superado en $" + surplus + " MXN.");
 		} else {
-			var dialog = document.querySelector("div.success-dialog");
-			dialog.classList.remove("close");
-			ionForm.reset({creditSelected: {"amount": "$0.00 MXN"}});
+			let body = {
+				user: this.storage.user.id,
+				rent: this.rent,
+				rentDate: this.rentDate,
+				ground: this.ground,
+				groundDate: this.groundDate,
+				sowing: this.sowing,
+				sowingDate: this.sowingDate,
+				labors: this.labors,
+				laborsDate: this.laborsDate,
+				harvest: this.harvest,
+				harvestDate: this.harvestDate,
+				diverse: this.diverse,
+				diverseDate: this.diverseDate,
+				credit: this.creditSelected.credit_id
+			};
+			this.http.post('ministrycashrequest', body, data => {
+				var dialog = document.querySelector("div.success-dialog");
+				dialog.classList.remove("close");
+				ionForm.reset({creditSelected: {"amount": "$0.00 MXN"}});
+			});
 		}
 	}
 }

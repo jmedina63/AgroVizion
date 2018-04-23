@@ -55,13 +55,13 @@
                     <ion-col class="row-title" col-3>Preparación de terreno</ion-col>
                     <ion-col col-5>
                         <ion-item>
-                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="preparation" name="preparation" required></ion-input>
+                            <ion-input type="number" pattern="^[0-9]*\.?[0-9]{1,2}$" [(ngModel)]="ground" name="ground" required></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col col-4>
                         <ion-item>
                             <ion-datetime displayFormat="DD/MM/YYYY" placeholder="DD/MM/AAAA" min="{{currentDate}}" max="{{maxDate}}"
-                            [(ngModel)]="preparationDate" name="preparationDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
+                            [(ngModel)]="groundDate" name="groundDate" cancelText="Cancelar" doneText="Hecho" required></ion-datetime>
                         </ion-item>
                     </ion-col>
                 </ion-row>
@@ -123,7 +123,7 @@
                 </ion-row>
             </ion-grid>
             <div class="footer">
-                <button type="submit">Guardar Fechas</button>
+                <button type="submit" [disabled]="!ionForm.form.valid">Guardar Fechas</button>
                 <img src="assets/img/grey_logo.png" alt="logo">
             </div>
         </form>
@@ -138,7 +138,7 @@
             <label>Las fechas han sido cambiadas.</label>
         </div>
         <div class="dialog-footer">
-            <button (click)="exit()">Volver</button>
+            <button (click)="back()">Volver</button>
         </div>
     </div>
 </ion-content>

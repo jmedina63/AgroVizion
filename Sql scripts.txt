@@ -2,7 +2,7 @@
 CREATE VIEW vw_credits AS
 SELECT
 credits.id,
-amount, 
+FORMAT(amount, 2) AS amount, 
 credits.expiration AS creditExpiration,
 DATE_FORMAT(credits.created_at, '%Y/%m/%d') AS creditCreated,
 request_id,
@@ -54,6 +54,24 @@ status_id IN(2, 3, 6) AND
 credit_ministry.status=1
 
 
+CREATE VIEW vw_ministry_request_cash AS
+SELECT
+users.id AS user_id,
+DATE_FORMAT(ministry_orders.created_at, '%Y/%m/%d') AS created,
+DATE_FORMAT(credits.expiration, '%Y/%m/%d') AS expiration,
+CONCAT(hectares,'H - ', cultivations.short_desc) AS creditName,
+REPLACE(ministry_status.appText, '%%', CONCAT('$', FORMAT((rent+ground+sowing+labors+harvest+diverse),2), ' MXN')) AS appText,
+ministry_status.colorHEX,
+(SELECT name FROM branchoffices WHERE id=users.branchoffice_id) AS branchoffice
+FROM ministry_orders
+JOIN ministry_status ON ministry_orders.status_id=ministry_status.id
+JOIN credits ON credits.id=ministry_orders.credit_id
+JOIN credit_request ON credit_request.id=credits.request_id
+JOIN cultivations ON credit_request.cultivation_id=cultivations.id
+JOIN ministry_cash_request ON ministry_orders.ministry_request_id=ministry_cash_request.id
+JOIN users ON users.id=ministry_cash_request.user_id
+
+
 // trigger for credit ministrations
 DELIMITER $$
 
@@ -72,3 +90,44 @@ BEGIN
 		SIGNAL sqlstate '45001' set message_text = "The sum of the ministry amounts is more than the credit";
 	END IF;
 END $$
+
+
+DELIMITER $$
+
+CREATE TRIGGER CHK_Ministry_Order BEFORE INSERT ON ministry_orders FOR EACH ROW
+BEGIN
+	SET @credit = (SELECT amount FROM credit_ministry WHERE ministry_id=NEW.ministry_id);
+	SET @amount = 0;
+	IF(@credit <= 0)
+		THEN SIGNAL sqlstate '45001' set message_text = "credit ministry is 0 or NULL";
+	ELSE
+		CASE NEW.ministry_id
+			WHEN 1 THEN SET @amount = (SELECT (rent+ground+sowing+labors+harvest+diverse) FROM ministry_cash_request WHERE id=NEW.ministry_request_id);
+			WHEN 2 THEN SET @amount = 1;
+			WHEN 3 THEN SET @amount = 1;
+			WHEN 4 THEN SET @amount = 1;
+			ELSE SET @amount = 0;
+		END CASE;
+		IF (@amount IS NULL OR @amount <= 0) THEN
+			SIGNAL sqlstate '45001' set message_text = "Amount is less than 1";
+		ELSEIF (@amount > @credit) THEN
+			SIGNAL sqlstate '45001' set message_text = "The sum of the request amount is more than the ministry credit";
+		END IF;	
+	END IF;
+END $$
+
+
+/// Change collation's
+SHOW VARIABLES LIKE 'character_set%';
+SHOW VARIABLES LIKE 'collation%';
+show table status
+
+https://mathiasbynens.be/notes/mysql-utf8mb4#utf8-to-utf8mb4
+
+ALTER DATABASE agroMaster CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+ALTER TABLE ministry_cash_request CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+ALTER TABLE ministry_orders CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+ALTER TABLE ministry_status CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

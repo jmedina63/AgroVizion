@@ -60,8 +60,8 @@ export class CreditPage {
 	}
 
 	/**
-	 * [listCredits description]
-	 * @return [description]
+	 * List credits
+	 * @return {bool}
 	 */
 	public listCredits(callback) {
 		this.http.get('credit/' + this.storage.user.id, data => {

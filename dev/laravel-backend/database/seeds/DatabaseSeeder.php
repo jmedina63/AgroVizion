@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MinistryTableSeeder::class);
         $this->call(MinistryConceptTableSeeder::class);
         $this->call(MinistryConceptDetailTableSeeder::class);
+        $this->call(MinistryStatusTableSeeder::class);
     }
 }

@@ -32,7 +32,7 @@ class CreateCreditsTable extends Migration
                 ->references('id')->on('credit_status')
                 ->onDelete('cascade')
                 ->onUpdate('restrict');
-            $table->decimal('amount', 8, 2)->default(0);
+            $table->decimal('amount', 10, 2)->default(0);
             $table->date('expiration')->nullable();
             $table->integer('status')->default('1');
             $table->timestamps();
