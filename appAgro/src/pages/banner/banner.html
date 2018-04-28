@@ -1,0 +1,35 @@
+<ion-content padding class="page-banner" overflow-scroll="false">
+    <div class="header" ion-fixed>
+        <button ion-button icon-only (click)="back()">
+            <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+        <div class="user-info">
+            <div class="user-data">
+                <label id="user-name">{{storage.user.name}}</label>
+                <label id="user-number">{{storage.user.phone}}</label>
+            </div>
+            <div class="user-pic">
+                <img src="{{storage.user.avatar_url}}" alt="Usuario">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <img src="data:image/{{storage.banners.second.extension}};base64,{{storage.banners.second.base64}}" alt="">
+        <div class="content-items">
+            <button type="button" (click)="sendInfo()">ENVIAR INFORMACIÓN</button>
+            <img src="assets/img/green_logo.png" alt="AgroVizión">
+        </div>
+    </div>
+    <div class="success-dialog close" ion-fixed>
+        <div class="dialog-background"></div>
+        <div class="dialog-icon">
+            <img src="assets/img/acept_icon_orange.png" alt="">
+        </div>
+        <div class="dialog-title">
+            <label><span>INFORMACION<BR>ENVIADA!</span><br></label>
+        </div>
+        <div class="dialog-footer">
+            <button (click)="back()">Volver</button>
+        </div>
+    </div>
+</ion-content>

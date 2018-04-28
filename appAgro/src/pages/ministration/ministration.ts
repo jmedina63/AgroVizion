@@ -23,10 +23,9 @@ export class MinistrationPage {
 		this.pages = {
 			ministrationMenu: MinistrationMenuPage
 		}
-		this.http.get('ministrycashrequest/' + this.storage.user.id, data => {
-			this.storage.orders = data;
+		this.listOrders(() => {
 			this.alert.hideLoading();
-		});
+		})
 	}
 
     /**
@@ -64,8 +63,8 @@ export class MinistrationPage {
 	 * @return {bool}
 	 */
 	public listOrders(callback) {
-		this.http.get('ministrycashrequest/' + this.storage.user.id, data => {
-			this.storage.credits = data;
+		this.http.get('ministryorders/' + this.storage.user.id, data => {
+			this.storage.orders = data;
 			return callback(true);
 		});
 	}

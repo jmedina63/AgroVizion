@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\MinistryOrder;
 use App\MinistryCashRequest;
-use Illuminate\Support\Facades\DB;
 
 class MinistryCashRequestController extends Controller
 {
@@ -41,14 +40,4 @@ class MinistryCashRequestController extends Controller
         return response()->json($cashRequest, 202);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) {
-        $orders = DB::table('vw_ministry_request_cash')->where('user_id', '=', $id)->get();
-        return response()->json($orders, 202);
-    }
 }

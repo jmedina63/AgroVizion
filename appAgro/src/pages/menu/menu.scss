@@ -6,13 +6,18 @@
     }
 
     .header {
-        background-image: url('../assets/img/farm.jpg');
         height: 37.5%;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        -webkit-clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
-        clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+        // background-position: center;
+        // background-position: -40vw 0vw;
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // -webkit-clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+        // clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+        & img {
+            height: 100%;
+            -webkit-clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+            clip-path: polygon(0 0, 0 62%, 41% 77%, 100% 100%, 100% 0);
+        }
     }
 
     .header button {

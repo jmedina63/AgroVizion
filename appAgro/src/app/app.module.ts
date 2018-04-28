@@ -29,6 +29,7 @@ import { CashPage } from '../pages/ministration/cash/cash';
 import { SuppliesPage } from '../pages/ministration/supplies/supplies';
 import { QuimicsPage } from '../pages/ministration/quimics/quimics';
 import { WaterPage } from '../pages/ministration/water/water';
+import { BannerPage } from '../pages/banner/banner';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { WaterPage } from '../pages/ministration/water/water';
     CashPage,
     SuppliesPage,
     QuimicsPage,
-    WaterPage
+    WaterPage,
+    BannerPage
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,8 @@ import { WaterPage } from '../pages/ministration/water/water';
     CashPage,
     SuppliesPage,
     QuimicsPage,
-    WaterPage
+    WaterPage,
+    BannerPage
   ],
   providers: [
     StatusBar,

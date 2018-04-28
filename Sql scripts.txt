@@ -54,7 +54,7 @@ status_id IN(2, 3, 6) AND
 credit_ministry.status=1
 
 
-CREATE VIEW vw_ministry_request_cash AS
+CREATE VIEW vw_ministry_request AS
 SELECT
 users.id AS user_id,
 DATE_FORMAT(ministry_orders.created_at, '%Y/%m/%d') AS created,
@@ -62,7 +62,8 @@ DATE_FORMAT(credits.expiration, '%Y/%m/%d') AS expiration,
 CONCAT(hectares,'H - ', cultivations.short_desc) AS creditName,
 REPLACE(ministry_status.appText, '%%', CONCAT('$', FORMAT((rent+ground+sowing+labors+harvest+diverse),2), ' MXN')) AS appText,
 ministry_status.colorHEX,
-(SELECT name FROM branchoffices WHERE id=users.branchoffice_id) AS branchoffice
+(SELECT name FROM branchoffices WHERE id=users.branchoffice_id) AS branchoffice,
+ministry_orders.ministry_id
 FROM ministry_orders
 JOIN ministry_status ON ministry_orders.status_id=ministry_status.id
 JOIN credits ON credits.id=ministry_orders.credit_id
@@ -70,6 +71,27 @@ JOIN credit_request ON credit_request.id=credits.request_id
 JOIN cultivations ON credit_request.cultivation_id=cultivations.id
 JOIN ministry_cash_request ON ministry_orders.ministry_request_id=ministry_cash_request.id
 JOIN users ON users.id=ministry_cash_request.user_id
+WHERE ministry_orders.ministry_id=1
+
+UNION
+
+SELECT
+users.id AS user_id,
+DATE_FORMAT(ministry_orders.created_at, '%Y/%m/%d') AS created,
+DATE_FORMAT(credits.expiration, '%Y/%m/%d') AS expiration,
+CONCAT(hectares,'H - ', cultivations.short_desc) AS creditName,
+REPLACE(ministry_status.appText, '%%', (phosphate+urea+ammonia)) AS appText,
+ministry_status.colorHEX,
+(SELECT name FROM branchoffices WHERE id=users.branchoffice_id) AS branchoffice,
+ministry_orders.ministry_id
+FROM ministry_orders
+JOIN ministry_status ON ministry_orders.status_id=ministry_status.id
+JOIN credits ON credits.id=ministry_orders.credit_id
+JOIN credit_request ON credit_request.id=credits.request_id
+JOIN cultivations ON credit_request.cultivation_id=cultivations.id
+JOIN ministry_supplies_request ON ministry_orders.ministry_request_id=ministry_supplies_request.id
+JOIN users ON users.id=ministry_supplies_request.user_id
+WHERE ministry_orders.ministry_id=2
 
 
 // trigger for credit ministrations

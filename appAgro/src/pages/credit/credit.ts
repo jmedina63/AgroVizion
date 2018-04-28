@@ -16,10 +16,10 @@ export class CreditPage {
 
 	constructor(public navCtrl: NavController, private statusBar: StatusBar, private platform: Platform,
 		private storage: Storage, private http: APIService, private alert: AlertService) {
+		this.alert.showLoading("Cargando..."); // activa el loading screen
 		platform.ready().then(() => {
 			statusBar.backgroundColorByHexString("#205d23");
 		});
-		this.alert.showLoading("Cargando..."); // activa el loading screen
         this.pages = {
             creditRequest: CreditRequest
         }

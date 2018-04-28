@@ -13,12 +13,19 @@ import { Storage } from '../../../app/provider/Storage';
 export class SuppliesPage {
     private currentDate;
 	private maxDate;
+	private creditSelected;
+	private credits;
 
 	constructor(public navCtrl: NavController, statusBar: StatusBar, private http: APIService,
 		private alert: AlertService, private storage: Storage) {
-		// this.alert.showLoading("Cargando..."); // activa el loading screen
+		this.alert.showLoading("Cargando..."); // activa el loading screen
         this.currentDate = new Date().toISOString(); // current date for date fields
 		this.maxDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString(); // max date for date fields
+		this.creditSelected = {"amount": "$0.00 MXN"};
+		this.http.get('creditministry/' + this.storage.user.id + '/2', data => { // the number 1 is the ministry id of cash
+			this.credits = data;
+			this.alert.hideLoading();
+		});
 	}
 
 	/**

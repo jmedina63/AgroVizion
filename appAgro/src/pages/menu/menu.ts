@@ -9,15 +9,21 @@ import { MovementPage } from '../movement/movement';
 import { NoticePage } from '../notice/notice';
 import { LoginPage } from '../login/login';
 import { NotificationPage } from '../notification/notification';
+import { BannerPage } from '../banner/banner';
+import { APIService } from '../../app/provider/APIService';
+import { AlertService } from '../../app/provider/AlertService';
 
 @Component({
 	selector: 'page-menu',
-	templateUrl: 'menu.html'
+	templateUrl: 'menu.html',
+	providers: [APIService, AlertService]
 })
 export class MenuPage {
     private pages;
 
-	constructor(public navCtrl: NavController, statusBar: StatusBar, platform: Platform, private storage: Storage) {
+	constructor(public navCtrl: NavController, statusBar: StatusBar, platform: Platform,
+		private storage: Storage, private http: APIService, private alert: AlertService) {
+		//this.alert.showLoading("Cargando..."); // activa el loading screen
 		platform.ready().then(() => {
 			statusBar.backgroundColorByHexString("#205d23");
 		});
@@ -28,8 +34,16 @@ export class MenuPage {
             movement: MovementPage,
             notice: NoticePage,
 			login: LoginPage,
-			notification: NotificationPage
+			notification: NotificationPage,
+			banner: BannerPage
         }
+		if (this.storage.banners.first.extension == null) {
+			this.http.get('banner/1', data => {
+				this.storage.banners.first = data
+				// this.alert.hideLoading();
+				console.log(this.storage.banners.first);
+			});
+		}
 	}
 
     /**
@@ -44,5 +58,4 @@ export class MenuPage {
 	logout() {
 		this.navCtrl.setRoot(LoginPage);
 	}
-
 }

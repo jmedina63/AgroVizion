@@ -1,5 +1,5 @@
 <ion-content padding class="page-menu" overflow-scroll="true">
-    <div class="header">
+    <div class="header" (click)="goTo(pages['banner'])">
         <!-- <button ion-button icon-only type="button" (click)="goTo(pages['settings'])">
             <ion-icon name="md-menu"></ion-icon>
         </button> -->
@@ -12,6 +12,7 @@
                 <label id="user-num">{{storage.user.phone}}</label>
             </div>
         </div> -->
+        <img src="data:image/{{storage.banners.first.extension}};base64,{{storage.banners.first.base64}}" alt="">
     </div>
     <div class="content">
         <div class="icons">

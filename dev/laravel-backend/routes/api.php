@@ -63,5 +63,18 @@ Route::resource('creditministry', 'CreditMinistryController');
 // API Credits Ministry Route By userid and ministryId
 Route::get('creditministry/{userid}/{ministryid}', 'CreditMinistryController@show');
 
-// API Credits Ministry Route By userid and ministryId
+// API Ministry Cash Request
 Route::resource('ministrycashrequest', 'MinistryCashRequestController');
+
+// API Ministry Supplies Request
+Route::resource('ministrysupplyrequest', 'MinistrySuppliesRequestController');
+
+// API Ministry Orders
+Route::resource('ministryorders', 'MinistryOrderController');
+
+// API Banner Route
+Route::post('banner/{order}', 'BannerController@store');
+Route::get('banner/{id}', 'BannerController@show');
+
+// API SendInfo advertising
+Route::resource('sendinfo', 'SendInfoController');

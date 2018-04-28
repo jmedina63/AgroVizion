@@ -19,7 +19,8 @@
                 <li class="first-dialog" #i>
                     <div class="item-title">
                         <div class="item-icon">
-                            <img src="assets/img/money_blue.png" alt="dinero">
+                            <img *ngIf="(order.ministry_id == 1)" src="assets/img/money_blue.png" alt="dinero">
+                            <img *ngIf="(order.ministry_id == 2)" src="assets/img/products_blue.png" alt="semillas">
                         </div>
                         <div class="item-label"><label>Ministración</label></div>
                     </div>
