@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCreditsTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $set_schema_table = 'credits';
+    public $set_schema_table = 'transactions';
 
     /**
      * Run the migrations.
@@ -22,24 +22,14 @@ class CreateCreditsTable extends Migration
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('request_id')->unsigned();
-            $table->foreign('request_id')
-                ->references('id')->on('credit_request')
+            $table->integer('credit_id')->unsigned();
+            $table->foreign('credit_id')
+                ->references('id')->on('credits')
                 ->onDelete('cascade')
                 ->onUpdate('restrict');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('restrict');
-            $table->integer('status_id')->unsigned();
-            $table->foreign('status_id')
-                ->references('id')->on('credit_status')
-                ->onDelete('cascade')
-                ->onUpdate('restrict');
+            $table->string('description', 100);
+            $table->enum('type', array('C', 'A'));
             $table->decimal('amount', 10, 2)->default(0);
-            $table->date('expiration')->nullable();
-            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

@@ -11,6 +11,7 @@ class Credit extends Model
 
     protected $fillable = [
         'request_id',
+        'user_id',
         'status_id',
         'amount',
         'expiration',
@@ -25,5 +26,10 @@ class Credit extends Model
     public function creditStatus()
     {
         return $this->hasOne('App\CreditStatus', 'id', 'status_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
 }

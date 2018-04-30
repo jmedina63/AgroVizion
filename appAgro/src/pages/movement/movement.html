@@ -11,20 +11,20 @@
         <div class="logo"> <img src="assets/img/green_logo.png" alt="logo"></div>
         <div class="user-info">
             <div class="user-pic">
-                <img src="assets/img/userpic.png" alt="user">
-                <!-- <img src="{{storage.user.avatar_url}}" alt="user"> -->
+                <!-- <img src="assets/img/userpic.png" alt="user"> -->
+                <img src="{{storage.user.avatar_url}}" alt="user">
             </div>
             <div class="user-data">
-                <!-- <label id="user-name">{{storage.user.name}}</label> -->
-                <label id="user-name">Usuario</label>
-                <!-- <label id="user-number">{{storage.user.phone}}</label> -->
-                <label id="user-number">6862645467</label>
+                <label id="user-name">{{storage.user.name}}</label>
+                <!-- <label id="user-name">Usuario</label> -->
+                <label id="user-number">{{storage.user.phone}}</label>
+                <!-- <label id="user-number">6862645467</label> -->
             </div>
         </div>
         <div class="movement-info">
             <div class="info">
                 <label id="title">Balance General</label>
-                <label id="date">01 de Octubre 2017</label>
+                <label id="date">{{currentDate}}</label>
             </div>
             <div class="options">
                 <ion-icon name="ios-information-circle-outline" id="btnInfo" (click)="showInfo()"></ion-icon>
@@ -37,7 +37,7 @@
                 <label>Saldo disponible</label>
             </div>
             <div class="content">
-                <label>$ 89,530.00 <span>MXN</span></label>
+                <label [innerHTML]="balance"></label>
             </div>
         </div>
         <div class="balance-apply">
@@ -46,63 +46,14 @@
         </div>
         <div class="movements">
             <ul>
-                <li>
+                <li *ngFor="let trans of transactions; let i = index;">
                     <div class="description">
-                        <label class="desc-title">Retiro Efectivo</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
+                        <label class="desc-title">{{trans.description}}</label>
+                        <label class="desc-date">{{trans.created_at}}</label>
                     </div>
                     <div class="movement">
-                        <label class="move-money red"><ion-icon name="md-arrow-round-back"></ion-icon>$ 56,200.00</label>
-                        <label class="move-coin">MXN</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="description">
-                        <label class="desc-title">Cred Fol. 3445</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
-                    </div>
-                    <div class="movement">
-                        <label class="move-money green"><ion-icon name="md-arrow-round-forward"></ion-icon>$ 90,000.00</label>
-                        <label class="move-coin">MXN</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="description">
-                        <label class="desc-title">Cred Fol. 7438</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
-                    </div>
-                    <div class="movement">
-                        <label class="move-money green"><ion-icon name="md-arrow-round-forward"></ion-icon>$ 50,000.00</label>
-                        <label class="move-coin">MXN</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="description">
-                        <label class="desc-title">Pedido No. 238F</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
-                    </div>
-                    <div class="movement">
-                        <label class="move-money red"><ion-icon name="md-arrow-round-back"></ion-icon>$ 6,000.00</label>
-                        <label class="move-coin">MXN</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="description">
-                        <label class="desc-title">Pedido No. 438N</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
-                    </div>
-                    <div class="movement">
-                        <label class="move-money red"><ion-icon name="md-arrow-round-back"></ion-icon>$ 1,000.00</label>
-                        <label class="move-coin">MXN</label>
-                    </div>
-                </li>
-                <li>
-                    <div class="description">
-                        <label class="desc-title">Retiro Efectivo</label>
-                        <label class="desc-date">5 Oct 2017 - 17:37:21</label>
-                    </div>
-                    <div class="movement">
-                        <label class="move-money green"><ion-icon name="md-arrow-round-forward"></ion-icon>$ 500.00</label>
+                        <label *ngIf="(trans.type == 'C')" class="move-money red"><ion-icon name="md-arrow-round-back"></ion-icon>{{trans.amount}}</label>
+                        <label *ngIf="(trans.type == 'A')" class="move-money green"><ion-icon name="md-arrow-round-forward"></ion-icon>{{trans.amount}}</label>
                         <label class="move-coin">MXN</label>
                     </div>
                 </li>

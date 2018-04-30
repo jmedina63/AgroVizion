@@ -13,7 +13,7 @@ import { AlertService } from '../../app/provider/AlertService';
 export class BannerPage {
     private pages;
 
-	constructor(public navCtrl: NavController, statusBar: StatusBar, platform: Platform,
+	constructor(public navCtrl: NavController, private statusBar: StatusBar, platform: Platform,
 		private storage: Storage, private http: APIService, private alert: AlertService) {
 		this.alert.showLoading("Cargando..."); // activa el loading screen
 		platform.ready().then(() => {
@@ -42,6 +42,7 @@ export class BannerPage {
     * @return {void}
     */
     back() {
+		this.statusBar.backgroundColorByHexString("#205d23");
         this.navCtrl.pop();
     }
 

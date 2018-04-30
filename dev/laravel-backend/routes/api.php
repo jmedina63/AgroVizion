@@ -78,3 +78,6 @@ Route::get('banner/{id}', 'BannerController@show');
 
 // API SendInfo advertising
 Route::resource('sendinfo', 'SendInfoController');
+
+// API Transactions Routes
+Route::resource('transaction', 'TransactionController');

@@ -37,6 +37,7 @@ class CreditRequestController extends Controller
         ]);
         $credit = Credit::create([
             'request_id' => $creditRequest->id,
+            'user_id' => $creditRequest->user_id,
             'status_id' => 1 // Desarrollo de análisis
         ]);
         return response()->json($docs, 202);

@@ -20,13 +20,13 @@ export class MinistrationMenuPage {
 
 	constructor(public navCtrl: NavController, statusBar: StatusBar, private http: APIService,
 		private alert: AlertService, private storage: Storage, private navParams: NavParams) {
+		this.alert.showLoading("Cargando..."); // activa el loading screen
 		this.pages = {
 			cash: CashPage,
 			supplies: SuppliesPage,
 			quimics: QuimicsPage,
 			water: WaterPage
 		}
-		this.alert.showLoading("Cargando..."); // activa el loading screen
 		this.http.get('balance/' + this.storage.user.id, data => {
 			this.balance = data[0].balance;
 			this.alert.hideLoading();

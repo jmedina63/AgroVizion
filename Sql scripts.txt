@@ -23,22 +23,22 @@ JOIN credit_request ON credits.request_id=credit_request.id
 JOIN credit_status ON credits.status_id=credit_status.id
 JOIN cultivations ON credit_request.cultivation_id=cultivations.id
 JOIN credit_docs ON credit_request.docs_id=credit_docs.id
-JOIN users ON credit_request.user_id=users.id
+JOIN users ON credits.user_id=users.id
 
 ----- Balance view
 CREATE VIEW vw_credit_balance AS
 SELECT
 user_id,
-CONCAT('$', FORMAT(SUM(amount), 2), ' MXN') AS balance
+CONCAT('$', FORMAT(SUM(amount), 2), ' MXN') AS balance,
+CONCAT('$', FORMAT(SUM(amount), 2), ' <span>MXN</span>') AS balanceHTML
 FROM credits
-JOIN credit_request ON credits.request_id=credit_request.id
 WHERE status_id IN(2, 3, 6)
 GROUP BY user_id
 
 
 CREATE VIEW vw_credits_ministry AS
 select
-user_id,
+credits.user_id,
 credit_ministry.credit_id,
 credit_ministry.ministry_id,
 ministry.description,
@@ -92,6 +92,19 @@ JOIN cultivations ON credit_request.cultivation_id=cultivations.id
 JOIN ministry_supplies_request ON ministry_orders.ministry_request_id=ministry_supplies_request.id
 JOIN users ON users.id=ministry_supplies_request.user_id
 WHERE ministry_orders.ministry_id=2
+
+
+CREATE VIEW vw_transactions AS
+SELECT
+user_id,
+credit_id,
+description,
+type,
+CONCAT('$', FORMAT(transactions.amount, 2)) AS amount,
+DATE_FORMAT(transactions.created_at, '%Y/%m/%d') AS created_at
+FROM transactions
+JOIN credits ON transactions.credit_id=credits.id
+JOIN users ON credits.user_id=users.id
 
 
 // trigger for credit ministrations
